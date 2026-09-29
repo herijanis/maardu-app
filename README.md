@@ -8,7 +8,14 @@ npm run timetable    # data/timetable.json from mgm.edupage.org
 curl -X POST localhost:4411/api/refresh   # run the fetcher now
 ```
 
-## Keep it running on the Mac (launchd)
+## Production: GitHub Pages
+
+`.github/workflows/pages.yml` runs `npm run timetable` at 07:00, 12:00 and 19:00 Europe/Tallinn (and on every
+push to main or a manual run) and deploys `web/` + `data/timetable.json` + `data/status.json` to Pages.
+If EduPage fails, it redeploys the last good timetable (Actions cache, else the live site) with
+`status.json` saying `ok: false`. Needs Settings → Pages → Source: GitHub Actions.
+
+## Keep the local server running on the Mac (launchd, optional)
 
 ```sh
 sed -e "s|__APP_DIR__|$PWD|g" -e "s|__HOME__|$HOME|g" timetable/ee.maardu-app.plist > ~/Library/LaunchAgents/ee.maardu-app.plist

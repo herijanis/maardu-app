@@ -1,0 +1,116 @@
+name: Timetable → GitHub Pages
+
+# Refetches the 11.erh timetable and deploys web/ + data/*.json to GitHub Pages.
+# Scheduled for 07:00, 12:00 and 19:00 Europe/Tallinn. GitHub cron is UTC-only, so there is one cron
+# for summer time (UTC+3) and one for winter time (UTC+2), and each run only goes ahead when its cron
+# matches Tallinn's current offset. Runs can start late, so this compares offsets rather than the clock hour.
+on:
+  schedule:
+    - cron: '0 4,9,16 * * *'   # 07/12/19 in summer (EEST, UTC+3)
+    - cron: '0 5,10,17 * * *'  # 07/12/19 in winter (EET, UTC+2)
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    outputs:
+      run: ${{ steps.gate.outputs.run }}
+    steps:
+      - name: Check schedule slot
+        id: gate
+        env:
+          EVENT: ${{ github.event_name }}
+          CRON: ${{ github.event.schedule }}
+        run: |
+          run=true
+          if [ "$EVENT" = schedule ]; then
+            offset=$(TZ=Europe/Tallinn date +%z)
+            case "$CRON:$offset" in
+              '0 4,9,16 * * *:+0300'|'0 5,10,17 * * *:+0200') ;;
+              *) run=false ;;
+            esac
+            echo "cron '$CRON', Tallinn offset $offset, run=$run"
+          fi
+          echo "run=$run" >> "$GITHUB_OUTPUT"
+
+  deploy:
+    needs: gate
+    if: needs.gate.outputs.run == 'true'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Configure Pages
+        id: pages
+        uses: actions/configure-pages@v5
+
+      # Last good timetable. fetch.js keeps data/timetable.json when a fetch fails, so restore it first.
+      - name: Restore last good timetable
+        uses: actions/cache/restore@v4
+        with:
+          path: data/timetable.json
+          key: timetable-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: timetable-
+
+      - name: Fall back to the live site's timetable
+        if: hashFiles('data/timetable.json') == ''
+        env:
+          BASE_URL: ${{ steps.pages.outputs.base_url }}
+        run: |
+          mkdir -p data
+          curl -fsSL --max-time 30 "$BASE_URL/data/timetable.json" -o data/timetable.json \
+            && echo "restored from $BASE_URL" || { rm -f data/timetable.json; echo "no previous deployment data"; }
+
+      - name: Fetch timetable
+        id: fetch
+        continue-on-error: true
+        run: npm run timetable
+
+      - name: Save timetable for next time
+        if: steps.fetch.outcome == 'success'
+        uses: actions/cache/save@v4
+        with:
+          path: data/timetable.json
+          key: timetable-${{ github.run_id }}-${{ github.run_attempt }}
+
+      - name: Build site
+        run: |
+          if [ ! -s data/timetable.json ]; then
+            echo "::error::Fetch failed and there is no previous timetable; keeping the current deployment."
+            cat data/status.json 2>/dev/null || true
+            exit 1
+          fi
+          [ "${{ steps.fetch.outcome }}" = success ] || echo "::warning::Fetch failed; deploying the last good timetable with status ok:false."
+          rm -rf _site
+          cp -R web _site
+          mkdir -p _site/data
+          cp data/timetable.json _site/data/
+          [ -f data/status.json ] && cp data/status.json _site/data/ || true
+          touch _site/.nojekyll
+          ls -R _site
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
