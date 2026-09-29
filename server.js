@@ -1,8 +1,8 @@
-// Local dev server: serves web/ and data/*.json on http://localhost:4411 (the same layout as the
-// GitHub Pages site) and runs the timetable fetcher at 07:00, 12:00 and 19:00 Europe/Tallinn (plus once
-// on start). POST /api/refresh runs it now. Production has no backend; see .github/workflows/pages.yml.
+// Serves web/ plus data/timetable.json and data/status.json on http://localhost:4411 (the same layout as
+// the GitHub Pages site) and runs the timetable fetcher at 07:00, 12:00 and 19:00 Europe/Tallinn (plus once
+// on start). It is exposed publicly, so it serves nothing outside that allow-list.
 import { createServer } from 'node:http';
-import { readFile, stat } from 'node:fs/promises';
+import { readFile, stat, realpath } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import { spawn } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
@@ -10,6 +10,7 @@ import { dirname, join, normalize, extname, sep } from 'node:path';
 
 const ROOT = dirname(fileURLToPath(import.meta.url));
 const WEB = join(ROOT, 'web');
+const WEB_REAL = await realpath(WEB).catch(() => WEB);
 const DATA = join(ROOT, 'data');
 const PORT = Number(process.env.PORT) || 4411;
 const TZ = 'Europe/Tallinn';
@@ -81,46 +82,74 @@ async function tick() {
 }
 
 // --- http ---
-function send(res, code, body, type = 'text/plain; charset=utf-8', extra = {}) {
-  res.writeHead(code, { 'Content-Type': type, ...extra });
-  res.end(body);
+// Public (served through a tunnel): only web/ and an explicit allow-list of data files.
+const DATA_FILES = {
+  '/data/timetable.json': [join(DATA, 'timetable.json'), join(DATA, 'sample', 'timetable.json')],
+  '/data/status.json': [join(DATA, 'status.json')],
+  '/data/sample/timetable.json': [join(DATA, 'sample', 'timetable.json')],
+};
+const SECURITY_HEADERS = {
+  'X-Content-Type-Options': 'nosniff',
+  'Referrer-Policy': 'no-referrer',
+  'X-Frame-Options': 'DENY',
+  'Content-Security-Policy': "frame-ancestors 'none'; base-uri 'self'; object-src 'none'",
+  'Permissions-Policy': 'camera=(), microphone=(), geolocation=()',
+};
+function cacheControl(file) {
+  const ext = extname(file).toLowerCase();
+  if (['.png', '.jpg', '.jpeg', '.webp', '.svg', '.ico', '.woff2'].includes(ext)) return 'public, max-age=604800';
+  if (['.js', '.mjs', '.css'].includes(ext)) return 'public, max-age=300';
+  return 'no-cache'; // html, json, manifest: always revalidate
 }
-async function sendFile(res, file, extra = {}) {
-  const body = await readFile(file);
-  send(res, 200, body, TYPES[extname(file).toLowerCase()] ?? 'application/octet-stream', extra);
+
+function send(req, res, code, body, headers = {}) {
+  res.writeHead(code, { 'Content-Type': 'text/plain; charset=utf-8', ...SECURITY_HEADERS, ...headers });
+  res.end(req.method === 'HEAD' ? undefined : body);
+}
+async function sendFile(req, res, file) {
+  const st = await stat(file);
+  const etag = `W/"${st.size.toString(16)}-${Math.floor(st.mtimeMs).toString(16)}"`;
+  const headers = {
+    'Content-Type': TYPES[extname(file).toLowerCase()] ?? 'application/octet-stream',
+    'Cache-Control': cacheControl(file),
+    ETag: etag,
+    'Last-Modified': st.mtime.toUTCString(),
+  };
+  if (req.headers['if-none-match'] === etag) return send(req, res, 304, undefined, headers);
+  send(req, res, 200, await readFile(file), headers);
+}
+// Resolves a URL path to a file inside web/, or null. No dotfiles, no escaping web/ (incl. via symlinks).
+async function webFile(path) {
+  if (path.split('/').some((seg) => seg.startsWith('.'))) return null;
+  let file = normalize(join(WEB, path));
+  if (file !== WEB && !file.startsWith(WEB + sep)) return null;
+  try {
+    if ((await stat(file)).isDirectory()) file = join(file, 'index.html');
+    const real = await realpath(file);
+    if (!real.startsWith(WEB_REAL + sep) || !(await stat(real)).isFile()) return null;
+    return real;
+  } catch {
+    return null;
+  }
 }
 
 const server = createServer(async (req, res) => {
   try {
-    const url = new URL(req.url, 'http://localhost');
-    const path = decodeURIComponent(url.pathname);
+    if (req.method !== 'GET' && req.method !== 'HEAD') return send(req, res, 405, 'method not allowed', { Allow: 'GET, HEAD' });
+    let path;
+    try { path = decodeURIComponent(new URL(req.url, 'http://localhost').pathname); } catch { return send(req, res, 400, 'bad request'); }
+    if (path.includes('\0')) return send(req, res, 400, 'bad request');
 
-    if (path === '/api/refresh') {
-      if (req.method !== 'POST') return send(res, 405, 'POST only', undefined, { Allow: 'POST' });
-      const results = await refresh('api');
-      let status = {};
-      try { status = JSON.parse(await readFile(join(DATA, 'status.json'), 'utf8')); } catch {}
-      return send(res, 200, JSON.stringify({ results, status }), TYPES['.json']);
+    if (path.startsWith('/data/')) {
+      const file = (DATA_FILES[path] ?? []).find((f) => existsSync(f));
+      return file ? await sendFile(req, res, file) : send(req, res, 404, 'not found');
     }
 
-    const m = path.match(/^\/data\/([a-z0-9_-]+)\.json$/i);
-    if (m) {
-      const noStore = { 'Cache-Control': 'no-store' };
-      for (const file of [join(DATA, `${m[1]}.json`), join(DATA, 'sample', `${m[1]}.json`)]) {
-        if (existsSync(file)) return await sendFile(res, file, noStore);
-      }
-      return send(res, 404, 'not found');
-    }
-
-    if (req.method !== 'GET' && req.method !== 'HEAD') return send(res, 405, 'method not allowed');
-    let file = normalize(join(WEB, path));
-    if (file !== WEB && !file.startsWith(WEB + sep)) return send(res, 403, 'forbidden');
-    if (existsSync(file) && (await stat(file)).isDirectory()) file = join(file, 'index.html');
-    if (!existsSync(file)) return send(res, 404, 'not found');
-    return await sendFile(res, file);
+    const file = await webFile(path);
+    return file ? await sendFile(req, res, file) : send(req, res, 404, 'not found');
   } catch (err) {
     log('request error', err);
-    if (!res.headersSent) send(res, 500, 'server error');
+    if (!res.headersSent) send(req, res, 500, 'server error');
     else res.end();
   }
 });
