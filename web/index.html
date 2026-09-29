@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="et">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0f1115">
+  <meta name="color-scheme" content="dark">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>11.erh tunniplaan</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231e222b'/%3E%3Crect x='7' y='9' width='18' height='3' rx='1.5' fill='%238b9cff'/%3E%3Crect x='7' y='15' width='12' height='3' rx='1.5' fill='%23e8eaf0'/%3E%3Crect x='7' y='21' width='15' height='3' rx='1.5' fill='%23e8eaf0' opacity='.5'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <div class="app">
+    <header class="top">
+      <div class="brand">
+        <h1>11.erh</h1>
+        <span class="school">Maardu Gümnaasium</span>
+      </div>
+      <div class="meta">
+        <button id="errPill" class="pill pill-err" hidden></button>
+        <span id="updated" class="updated">Laadin…</span>
+        <button id="refreshBtn" class="icon-btn" aria-label="Värskenda" title="Värskenda">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.34-5.66M20 4v5h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <nav class="tabs" role="tablist" aria-label="Vaade">
+      <span class="tab-ind" aria-hidden="true"></span>
+      <button role="tab" class="tab" data-view="day" aria-selected="true">Päev</button>
+      <button role="tab" class="tab" data-view="week" aria-selected="false">Nädal</button>
+      <button role="tab" class="tab tab-tomorrow" data-view="tomorrow" aria-selected="false">Homme <span id="tomorrowCount" class="count" hidden></span></button>
+    </nav>
+
+    <main class="layout">
+      <div class="main-col">
+        <section id="view-day" class="view is-active" aria-label="Päeva tunniplaan">
+          <div class="daynav">
+            <button class="icon-btn" id="prevDay" aria-label="Eelmine päev"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <div class="daytitle">
+              <div id="dayName" class="dayname"></div>
+              <div id="dayDate" class="daydate"></div>
+            </div>
+            <button class="icon-btn" id="nextDay" aria-label="Järgmine päev"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          </div>
+          <div id="dayStrip" class="daystrip"></div>
+          <div id="dayBody" class="daybody">
+            <ol id="slots" class="slots"></ol>
+          </div>
+        </section>
+
+        <section id="view-week" class="view" aria-label="Nädala tunniplaan">
+          <div class="daynav">
+            <button class="icon-btn" id="prevWeek" aria-label="Eelmine nädal"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <div class="daytitle">
+              <div id="weekName" class="dayname"></div>
+              <div id="weekRange" class="daydate"></div>
+            </div>
+            <button class="icon-btn" id="nextWeek" aria-label="Järgmine nädal"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          </div>
+          <div id="weekGrid" class="weekgrid"></div>
+        </section>
+      </div>
+
+      <aside id="view-tomorrow" class="view side" aria-label="Homseks">
+        <div class="side-head">
+          <h2 id="tomorrowTitle">Homseks</h2>
+          <span id="tomorrowDate" class="daydate"></span>
+        </div>
+        <div id="tomorrowList" class="checklist"></div>
+      </aside>
+    </main>
+  </div>
+
+  <div id="backdrop" class="backdrop" hidden></div>
+  <div id="sheet" class="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetTitle" hidden>
+    <div class="sheet-handle" id="sheetHandle"><span></span></div>
+    <div id="sheetBody" class="sheet-body"></div>
+  </div>
+  <div id="toast" class="toast" role="status" hidden></div>
+
+  <script src="app.js" type="module"></script>
+</body>
+</html>
