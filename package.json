@@ -6,5 +6,8 @@
     "start": "node server.js",
     "timetable": "node timetable/fetch.js",
     "ekool": "node ekool/fetch.js"
+  },
+  "dependencies": {
+    "playwright-core": "^1.63.0"
   }
 }

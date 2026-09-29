@@ -4,3 +4,4 @@ data/*.json
 data/browser-profile/
 *.cookies.json
 .DS_Store
+data/chrome-login/
