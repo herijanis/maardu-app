@@ -52,19 +52,19 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: 24
 
       - name: Configure Pages
         id: pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
 
       # Last good timetable. fetch.js keeps data/timetable.json when a fetch fails, so restore it first.
       - name: Restore last good timetable
-        uses: actions/cache/restore@v4
+        uses: actions/cache/restore@v6
         with:
           path: data/timetable.json
           key: timetable-${{ github.run_id }}-${{ github.run_attempt }}
@@ -86,7 +86,7 @@ jobs:
 
       - name: Save timetable for next time
         if: steps.fetch.outcome == 'success'
-        uses: actions/cache/save@v4
+        uses: actions/cache/save@v6
         with:
           path: data/timetable.json
           key: timetable-${{ github.run_id }}-${{ github.run_attempt }}
@@ -104,13 +104,12 @@ jobs:
           mkdir -p _site/data
           cp data/timetable.json _site/data/
           [ -f data/status.json ] && cp data/status.json _site/data/ || true
-          touch _site/.nojekyll
           ls -R _site
 
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: _site
 
       - name: Deploy
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
