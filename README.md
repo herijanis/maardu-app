@@ -1,5 +1,11 @@
 # maardu-app
 
+> **⚠ Yearly reminder: update `timetable/holidays.js` before 2027-09-01.** EduPage keeps showing lessons
+> through school breaks and public holidays, so this list is what hides them. It covers the 2026/27 school year
+> only (`COVERED_UNTIL = '2027-08-31'`). Add the 2027/28 breaks (mgm.ee/teenused → "Koolivaheajad") and public
+> holidays, bump `COVERED_UNTIL`, run `npm test`. Past that date nothing is hidden and validation skips the
+> empty-weekday check.
+
 Maardu Gümnaasium 11.erh timetable as a web app that works on any phone (GitHub Pages). See `CLAUDE.md` for the team setup.
 
 ```sh
@@ -22,7 +28,6 @@ Alarms: after 12h without a successful fetch the issue "Tunniplaan ei uuene" is 
 closed on recovery. `watchdog.yml` re-checks the live site every 3h.
 Test the fallback: run the Pages workflow with `simulate_edupage_down`; test the alarm: run the watchdog with
 `fake_last_ok` (e.g. `2026-09-28T07:00:00+03:00`), then without it to close the issue.
-School holidays live in `timetable/holidays.js`: update it every school year.
 
 ## Mac backup publisher (launchd)
 
