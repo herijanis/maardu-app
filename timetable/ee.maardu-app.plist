@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- Template: __APP_DIR__ and __HOME__ are replaced with the repo path on install (see README). -->
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>ee.maardu-app</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/zsh</string>
+    <string>__APP_DIR__/timetable/run-server.sh</string>
+  </array>
+  <key>WorkingDirectory</key>
+  <string>__APP_DIR__</string>
+  <key>RunAtLoad</key>
+  <true/>
+  <key>KeepAlive</key>
+  <true/>
+  <key>ThrottleInterval</key>
+  <integer>30</integer>
+  <key>StandardOutPath</key>
+  <string>__HOME__/Library/Logs/maardu-app.log</string>
+  <key>StandardErrorPath</key>
+  <string>__HOME__/Library/Logs/maardu-app.log</string>
+</dict>
+</plist>
