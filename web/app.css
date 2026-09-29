@@ -11,8 +11,6 @@
   --accent-soft: rgb(139 156 255 / 0.14);
   --test: #f2a65a;
   --test-soft: rgb(242 166 90 / 0.14);
-  --danger: #ff7070;
-  --danger-soft: rgb(255 112 112 / 0.14);
 
   --r-sm: 8px;
   --r: 12px;
@@ -80,8 +78,15 @@ button:focus-visible, [tabindex]:focus-visible { outline: 2px solid var(--accent
 }
 .pill-group { height: 32px; background: var(--surface); border: 1px solid var(--line); color: var(--muted); transition: background var(--t-fast) var(--ease), color var(--t-fast) var(--ease); }
 .pill-group.is-set { background: var(--accent-soft); border-color: rgb(139 156 255 / 0.4); color: var(--accent); }
-.pill-err { background: var(--danger-soft); color: var(--danger); }
-.pill-err::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+.stale {
+  display: flex; align-items: center; justify-content: center; gap: 6px; white-space: nowrap;
+  margin: -8px auto 16px; padding: 6px 12px; width: fit-content; max-width: 100%;
+  border-radius: 999px; background: var(--surface); border: 1px solid var(--line);
+  color: var(--muted); font-size: 12px; text-align: center;
+  animation: viewIn var(--t-slow) var(--ease);
+}
+.stale::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--test); opacity: 0.8; }
+.stale span { color: var(--faint); }
 
 /* ---------- tabs ---------- */
 .tabs {

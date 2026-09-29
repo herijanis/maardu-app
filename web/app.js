@@ -9,6 +9,7 @@ const WEEKDAYS = ['pühapäev', 'esmaspäev', 'teisipäev', 'kolmapäev', 'nelja
 const WD_SHORT = ['P', 'E', 'T', 'K', 'N', 'R', 'L'];
 const MONTHS = ['jaanuar', 'veebruar', 'märts', 'aprill', 'mai', 'juuni', 'juuli', 'august', 'september', 'oktoober', 'november', 'detsember'];
 const GROUP_KEY = 'maardu.group.v1';
+const STALE_MS = 12 * 3600_000;
 
 // Short labels for the compact week grid (phones). Unknown subjects fall back to abbreviate().
 const ABBR = {
@@ -117,6 +118,11 @@ function index() {
   if (state.myGroup && !state.groups.includes(state.myGroup)) state.myGroup = null;
 }
 
+function lastGood() {
+  const ts = [state.tt?.fetchedAt, state.status?.timetable?.lastOk].map((t) => Date.parse(t)).filter((t) => !isNaN(t));
+  return ts.length ? Math.max(...ts) : null;
+}
+
 function defaultDate() {
   const want = now().getHours() >= 15 ? tomorrow() : today();
   return state.dates.find((d) => d >= want) || state.dates[state.dates.length - 1] || want;
@@ -127,13 +133,13 @@ function renderHeader() {
   const t = stamp(state.tt.fetchedAt);
   $('updated').textContent = t ? `Uuendatud ${t}` : 'Andmed puuduvad';
 
-  const s = state.status?.timetable;
-  const pill = $('errPill');
-  pill.hidden = !(s && s.ok === false);
-  if (!pill.hidden) {
-    pill.textContent = 'Uuendus ebaõnnestus';
-    pill.title = `${s.error || 'viga'}${s.at ? ` (${stamp(s.at)})` : ''}`;
-  }
+  // A single failed fetch is not the user's problem while the shown data is fresh.
+  // Only warn when the newest good data (fetchedAt or status.timetable.lastOk) is over 12h old.
+  const last = lastGood();
+  const stale = last != null && now() - last > STALE_MS;
+  const pill = $('stalePill');
+  pill.hidden = !stale;
+  if (stale) pill.innerHTML = `Tunniplaan võib olla vananenud <span>· ${esc(stamp(new Date(last).toISOString()))}</span>`;
 
   const gb = $('groupBtn');
   gb.hidden = !state.groups.length;
@@ -355,7 +361,6 @@ function bind() {
   $('prevWeek').addEventListener('click', () => stepWeek(-1));
   $('nextWeek').addEventListener('click', () => stepWeek(1));
   $('refreshBtn').addEventListener('click', refresh);
-  $('errPill').addEventListener('click', () => toast($('errPill').title));
   $('groupBtn').addEventListener('click', () => {
     const order = [null, ...state.groups];
     state.myGroup = order[(order.indexOf(state.myGroup) + 1) % order.length];
