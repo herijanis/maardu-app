@@ -5,16 +5,24 @@ Maardu Gümnaasium 11.erh timetable as a web app that works on any phone (GitHub
 ```sh
 npm start            # http://localhost:4411, fetches at 07:00, 12:00, 19:00 (Europe/Tallinn) and on start
 npm run timetable    # data/timetable.json from mgm.edupage.org
+npm test             # parser/validation/publish/alarm tests
 curl -X POST localhost:4411/api/refresh   # run the fetcher now
 ```
 
-## Production: GitHub Pages
+## Production: GitHub Pages (see team/reliability.md)
 
-`.github/workflows/pages.yml` runs `npm run timetable` at 07:00, 12:00 and 19:00 Europe/Tallinn (and on every
-push to main or a manual run) and deploys `web/` + `data/timetable.json` + `data/status.json` to Pages. EduPage times out from some
-GitHub runner IPs, so each slot is retried at :15, :30 and :45 until one run fetches successfully.
-If EduPage fails, it redeploys the last good timetable (Actions cache, else the live site) with
-`status.json` saying `ok: false`. Needs Settings → Pages → Source: GitHub Actions.
+`.github/workflows/pages.yml` fetches the timetable at 07:00, 12:00 and 19:00 Europe/Tallinn and deploys `web/` +
+`data/timetable.json` + `data/status.json`. EduPage times out from some GitHub runner IPs, so:
+- each run retries with backoff for ~4 min, and each slot gets an attempt every 20 min for ~2h until one succeeds;
+- if the fetch fails it deploys the NEWEST valid copy of: the Mac's `snapshots` branch, the Actions cache, the live site;
+- data is validated before it's published (`timetable/validate.js`; `npm test` runs in the workflow);
+- `status.json`: `{ timetable: { ok, at, error?, lastOk, source: actions|mac|cache } }`.
+
+Alarms: after 12h without a successful fetch the issue "Tunniplaan ei uuene" is opened (you get an email) and it is
+closed on recovery. `watchdog.yml` re-checks the live site every 3h.
+Test the fallback: run the Pages workflow with `simulate_edupage_down`; test the alarm: run the watchdog with
+`fake_last_ok` (e.g. `2026-09-28T07:00:00+03:00`), then without it to close the issue.
+School holidays live in `timetable/holidays.js`: update it every school year.
 
 ## Mac backup publisher (launchd)
 
