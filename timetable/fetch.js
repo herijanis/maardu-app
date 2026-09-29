@@ -8,6 +8,7 @@
 // - Substitutions (asendused) come from the public substitution viewer, which the school rarely uses.
 //   When it lists something for our class, the matching lessons get changed=true and the text as note.
 import { readFile, writeFile, mkdir, rename } from 'node:fs/promises';
+import { setDefaultAutoSelectFamilyAttemptTimeout } from 'node:net';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import { subjectKey } from '../shared/subject.js';
@@ -18,7 +19,11 @@ const TZ = 'Europe/Tallinn';
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const DATA = join(ROOT, 'data');
 
-async function rpc(path, args) {
+// Node gives each resolved address only 250 ms to connect by default; from far-away CI runners that
+// made every address time out (ETIMEDOUT) within a second.
+setDefaultAutoSelectFamilyAttemptTimeout(2500);
+
+async function rpcOnce(path, args) {
   const res = await fetch(`${BASE}${path}`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', 'User-Agent': 'maardu-app timetable fetcher' },
@@ -29,6 +34,17 @@ async function rpc(path, args) {
   const json = await res.json();
   if (json.r === undefined) throw new Error(`${path}: unexpected response ${JSON.stringify(json).slice(0, 200)}`);
   return json.r;
+}
+async function rpc(path, args, tries = 3) {
+  for (let i = 1; ; i++) {
+    try {
+      return await rpcOnce(path, args);
+    } catch (err) {
+      if (i >= tries) throw err;
+      console.warn(`${path}: ${err.cause?.code ?? err.message}, retry ${i}/${tries - 1}`);
+      await new Promise((r) => setTimeout(r, 2000 * i));
+    }
+  }
 }
 
 // --- dates (all in Europe/Tallinn) ---
