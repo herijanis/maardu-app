@@ -42,7 +42,21 @@ function pushSnapshot(file, fetchedAt) {
   return commit;
 }
 
+// GitHub disables scheduled workflows in public repos after 60 days without activity; turn them back on.
+function reenableWorkflows() {
+  try {
+    const list = JSON.parse(execFileSync('gh', ['workflow', 'list', '--all', '--json', 'id,name,state'], { cwd: ROOT, encoding: 'utf8' }));
+    for (const w of list.filter((w) => w.state === 'disabled_inactivity')) {
+      execFileSync('gh', ['workflow', 'enable', String(w.id)], { cwd: ROOT, stdio: 'inherit' });
+      log(`re-enabled workflow "${w.name}" (GitHub had disabled it for inactivity)`);
+    }
+  } catch (err) {
+    log(`could not check workflow states: ${err.message}`);
+  }
+}
+
 export async function runBackup({ force = false, simulateActionsDown = false } = {}) {
+  reenableWorkflows();
   const slot = latestSlot();
   const live = await liveFetchedAt();
   if (!force && live && Date.parse(live) >= slot.getTime()) {

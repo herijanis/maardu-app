@@ -6,6 +6,7 @@ name: Timetable → GitHub Pages
 # while that slot has no success yet (a marker in the Actions cache). That gives an attempt every 20 min for
 # ~2h per slot, each usually on a runner with a different IP (EduPage times out from some of them).
 # Data: the fresh fetch, else the NEWEST valid copy of {Mac `snapshots` branch, Actions cache, live site}.
+# Alarm: after 12h without a successful fetch an issue "Tunniplaan ei uuene" is opened, and closed on recovery.
 on:
   schedule:
     - cron: '0,20,40 4-7,9-12,16-19 * * *'
@@ -25,6 +26,7 @@ permissions:
   contents: read
   pages: write
   id-token: write
+  issues: write # alarm issue
 
 concurrency:
   group: pages
@@ -158,3 +160,13 @@ jobs:
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v5
+
+      - name: Alarm (open/close the "Tunniplaan ei uuene" issue)
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          ALARM_MENTION: ${{ github.repository_owner }}
+          LAST_OK: ${{ steps.publish.outputs.lastOk }}
+          ERRORS: ${{ steps.publish.outputs.error }}
+        run: node timetable/alarm.js --last-ok "$LAST_OK" --errors "$ERRORS" --context "Pages run $GITHUB_RUN_ID"
