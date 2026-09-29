@@ -1,5 +1,6 @@
-// Serves web/ and data/*.json on http://localhost:4411 and runs the fetchers at
-// 07:00, 12:00 and 19:00 Europe/Tallinn (plus once on start). POST /api/refresh runs them now.
+// Local dev server: serves web/ and data/*.json on http://localhost:4411 (the same layout as the
+// GitHub Pages site) and runs the timetable fetcher at 07:00, 12:00 and 19:00 Europe/Tallinn (plus once
+// on start). POST /api/refresh runs it now. Production has no backend; see .github/workflows/pages.yml.
 import { createServer } from 'node:http';
 import { readFile, stat } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
@@ -15,7 +16,6 @@ const TZ = 'Europe/Tallinn';
 const SLOTS = ['07', '12', '19']; // hours, Tallinn time
 const FETCHERS = [
   { name: 'timetable', script: join(ROOT, 'timetable', 'fetch.js') },
-  { name: 'ekool', script: join(ROOT, 'ekool', 'fetch.js') },
 ];
 
 const TYPES = {
@@ -45,7 +45,7 @@ function runScript({ name, script }) {
 }
 
 let running = null;
-// One refresh at a time; the fetchers run one after another so they don't both write status.json at once.
+// One refresh at a time.
 function refresh(reason) {
   running ??= (async () => {
     log(`refresh (${reason})`);
