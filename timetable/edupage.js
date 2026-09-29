@@ -17,6 +17,8 @@ const pick = (row) => Object.fromEntries(KEEP_FIELDS.filter((k) => k in row).map
 setDefaultAutoSelectFamilyAttemptTimeout(2500);
 
 async function rpc(path, args) {
+  // Test hook for the fallback path (workflow_dispatch input simulate_edupage_down).
+  if (process.env.SIMULATE_EDUPAGE_DOWN) throw new TypeError('fetch failed', { cause: { code: 'SIMULATED_DOWN' } });
   const res = await fetch(`${BASE}${path}`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', 'User-Agent': 'maardu-app timetable fetcher' },

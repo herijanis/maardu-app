@@ -1,16 +1,23 @@
 name: Timetable → GitHub Pages
 
-# Refetches the 11.erh timetable and deploys web/ + data/*.json to GitHub Pages.
-# Scheduled for 07:00, 12:00 and 19:00 Europe/Tallinn. GitHub cron is UTC-only, so there is one cron
-# for summer time (UTC+3) and one for winter time (UTC+2), and each run only goes ahead when its cron
-# matches Tallinn's current offset. Runs can start late, so this compares offsets rather than the clock hour.
-# EduPage times out from some GitHub runner IPs, so each slot also gets retry runs at :15, :30 and :45.
-# They land on other runners and only deploy if the live status.json has no successful fetch for this slot yet.
+# Refetches the 11.erh timetable and deploys web/ + data/*.json to GitHub Pages (team/reliability.md).
+# Slots: 07:00, 12:00 and 19:00 Europe/Tallinn. GitHub cron is UTC-only, so the cron covers both UTC offsets
+# and the gate works in Tallinn time: a scheduled run goes ahead only within 2.5h after a slot, and only
+# while that slot has no success yet (a marker in the Actions cache). That gives an attempt every 20 min for
+# ~2h per slot, each usually on a runner with a different IP (EduPage times out from some of them).
+# Data: the fresh fetch, else the NEWEST valid copy of {Mac `snapshots` branch, Actions cache, live site}.
 on:
   schedule:
-    - cron: '0,15,30,45 4,9,16 * * *'   # 07/12/19 in summer (EEST, UTC+3), + retries
-    - cron: '0,15,30,45 5,10,17 * * *'  # 07/12/19 in winter (EET, UTC+2), + retries
+    - cron: '0,20,40 4-7,9-12,16-19 * * *'
   workflow_dispatch:
+    inputs:
+      reason:
+        description: Why this run was started (the Mac backup passes "mac backup")
+        required: false
+      simulate_edupage_down:
+        description: Test the fallback path (the EduPage fetch fails on purpose)
+        type: boolean
+        default: false
   push:
     branches: [main]
 
@@ -27,31 +34,44 @@ jobs:
   gate:
     runs-on: ubuntu-latest
     outputs:
-      run: ${{ steps.gate.outputs.run }}
+      run: ${{ steps.decide.outputs.run }}
     steps:
-      - name: Check schedule slot
-        id: gate
+      - name: Find the current slot
+        id: slot
+        run: |
+          mins=$((10#$(TZ=Europe/Tallinn date +%H) * 60 + 10#$(TZ=Europe/Tallinn date +%M)))
+          day=$(TZ=Europe/Tallinn date +%F)
+          slot=
+          for h in 19 12 7; do
+            if [ "$mins" -ge $((h * 60)) ]; then slot=$(printf '%sT%02d' "$day" "$h"); since=$((mins - h * 60)); break; fi
+          done
+          if [ -z "$slot" ]; then slot="$(TZ=Europe/Tallinn date -d yesterday +%F)T19"; since=$((mins + 1440 - 1140)); fi
+          echo "slot $slot, $since min ago"
+          echo "slot=$slot" >> "$GITHUB_OUTPUT"
+          echo "since=$since" >> "$GITHUB_OUTPUT"
+
+      - name: Has this slot already succeeded?
+        id: done
+        if: github.event_name == 'schedule'
+        uses: actions/cache/restore@v6
+        with:
+          path: .slot-ok
+          key: slot-ok-${{ steps.slot.outputs.slot }}
+          lookup-only: true
+
+      - name: Decide
+        id: decide
         env:
           EVENT: ${{ github.event_name }}
-          CRON: ${{ github.event.schedule }}
-          SITE: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
+          SINCE: ${{ steps.slot.outputs.since }}
+          DONE: ${{ steps.done.outputs.cache-hit }}
         run: |
           run=true
           if [ "$EVENT" = schedule ]; then
-            offset=$(TZ=Europe/Tallinn date +%z)
-            case "$CRON:$offset" in
-              '0,15,30,45 4,9,16 * * *:+0300'|'0,15,30,45 5,10,17 * * *:+0200') ;;
-              *) run=false ;;
-            esac
-            echo "cron '$CRON', Tallinn offset $offset, run=$run"
-            if [ "$run" = true ]; then
-              slot="$(TZ=Europe/Tallinn date +%Y-%m-%dT%H):00"
-              site=$(echo "$SITE" | tr A-Z a-z)
-              live=$(curl -fsSL --max-time 20 "$site/data/status.json?t=$(date +%s)" | jq -r 'if .timetable.ok then .timetable.at[0:16] else "" end' || true)
-              echo "slot $slot, last successful fetch on the live site: ${live:-none}"
-              if [ -n "$live" ] && [[ ! "$live" < "$slot" ]]; then run=false; echo "already fetched this slot"; fi
-            fi
+            if [ "$SINCE" -gt 150 ]; then run=false; echo "outside the retry window"; fi
+            if [ "$DONE" = true ]; then run=false; echo "slot already succeeded"; fi
           fi
+          echo "run=$run"
           echo "run=$run" >> "$GITHUB_OUTPUT"
 
   deploy:
@@ -68,53 +88,68 @@ jobs:
         with:
           node-version: 24
 
+      - name: Parser tests
+        run: npm test
+
       - name: Configure Pages
         id: pages
         uses: actions/configure-pages@v6
 
-      # Last good timetable. fetch.js keeps data/timetable.json when a fetch fails, so restore it first.
-      - name: Restore last good timetable
+      - name: Restore last good timetable (Actions cache)
         uses: actions/cache/restore@v6
         with:
-          path: data/timetable.json
+          path: last-good/timetable.json
           key: timetable-${{ github.run_id }}-${{ github.run_attempt }}
           restore-keys: timetable-
 
-      - name: Fall back to the live site's timetable
-        if: hashFiles('data/timetable.json') == ''
+      - name: Get the Mac's snapshot and the live site's copy
         env:
           BASE_URL: ${{ steps.pages.outputs.base_url }}
         run: |
-          mkdir -p data
-          curl -fsSL --max-time 30 "$BASE_URL/data/timetable.json" -o data/timetable.json \
-            && echo "restored from $BASE_URL" || { rm -f data/timetable.json; echo "no previous deployment data"; }
+          mkdir -p candidates
+          if git fetch -q --depth=1 origin snapshots 2>/dev/null; then
+            git show FETCH_HEAD:data/timetable.json > candidates/mac.json || rm -f candidates/mac.json
+          fi
+          curl -fsSL --max-time 30 "$BASE_URL/data/timetable.json?t=$(date +%s)" -o candidates/live.json || rm -f candidates/live.json
+          ls -la candidates last-good 2>/dev/null || true
 
-      - name: Fetch timetable
+      - name: Fetch timetable from EduPage
         id: fetch
         continue-on-error: true
+        env:
+          TIMETABLE_SOURCE: actions
+          SIMULATE_EDUPAGE_DOWN: ${{ inputs.simulate_edupage_down && '1' || '' }}
         run: npm run timetable
 
-      - name: Save timetable for next time
-        if: steps.fetch.outcome == 'success'
-        uses: actions/cache/save@v6
-        with:
-          path: data/timetable.json
-          key: timetable-${{ github.run_id }}-${{ github.run_attempt }}
-
-      - name: Build site
+      - name: Choose the newest valid data and build the site
+        id: publish
         run: |
-          if [ ! -s data/timetable.json ]; then
-            echo "::error::Fetch failed and there is no previous timetable; keeping the current deployment."
-            cat data/status.json 2>/dev/null || true
-            exit 1
-          fi
-          [ "${{ steps.fetch.outcome }}" = success ] || echo "::warning::Fetch failed; deploying the last good timetable with status ok:false."
           rm -rf _site
           cp -R web _site
-          mkdir -p _site/data
-          cp data/timetable.json _site/data/
-          [ -f data/status.json ] && cp data/status.json _site/data/ || true
-          ls -R _site
+          node timetable/publish.js --out _site/data --keep last-good/timetable.json \
+            --fetch-status data/status.json \
+            --candidate actions=data/timetable.json \
+            --candidate mac=candidates/mac.json \
+            --candidate cache=last-good/timetable.json \
+            --candidate cache=candidates/live.json
+          cat _site/data/status.json
+
+      - name: Save last good timetable
+        uses: actions/cache/save@v6
+        with:
+          path: last-good/timetable.json
+          key: timetable-${{ github.run_id }}-${{ github.run_attempt }}
+
+      - name: Mark the slot as done
+        if: steps.publish.outputs.fresh == 'true'
+        run: mkdir -p .slot-ok && echo "${{ steps.publish.outputs.source }} ${{ steps.publish.outputs.lastOk }}" > .slot-ok/done
+
+      - name: Save slot marker
+        if: steps.publish.outputs.fresh == 'true'
+        uses: actions/cache/save@v6
+        with:
+          path: .slot-ok
+          key: slot-ok-${{ steps.publish.outputs.slot }}
 
       - uses: actions/upload-pages-artifact@v5
         with:
