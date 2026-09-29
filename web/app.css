@@ -79,6 +79,8 @@ button:focus-visible, [tabindex]:focus-visible { outline: 2px solid var(--accent
   height: 28px; padding: 0 12px; border-radius: 999px;
   font-size: 12px; font-weight: 600; white-space: nowrap;
 }
+.pill-group { height: 32px; background: var(--surface); border: 1px solid var(--line); color: var(--muted); transition: background var(--t-fast) var(--ease), color var(--t-fast) var(--ease); }
+.pill-group.is-set { background: var(--accent-soft); border-color: rgb(139 156 255 / 0.4); color: var(--accent); }
 .pill-err { background: var(--danger-soft); color: var(--danger); }
 .pill-err::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
 
@@ -173,6 +175,8 @@ button:focus-visible, [tabindex]:focus-visible { outline: 2px solid var(--accent
 .pnum { font-size: 17px; font-weight: 700; color: var(--muted); line-height: 1.1; }
 .time { font-size: 11px; line-height: 1.3; text-align: center; }
 .slot.is-past { opacity: 0.5; }
+.card.other-group { opacity: 0.45; }
+.wg-l.other-group { opacity: 0.4; }
 .slot-other .card-meta span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .slot.is-now .pnum { color: var(--accent); }
 
