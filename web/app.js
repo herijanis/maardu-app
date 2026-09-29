@@ -1,5 +1,6 @@
-// 11.erh timetable + homework UI. Plain ES module, no build step.
-// Data: /data/timetable.json, /data/homework.json, /data/status.json (see shared/contract.md).
+// 11.erh timetable UI. Plain ES module, no build step, no backend: works as a static site
+// (GitHub Pages under /maardu-app/), so data is fetched by RELATIVE path.
+// Data: data/timetable.json, data/status.json (see shared/contract.md).
 // Testing aid: ?now=2026-09-30T10:30 pins the clock.
 
 const $ = (id) => document.getElementById(id);
@@ -7,8 +8,6 @@ const $ = (id) => document.getElementById(id);
 const WEEKDAYS = ['pühapäev', 'esmaspäev', 'teisipäev', 'kolmapäev', 'neljapäev', 'reede', 'laupäev'];
 const WD_SHORT = ['P', 'E', 'T', 'K', 'N', 'R', 'L'];
 const MONTHS = ['jaanuar', 'veebruar', 'märts', 'aprill', 'mai', 'juuni', 'juuli', 'august', 'september', 'oktoober', 'november', 'detsember'];
-const TYPE_LABEL = { homework: 'Kodutöö', test: 'Kontrolltöö', task: 'Ülesanne', other: 'Muu' };
-const DONE_KEY = 'maardu.done.v1';
 const GROUP_KEY = 'maardu.group.v1';
 
 // Short labels for the compact week grid (phones). Unknown subjects fall back to abbreviate().
@@ -27,14 +26,12 @@ const ABBR = {
 };
 
 const state = {
-  tt: null, hw: null, status: null,
+  tt: null, status: null,
   view: 'day', date: null, weekStart: null,
-  done: loadDone(),
-  myGroup: loadGroup(),   // e.g. 'Grupp 1'; null = unknown
+  myGroup: loadGroup(),   // e.g. 'Grupp 1'; null = show both groups equally
   byDate: new Map(),      // date -> lessons sorted by period, group
-  work: new Map(),        // lessonId -> homework items
-  unmatched: new Map(),   // date -> homework items with no lesson
   dates: [],              // school dates present in the timetable
+  groups: [],             // distinct group names in the timetable
 };
 
 // ---------- time & dates ----------
@@ -58,10 +55,12 @@ function relLabel(s) {
   if (s === addDays(today(), -1)) return 'Eile';
   return '';
 }
-function hhmm(isoTs) {
+function stamp(isoTs) {
   if (!isoTs) return '';
   const d = new Date(isoTs);
-  return isNaN(d) ? '' : `${String(d.getHours()).padStart(2, '0')}:${String(d.getMinutes()).padStart(2, '0')}`;
+  if (isNaN(d)) return '';
+  const t = `${String(d.getHours()).padStart(2, '0')}:${String(d.getMinutes()).padStart(2, '0')}`;
+  return iso(d) === today() ? t : `${d.getDate()}.${String(d.getMonth() + 1).padStart(2, '0')} ${t}`;
 }
 
 // ---------- helpers ----------
@@ -77,58 +76,31 @@ function abbreviate(l) {
   if (words.length === 1) return words[0].slice(0, 6);
   return words.slice(0, 2).map((w, i) => (i === 0 ? w.slice(0, 4) : w.slice(0, 3))).join(' ');
 }
-const lessonId = (l) => `${l.date}|${l.period}|${l.group ?? ''}|${l.subjectKey}`;
-const cleanType = (t) => (TYPE_LABEL[t] ? t : 'other');
+const otherGroup = (l) => !!(state.myGroup && l.group && l.group !== state.myGroup);
 
-function loadDone() {
-  try { return JSON.parse(localStorage.getItem(DONE_KEY)) || {}; } catch { return {}; }
-}
-function saveDone() {
-  try { localStorage.setItem(DONE_KEY, JSON.stringify(state.done)); } catch {}
-}
 function loadGroup() {
   try { return localStorage.getItem(GROUP_KEY) || null; } catch { return null; }
 }
 function saveGroup() {
   try { state.myGroup ? localStorage.setItem(GROUP_KEY, state.myGroup) : localStorage.removeItem(GROUP_KEY); } catch {}
 }
-const norm = (s) => String(s ?? '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/\(.*?\)/g, ' ').replace(/[^a-z0-9]+/g, ' ').trim();
-// eKool sometimes repeats the subject as the title; then the description is the real headline.
-function headline(i) {
-  const t = (i.title || '').trim();
-  if (!t || norm(t) === norm(i.subject) || norm(t) === i.subjectKey) return (i.description || '').trim() || t || i.subject;
-  return t;
-}
-function detail(i) {
-  const h = headline(i);
-  const d = (i.description || '').trim();
-  return d && d !== h ? d : '';
-}
-const otherGroup = (l) => !!(state.myGroup && l.group && l.group !== state.myGroup);
-function isDone(item) { return item.id in state.done ? state.done[item.id] : item.done === true; }
 
-async function getJSON(paths) {
-  for (const p of paths) {
-    try {
-      const r = await fetch(p, { cache: 'no-store' });
-      if (r.ok) return await r.json();
-    } catch {}
-  }
-  return null;
+async function getJSON(path) {
+  try {
+    const r = await fetch(`${path}?t=${Date.now()}`, { cache: 'no-store' });
+    return r.ok ? await r.json() : null;
+  } catch { return null; }
 }
 
 // ---------- data ----------
 async function loadData() {
-  // Served by server.js at /data/*; the relative fallbacks cover `npx serve .` from the repo root.
-  const [tt, hw, status] = await Promise.all([
-    getJSON(['/data/timetable.json', '../data/timetable.json', '../data/sample/timetable.json']),
-    getJSON(['/data/homework.json', '../data/homework.json', '../data/sample/homework.json']),
-    getJSON(['/data/status.json', '../data/status.json']),
-  ]);
-  state.tt = tt || { lessons: [], periods: [] };
-  state.hw = hw || { items: [] };
+  // Relative on purpose: the site lives under /maardu-app/ on GitHub Pages and at / locally.
+  const [tt, status] = await Promise.all([getJSON('data/timetable.json'), getJSON('data/status.json')]);
+  if (tt) state.tt = tt;
+  else if (!state.tt) state.tt = (await getJSON('data/sample/timetable.json')) || { lessons: [], periods: [] };
   state.status = status;
   index();
+  return !!tt;
 }
 
 function index() {
@@ -141,92 +113,33 @@ function index() {
     list.sort((a, b) => a.period - b.period || String(a.group ?? '').localeCompare(String(b.group ?? ''), 'et'));
   }
   state.dates = [...state.byDate.keys()].sort();
-
-  // Among candidates, prefer lessons of the user's own group (or ungrouped ones), else the first.
-  const pick = (ls) => ls.find((l) => !otherGroup(l)) || ls[0] || null;
-
-  // Homework -> lesson: same date; by period (preferring a matching subjectKey when a period is split),
-  // else the first lesson that day with the same subjectKey, else a looser subject match.
-  state.work = new Map();
-  state.unmatched = new Map();
-  for (const item of state.hw.items || []) {
-    const lessons = state.byDate.get(item.date) || [];
-    let hit = null;
-    if (item.period != null) {
-      const same = lessons.filter((l) => l.period === Number(item.period));
-      hit = pick(same.filter((l) => l.subjectKey === item.subjectKey)) || pick(same);
-    }
-    if (!hit) hit = pick(lessons.filter((l) => l.subjectKey === item.subjectKey));
-    if (!hit && item.subjectKey) {
-      const k = ` ${item.subjectKey} `;
-      hit = pick(lessons.filter((l) => ` ${l.subjectKey} `.includes(k) || k.includes(` ${l.subjectKey} `)));
-    }
-    if (hit) {
-      const id = lessonId(hit);
-      if (!state.work.has(id)) state.work.set(id, []);
-      state.work.get(id).push(item);
-    } else {
-      if (!state.unmatched.has(item.date)) state.unmatched.set(item.date, []);
-      state.unmatched.get(item.date).push(item);
-    }
-  }
+  state.groups = [...new Set((state.tt.lessons || []).map((l) => l.group).filter(Boolean))].sort();
+  if (state.myGroup && !state.groups.includes(state.myGroup)) state.myGroup = null;
 }
 
 function defaultDate() {
-  const n = now();
-  const want = n.getHours() >= 15 ? tomorrow() : today();
+  const want = now().getHours() >= 15 ? tomorrow() : today();
   return state.dates.find((d) => d >= want) || state.dates[state.dates.length - 1] || want;
-}
-
-// The "tomorrow" panel shows the next school day (or the day after today when nothing is scheduled).
-function dueDate() {
-  const t = tomorrow();
-  const hwDates = (state.hw.items || []).map((i) => i.date);
-  const next = [...new Set([...state.dates, ...hwDates])].filter((d) => d >= t).sort()[0];
-  return next || t;
-}
-
-function workFor(l) { return state.work.get(lessonId(l)) || []; }
-function workBadge(items) {
-  if (!items.length) return '';
-  const open = items.filter((i) => !isDone(i));
-  const allDone = open.length === 0;
-  if (items.some((i) => i.type === 'test')) return `<span class="tag tag-test">${allDone ? '✓ ' : ''}Kontrolltöö</span>`;
-  const label = allDone ? '✓ Tehtud' : items.length > 1 ? `${items.length} tööd` : TYPE_LABEL[cleanType(items[0].type)];
-  return `<span class="tag tag-work${allDone ? ' done-mark' : ''}">${label}</span>`;
 }
 
 // ---------- header ----------
 function renderHeader() {
-  const t = hhmm(state.tt.fetchedAt);
-  const h = hhmm(state.hw.fetchedAt);
+  const t = stamp(state.tt.fetchedAt);
   $('updated').textContent = t ? `Uuendatud ${t}` : 'Andmed puuduvad';
-  $('updated').title = [t && `Tunniplaan ${t}`, h && `eKool ${h}`].filter(Boolean).join(' · ');
 
-  const fails = [];
-  const s = state.status || {};
-  if (s.timetable && s.timetable.ok === false) fails.push(['Tunniplaan', s.timetable]);
-  if (s.ekool && s.ekool.ok === false) fails.push(['eKool', s.ekool]);
+  const s = state.status?.timetable;
   const pill = $('errPill');
-  pill.hidden = !fails.length;
-  if (fails.length) {
-    pill.textContent = fails.length === 2 ? 'Uuendus ebaõnnestus' : `${fails[0][0]}: viga`;
-    pill.title = fails.map(([n, f]) => `${n}: ${f.error || 'viga'} (${hhmm(f.at)})`).join('\n');
+  pill.hidden = !(s && s.ok === false);
+  if (!pill.hidden) {
+    pill.textContent = 'Uuendus ebaõnnestus';
+    pill.title = `${s.error || 'viga'}${s.at ? ` (${stamp(s.at)})` : ''}`;
   }
 
-  const groups = [...new Set((state.tt.lessons || []).map((l) => l.group).filter(Boolean))].sort();
   const gb = $('groupBtn');
-  gb.hidden = !groups.length;
-  const gnum = state.myGroup ? state.myGroup.replace(/\D+/g, '') || state.myGroup : '?';
-  gb.textContent = `G${gnum}`;
+  gb.hidden = !state.groups.length;
+  gb.textContent = state.myGroup ? `G${state.myGroup.replace(/\D+/g, '') || state.myGroup}` : 'G?';
   gb.classList.toggle('is-set', !!state.myGroup);
   gb.title = state.myGroup ? `Minu grupp: ${state.myGroup}` : 'Vali oma grupp';
-
-  const due = dueDate();
-  const n = (state.work.size || state.unmatched.size)
-    ? (state.hw.items || []).filter((i) => i.date === due && !isDone(i)).length : 0;
-  $('tomorrowCount').hidden = !n;
-  $('tomorrowCount').textContent = n;
 }
 
 // ---------- day view ----------
@@ -238,17 +151,15 @@ function renderDay() {
   $('prevDay').disabled = !state.dates.some((d) => d < date);
   $('nextDay').disabled = !state.dates.some((d) => d > date);
 
-  // week strip
+  // week strip: tap a day, see its first–last period at a glance
   const mon = monday(date);
   let strip = '';
   for (let k = 0; k < 5; k++) {
     const d = addDays(mon, k);
-    const has = state.byDate.has(d);
-    const items = has ? state.byDate.get(d).flatMap(workFor).concat(state.unmatched.get(d) || []) : [];
-    const dots = items.filter((x) => !isDone(x)).slice(0, 3)
-      .map((x) => `<i class="${x.type === 'test' ? 'test' : ''}"></i>`).join('');
-    strip += `<button class="strip-day${d === date ? ' is-sel' : ''}${d === today() ? ' is-today' : ''}" data-date="${d}" ${has ? '' : 'disabled'} aria-label="${weekday(d)} ${fmtDate(d)}">
-      <span>${WD_SHORT[parse(d).getDay()]}</span><b>${parse(d).getDate()}</b><span class="dots">${dots}</span></button>`;
+    const ls = state.byDate.get(d) || [];
+    const span = ls.length ? `${ls[0].period}–${ls[ls.length - 1].period}` : '';
+    strip += `<button class="strip-day${d === date ? ' is-sel' : ''}${d === today() ? ' is-today' : ''}" data-date="${d}" ${ls.length ? '' : 'disabled'} aria-label="${weekday(d)} ${fmtDate(d)}">
+      <span>${WD_SHORT[parse(d).getDay()]}</span><b>${parse(d).getDate()}</b><em>${span}</em></button>`;
   }
   $('dayStrip').innerHTML = strip;
 
@@ -295,20 +206,11 @@ function renderDay() {
       <div class="cards">${group.map((l) => card(l, p === nowP, p === nextP, progress)).join('')}</div>
     </li>`;
   }
-  const other = state.unmatched.get(date) || [];
-  if (other.length) {
-    html += `<li class="slot slot-other"><div class="when"><span class="pnum">·</span><span class="time">Muu</span></div>
-      <div class="cards">${other.map((i) => `<button class="card has-work${i.type === 'test' ? ' has-test' : ''}" style="--h:${hue(i.subjectKey)}" data-item="${esc(i.id)}">
-        <div class="card-top"><span class="subj" title="${esc(i.subject)}">${esc(i.subject)}</span>${workBadge([i])}</div>
-        <div class="card-meta"><span>${esc(headline(i))}</span></div></button>`).join('')}</div></li>`;
-  }
   ol.innerHTML = html;
 }
 
 function card(l, isNow, isNext, progress) {
-  const items = workFor(l);
-  const hasTest = items.some((i) => i.type === 'test');
-  const cls = ['card', otherGroup(l) && 'other-group', items.length && 'has-work', hasTest && 'has-test', l.changed && 'changed'].filter(Boolean).join(' ');
+  const cls = ['card', otherGroup(l) && 'other-group', l.changed && 'changed'].filter(Boolean).join(' ');
   const meta = [
     l.group && `<span class="chip">${esc(l.group)}</span>`,
     l.room && `<span>ruum ${esc(l.room)}</span>`,
@@ -318,16 +220,13 @@ function card(l, isNow, isNext, progress) {
     isNow && '<span class="tag tag-now">Praegu</span>',
     isNext && '<span class="tag tag-next">Järgmine</span>',
     l.changed && '<span class="tag tag-sub">Asendus</span>',
-    workBadge(items),
   ].filter(Boolean).join('');
-  const tag = items.length ? 'button' : 'div';
-  const attrs = items.length ? ` data-lesson="${esc(lessonId(l))}" aria-label="${esc(l.subject)}: ${items.length} ülesannet"` : '';
-  return `<${tag} class="${cls}" style="--h:${hue(l.subjectKey)}"${attrs}>
+  return `<div class="${cls}" style="--h:${hue(l.subjectKey)}">
     <div class="card-top"><span class="subj" title="${esc(l.subject)}">${esc(l.subject)}</span>${tags ? `<span class="card-tags">${tags}</span>` : ''}</div>
     ${meta ? `<div class="card-meta">${meta}</div>` : ''}
     ${l.note ? `<div class="card-meta">${esc(l.note)}</div>` : ''}
     ${isNow ? `<div class="progress"><i style="width:${Math.round(progress * 100)}%"></i></div>` : ''}
-  </${tag}>`;
+  </div>`;
 }
 
 // ---------- week view ----------
@@ -337,7 +236,7 @@ function renderWeek() {
   const fri = days[4];
   const isThis = mon === monday(today());
   const isNext = mon === monday(addDays(today(), 7));
-  $('weekName').innerHTML = isThis ? 'See nädal' : isNext ? 'Järgmine nädal' : 'Nädal';
+  $('weekName').textContent = isThis ? 'See nädal' : isNext ? 'Järgmine nädal' : 'Nädal';
   $('weekRange').textContent = `${fmtShort(mon)} – ${fmtShort(fri)}`;
   $('prevWeek').disabled = !state.dates.some((d) => d < mon);
   $('nextWeek').disabled = !state.dates.some((d) => d > fri);
@@ -365,17 +264,15 @@ function renderWeek() {
   for (let p = lo; p <= hi; p++) {
     html += `<div class="wg-p">${p}</div>`;
     for (const d of days) {
-      const here = (state.byDate.get(d) || []).filter((l) => l.period === p);
+      const here = (state.byDate.get(d) || []).filter((l) => l.period === p).sort((x, y) => otherGroup(x) - otherGroup(y));
       const cls = ['wg-cell', !here.length && 'is-empty', d === today() && 'is-todaycol', nowKey === `${d}|${p}` && 'is-now'].filter(Boolean).join(' ');
       const split = here.length > 1;
       html += `<div class="${cls}">${here.map((l) => {
-        const og = otherGroup(l) ? ' other-group' : '';
-        const items = workFor(l).filter((i) => !isDone(i));
-        const dot = items.length ? `<span class="dot${items.some((i) => i.type === 'test') ? ' test' : ''}"></span>` : '';
         const tip = `${l.subject}${l.group ? ` (${l.group})` : ''} · ${l.start}–${l.end}${l.room ? ` · ruum ${l.room}` : ''}${l.teacher ? ` · ${l.teacher}` : ''}`;
         const g = split && l.group ? `<span class="g">${esc(l.group.replace(/grupp\s*/i, 'G'))}</span>` : '';
-        return `<button class="wg-l${split ? ' split' : ''}${l.changed ? ' changed' : ''}${og}" style="--h:${hue(l.subjectKey)}" data-date="${d}" title="${esc(tip)}">
-          ${dot}<span class="ab">${esc(abbreviate(l))}</span><span class="full">${esc(l.subject)}</span>${g}${l.room ? `<span class="rm">${esc(l.room)}</span>` : ''}
+        const c = ['wg-l', split && 'split', l.changed && 'changed', otherGroup(l) && 'other-group'].filter(Boolean).join(' ');
+        return `<button class="${c}" style="--h:${hue(l.subjectKey)}" data-date="${d}" title="${esc(tip)}">
+          <span class="ab">${esc(abbreviate(l))}</span><span class="full">${esc(l.subject)}</span>${g}${l.room ? `<span class="rm">${esc(l.room)}</span>` : ''}
         </button>`;
       }).join('')}</div>`;
     }
@@ -383,128 +280,18 @@ function renderWeek() {
   grid.innerHTML = html;
 }
 
-// ---------- tomorrow checklist ----------
-function renderTomorrow() {
-  const due = dueDate();
-  const t = tomorrow();
-  $('tomorrowTitle').textContent = due === t ? 'Homseks' : `${cap(weekday(due))}ks`;
-  $('tomorrowDate').textContent = `${weekday(due)} ${fmtShort(due)}`;
-
-  const groups = [];
-  for (const l of state.byDate.get(due) || []) {
-    const items = workFor(l);
-    if (items.length) groups.push({ lesson: l, items });
-  }
-  const other = state.unmatched.get(due) || [];
-  if (other.length) groups.push({ lesson: null, items: other });
-
-  const list = $('tomorrowList');
-  if (!groups.length) {
-    list.innerHTML = `<div class="empty"><b>Kõik korras</b>${due === t ? 'Homseks' : 'Selleks päevaks'} pole ühtegi kodutööd.</div>`;
-    return;
-  }
-  list.innerHTML = groups.map(({ lesson: l, items }) => `
-    <div class="cl-group">
-      <h3 style="--h:${l ? hue(l.subjectKey) : 220}">${l
-        ? `<span class="pn">${l.period}. tund</span><span class="nm" title="${esc(l.subject)}">${esc(l.subject)}${l.group ? ` · ${esc(l.group)}` : ''}</span>`
-        : '<span class="nm" style="color:var(--muted)">Muu</span>'}</h3>
-      <div class="cl-items">${items.map((i) => checkItem(i, l)).join('')}</div>
-    </div>`).join('');
-}
-
-function checkItem(i, l) {
-  const done = isDone(i);
-  const test = i.type === 'test';
-  return `<div class="cl-item${done ? ' is-done' : ''}">
-    <button class="check" role="checkbox" aria-checked="${done}" data-done="${esc(i.id)}" aria-label="Märgi tehtuks"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#0f1115" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-    <button class="cl-text" data-item="${esc(i.id)}">
-      <div class="cl-title">${esc(headline(i))}</div>
-      <div class="cl-sub">${test ? '<span class="tag tag-test">Kontrolltöö</span>' : ''}${!l ? `<span class="chip" style="--h:${hue(i.subjectKey)}">${esc(i.subject)}</span>` : ''}</div>
-    </button>
-  </div>`;
-}
-
-// ---------- bottom sheet ----------
-let lastFocus = null;
-function openSheet(lesson, items) {
-  const first = lesson || { subject: items[0].subject, subjectKey: items[0].subjectKey, date: items[0].date };
-  const meta = [
-    `<span>${esc(weekday(first.date))} ${fmtShort(first.date)}</span>`,
-    lesson && `<span>${lesson.period}. tund · ${lesson.start}–${lesson.end}</span>`,
-    lesson?.room && `<span>ruum ${esc(lesson.room)}</span>`,
-    lesson?.teacher && `<span>${esc(lesson.teacher)}</span>`,
-    lesson?.group && `<span class="chip" style="--h:${hue(lesson.subjectKey)}">${esc(lesson.group)}</span>`,
-  ].filter(Boolean).join('<span class="sep" style="width:3px;height:3px;border-radius:50%;background:var(--faint)"></span>');
-  $('sheetBody').innerHTML = `
-    <h2 id="sheetTitle">${esc(first.subject)}</h2>
-    <div class="sh-meta">${meta}</div>
-    ${items.map((i) => {
-      const done = isDone(i);
-      return `<div class="sh-item">
-        <div class="sh-item-head">
-          <span class="tag ${i.type === 'test' ? 'tag-test' : 'tag-work'}">${TYPE_LABEL[cleanType(i.type)]}</span>
-          <label class="sh-done"><button class="check" role="checkbox" aria-checked="${done}" data-done="${esc(i.id)}" aria-label="Tehtud"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#0f1115" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></button>Tehtud</label>
-        </div>
-        <p class="sh-title">${esc(headline(i))}</p>
-        ${detail(i) ? `<p class="sh-desc">${esc(detail(i))}</p>` : ''}
-        ${i.url ? `<a class="sh-link" href="${esc(i.url)}" target="_blank" rel="noopener">Ava eKoolis ↗</a>` : ''}
-      </div>`;
-    }).join('')}`;
-  const sheet = $('sheet'), bd = $('backdrop');
-  lastFocus = document.activeElement;
-  sheet.hidden = false; bd.hidden = false;
-  sheet.scrollTop = 0;
-  requestAnimationFrame(() => requestAnimationFrame(() => { sheet.classList.add('open'); bd.classList.add('open'); }));
-  sheet.focus?.();
-}
-function closeSheet() {
-  const sheet = $('sheet'), bd = $('backdrop');
-  if (sheet.hidden) return;
-  sheet.style.transform = '';
-  sheet.classList.remove('open'); bd.classList.remove('open');
-  const done = () => { if (!sheet.classList.contains('open')) { sheet.hidden = true; bd.hidden = true; } };
-  sheet.addEventListener('transitionend', done, { once: true });
-  setTimeout(done, 350);
-  lastFocus?.focus?.();
-}
-
-// drag the sheet down to close
-(() => {
-  const sheet = $('sheet');
-  let y0 = null, dy = 0;
-  sheet.addEventListener('touchstart', (e) => {
-    if (sheet.scrollTop > 0 && !e.target.closest('.sheet-handle')) return;
-    y0 = e.touches[0].clientY; dy = 0;
-  }, { passive: true });
-  sheet.addEventListener('touchmove', (e) => {
-    if (y0 == null) return;
-    dy = Math.max(0, e.touches[0].clientY - y0);
-    if (dy > 4) { sheet.classList.add('dragging'); sheet.style.transform = `translateY(${dy}px)`; }
-  }, { passive: true });
-  sheet.addEventListener('touchend', () => {
-    if (y0 == null) return;
-    sheet.classList.remove('dragging');
-    if (dy > 90) closeSheet(); else sheet.style.transform = '';
-    y0 = null;
-  });
-})();
-
 // ---------- rendering & navigation ----------
 function render() {
   renderHeader();
   renderDay();
   renderWeek();
-  renderTomorrow();
 }
 
 function setView(view) {
   state.view = view;
   document.querySelectorAll('.tab').forEach((t) => t.setAttribute('aria-selected', String(t.dataset.view === view)));
-  const idx = ['day', 'week', 'tomorrow'].indexOf(view);
-  document.querySelector('.tab-ind').style.transform = `translateX(${idx * 100}%)`;
-  for (const v of ['day', 'week', 'tomorrow']) $(`view-${v}`).classList.toggle('is-active', v === view);
-  // on desktop the tomorrow panel is always shown; keep a real view visible in the main column
-  if (view === 'tomorrow' && matchMedia('(min-width: 900px)').matches) setView('day');
+  document.querySelector('.tab-ind').style.transform = `translateX(${view === 'week' ? 100 : 0}%)`;
+  for (const v of ['day', 'week']) $(`view-${v}`).classList.toggle('is-active', v === view);
 }
 
 let animating = false;
@@ -547,43 +334,18 @@ function toast(msg) {
   toast.timer = setTimeout(() => { t.classList.remove('show'); setTimeout(() => (t.hidden = true), 250); }, 2600);
 }
 
+// Static site: "refresh" just refetches the JSON the scheduled deploy publishes.
 async function refresh() {
   const btn = $('refreshBtn');
   if (btn.disabled) return;
   btn.disabled = true; btn.classList.add('spinning');
-  try {
-    const r = await fetch('/api/refresh', { method: 'POST' });
-    if (!r.ok) throw new Error(r.status);
-    await loadData();
-    render();
-    const s = state.status || {};
-    toast(s.timetable?.ok === false || s.ekool?.ok === false ? 'Osa andmeid jäi uuendamata' : 'Andmed uuendatud');
-  } catch {
-    await loadData().catch(() => {});
-    render();
-    toast('Värskendamine ebaõnnestus');
-  } finally {
-    btn.disabled = false; btn.classList.remove('spinning');
-  }
-}
-
-function findItem(id) { return (state.hw.items || []).find((i) => i.id === id); }
-function lessonById(id) {
-  const [date] = id.split('|');
-  return (state.byDate.get(date) || []).find((l) => lessonId(l) === id);
-}
-
-function toggleDone(id) {
-  const item = findItem(id);
-  if (!item) return;
-  state.done[id] = !isDone(item);
-  saveDone();
-  document.querySelectorAll(`[data-done="${CSS.escape(id)}"]`).forEach((b) => {
-    b.setAttribute('aria-checked', String(state.done[id]));
-    b.closest('.cl-item')?.classList.toggle('is-done', state.done[id]);
-  });
-  // re-render everything else after the check animation has played
-  setTimeout(() => { renderHeader(); renderDay(); renderWeek(); if (!$('view-tomorrow').contains(document.activeElement)) renderTomorrow(); }, 220);
+  const before = state.tt?.fetchedAt;
+  const [ok] = await Promise.all([loadData(), new Promise((r) => setTimeout(r, 450))]);
+  if (!state.dates.includes(state.date)) state.date = defaultDate();
+  state.weekStart = monday(state.date);
+  render();
+  btn.disabled = false; btn.classList.remove('spinning');
+  toast(!ok ? 'Pole ühendust' : state.tt.fetchedAt !== before ? 'Tunniplaan uuendatud' : 'Tunniplaan on ajakohane');
 }
 
 function bind() {
@@ -593,17 +355,14 @@ function bind() {
   $('prevWeek').addEventListener('click', () => stepWeek(-1));
   $('nextWeek').addEventListener('click', () => stepWeek(1));
   $('refreshBtn').addEventListener('click', refresh);
+  $('errPill').addEventListener('click', () => toast($('errPill').title));
   $('groupBtn').addEventListener('click', () => {
-    const groups = [...new Set((state.tt.lessons || []).map((l) => l.group).filter(Boolean))].sort();
-    const order = [null, ...groups];
+    const order = [null, ...state.groups];
     state.myGroup = order[(order.indexOf(state.myGroup) + 1) % order.length];
     saveGroup();
-    index();
     render();
-    toast(state.myGroup ? `Minu grupp: ${state.myGroup}` : 'Grupp valimata');
+    toast(state.myGroup ? `Minu grupp: ${state.myGroup}` : 'Näitan mõlemat gruppi');
   });
-  $('errPill').addEventListener('click', () => toast($('errPill').title.split('\n')[0]));
-  $('backdrop').addEventListener('click', closeSheet);
 
   $('dayStrip').addEventListener('click', (e) => {
     const b = e.target.closest('[data-date]');
@@ -616,27 +375,11 @@ function bind() {
     setView('day');
   });
 
-  document.addEventListener('click', (e) => {
-    const d = e.target.closest('[data-done]');
-    if (d) { e.preventDefault(); toggleDone(d.dataset.done); return; }
-    const c = e.target.closest('[data-lesson]');
-    if (c) { const l = lessonById(c.dataset.lesson); if (l) openSheet(l, workFor(l)); return; }
-    const it = e.target.closest('[data-item]');
-    if (it) {
-      const item = findItem(it.dataset.item);
-      if (!item) return;
-      const l = [...state.work.entries()].find(([, v]) => v.includes(item));
-      openSheet(l ? lessonById(l[0]) : null, l ? l[1] : [item]);
-    }
-  });
-
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') return closeSheet();
-    if (!$('sheet').hidden || e.target.closest('input, textarea')) return;
-    if (state.view === 'day' && e.key === 'ArrowLeft') stepDay(-1);
-    if (state.view === 'day' && e.key === 'ArrowRight') stepDay(1);
-    if (state.view === 'week' && e.key === 'ArrowLeft') stepWeek(-1);
-    if (state.view === 'week' && e.key === 'ArrowRight') stepWeek(1);
+    if (e.target.closest('input, textarea')) return;
+    const dir = e.key === 'ArrowLeft' ? -1 : e.key === 'ArrowRight' ? 1 : 0;
+    if (!dir) return;
+    if (state.view === 'day') stepDay(dir); else stepWeek(dir);
   });
 
   // swipe between days
@@ -650,12 +393,16 @@ function bind() {
     if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.5) stepDay(dx < 0 ? 1 : -1);
   });
 
-  // keep now/next highlight fresh; reload data when the tab comes back after a while
+  // keep now/next highlight fresh; refetch when the app comes back after a while (home-screen apps stay open for days)
   setInterval(() => { if (state.date === today()) renderDay(); }, 30_000);
-  let hiddenAt = 0;
+  let hiddenAt = Date.now();
   document.addEventListener('visibilitychange', async () => {
     if (document.hidden) { hiddenAt = Date.now(); return; }
-    if (Date.now() - hiddenAt > 10 * 60_000) { await loadData(); render(); }
+    if (Date.now() - hiddenAt > 10 * 60_000) {
+      await loadData();
+      state.date = defaultDate(); state.weekStart = monday(state.date);
+      render();
+    }
   });
 }
 
