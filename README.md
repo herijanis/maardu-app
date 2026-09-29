@@ -11,7 +11,8 @@ curl -X POST localhost:4411/api/refresh   # run the fetcher now
 ## Production: GitHub Pages
 
 `.github/workflows/pages.yml` runs `npm run timetable` at 07:00, 12:00 and 19:00 Europe/Tallinn (and on every
-push to main or a manual run) and deploys `web/` + `data/timetable.json` + `data/status.json` to Pages.
+push to main or a manual run) and deploys `web/` + `data/timetable.json` + `data/status.json` to Pages. EduPage times out from some
+GitHub runner IPs, so each slot is retried at :15, :30 and :45 until one run fetches successfully.
 If EduPage fails, it redeploys the last good timetable (Actions cache, else the live site) with
 `status.json` saying `ok: false`. Needs Settings → Pages → Source: GitHub Actions.
 
