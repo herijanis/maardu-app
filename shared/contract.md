@@ -25,28 +25,6 @@
 }
 ```
 
-## data/homework.json
-```json
-{
-  "fetchedAt": "2026-09-29T07:00:10+03:00",
-  "items": [
-    {
-      "id": "ekool-123456",             // stable id
-      "date": "2026-09-30",             // the day it is DUE (the lesson it belongs to)
-      "subject": "Matemaatika",
-      "subjectKey": "matemaatika",      // subjectKey(subject)
-      "period": null,                   // lesson number if eKool gives it, else null
-      "type": "homework",               // homework | test | task | other
-      "title": "Lk 42 ül 3-7",
-      "description": "…full text…",     // may be ""
-      "done": false,                    // or null if unknown
-      "url": null
-    }
-  ]
-}
-```
-Include everything due from today through the next 7 days; the UI focuses on tomorrow.
-
 ## Errors
 If a fetch fails, keep the last good file and write `data/status.json`:
-`{ "timetable": { "ok": false, "at": "...", "error": "..." }, "ekool": { "ok": true, "at": "..." } }`
+`{ "timetable": { "ok": false, "at": "...", "error": "..." } }`

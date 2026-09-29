@@ -1,36 +1,30 @@
 # maardu-app
 
-Maardu Gümnaasium **11.erh** timetable (tunniplaan) + eKool homework for tomorrow,
-shown as one clean dark-mode web app. Refreshed 3x/day (07:00, 12:00, 19:00 Europe/Tallinn).
+Maardu Gümnaasium **11.erh** timetable (tunniplaan) as one clean dark-mode web app that works
+on any phone with the link. Hosted as a static site on GitHub Pages; a GitHub Actions workflow
+refetches the timetable 3x/day (07:00, 12:00, 19:00 Europe/Tallinn) and redeploys.
+The eKool homework feature was REMOVED on 2026-09-29 (user request). Don't bring it back.
 
 ## Team & ownership (only edit your own area)
 | Area | Owner | Path |
 |---|---|---|
 | Shared contract, CLAUDE.md, `shared/` | brain | `CLAUDE.md`, `shared/`, `data/sample/` |
-| Timetable fetcher + server + scheduler | tunniplaan fetcher | `timetable/`, `server.js`, `package.json` scripts |
-| eKool connector | ekool connector | `ekool/` |
+| Timetable fetcher, local dev server, GitHub Actions deploy | tunniplaan fetcher | `timetable/`, `server.js`, `.github/`, `package.json` |
 | Web UI | app designer | `web/` |
 
 Need a contract change? Ask the brain, don't edit `shared/` yourself.
 
 ## Stack
-- Node 24, ESM (`"type": "module"`). Few dependencies; add only what you need to root `package.json`.
-- `npm run timetable`: writes `data/timetable.json`
-- `npm run ekool`: writes `data/homework.json`
-- `npm start`: `server.js` serves `web/` at `/` and `data/*.json` at `/data/*.json` on
-  http://localhost:4411, and runs both fetchers at 07:00, 12:00 and 19:00 (and once on start).
-  `POST /api/refresh` runs both now.
-- The UI reads `/data/timetable.json` and `/data/homework.json`. Until real data exists,
-  use `data/sample/*.json` (the server falls back to them when the real file is missing).
+- Node 24, ESM. No runtime dependencies.
+- `npm run timetable`: writes `data/timetable.json` (public EduPage JSON, no login).
+- Production: GitHub Pages. The site is `web/` plus `data/timetable.json` (and `data/status.json`), and
+  the UI fetches `data/timetable.json` by RELATIVE path. There is no backend, so no /api calls.
+- `npm start`: local dev server on :4411 serving the same layout.
 
 ## Data contract (see `shared/contract.md` for full schema)
-- `shared/subject.js` exports `subjectKey(name)`. Both fetchers MUST set `subjectKey` using it
-  so homework matches lessons.
-- Homework → lesson matching (UI does this): same `date`, then same `period` if homework has
-  one, otherwise the first lesson that day with the same `subjectKey`.
+- `shared/subject.js` exports `subjectKey(name)`, used for subject colors.
 
 ## Rules
-- Secrets live in `.env` only (EKOOL_USER, EKOOL_PASS, ...). Never commit `.env`, `data/*.json`,
-  browser profiles or cookies.
+- No secrets in this app. Never commit `.env`, `data/*.json` or browser profiles.
 - Commit and push often: one logical change per commit, clear message, only your files.
   Pull/rebase before pushing. Never force-push.
