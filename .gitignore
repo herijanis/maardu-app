@@ -1,0 +1,6 @@
+node_modules/
+.env
+data/*.json
+data/browser-profile/
+*.cookies.json
+.DS_Store

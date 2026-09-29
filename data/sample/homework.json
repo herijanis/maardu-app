@@ -1,0 +1,53 @@
+{
+  "fetchedAt": "2026-09-29T12:00:05+03:00",
+  "items": [
+    {
+      "id": "s1",
+      "date": "2026-09-30",
+      "subject": "Matemaatika",
+      "subjectKey": "matemaatika",
+      "period": null,
+      "type": "homework",
+      "title": "Lk 42 ül 3–7",
+      "description": "Lahenda ülesanded vihikusse, näita lahenduskäik.",
+      "done": false,
+      "url": null
+    },
+    {
+      "id": "s2",
+      "date": "2026-09-30",
+      "subject": "Füüsika",
+      "subjectKey": "fuusika",
+      "period": null,
+      "type": "test",
+      "title": "Kontrolltöö: kinemaatika",
+      "description": "Peatükid 1–3.",
+      "done": false,
+      "url": null
+    },
+    {
+      "id": "s3",
+      "date": "2026-09-30",
+      "subject": "Inglise keel",
+      "subjectKey": "inglise keel",
+      "period": null,
+      "type": "homework",
+      "title": "Essay draft (250 words)",
+      "description": "Topic: technology at school.",
+      "done": true,
+      "url": null
+    },
+    {
+      "id": "s4",
+      "date": "2026-10-01",
+      "subject": "Ajalugu",
+      "subjectKey": "ajalugu",
+      "period": null,
+      "type": "task",
+      "title": "Loe peatükk 5",
+      "description": "",
+      "done": false,
+      "url": null
+    }
+  ]
+}

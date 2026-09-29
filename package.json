@@ -1,0 +1,10 @@
+{
+  "name": "maardu-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "timetable": "node timetable/fetch.js",
+    "ekool": "node ekool/fetch.js"
+  }
+}
