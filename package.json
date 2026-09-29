@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "start": "node server.js",
-    "timetable": "node timetable/fetch.js"
+    "timetable": "node timetable/fetch.js",
+    "test": "node --test 'timetable/test/*.test.js'"
   }
 }

@@ -1,0 +1,4933 @@
+{
+  "className": "11.erh",
+  "classId": "*38",
+  "fetchedAt": "2026-09-29T22:32:05+03:00",
+  "monday": "2026-09-28",
+  "dateTo": "2026-10-18",
+  "versions": [
+    {
+      "tt_num": "1",
+      "datefrom": "2026-09-01",
+      "year": 2026,
+      "text": "2026/2027 MGM tunniplaan (01. 09. 2026-?)"
+    },
+    {
+      "tt_num": "6",
+      "datefrom": "2026-09-20",
+      "year": 2026,
+      "text": "Tunniplaan 21.09-25.09 (20. 09. 2026-?)"
+    },
+    {
+      "tt_num": "7",
+      "datefrom": "2026-09-27",
+      "year": 2026,
+      "text": "Tunniplaan 28.09 - 02.10.2026 (27. 09. 2026-?)"
+    }
+  ],
+  "defaultNum": "7",
+  "tables": {
+    "7": {
+      "periods": [
+        {
+          "id": "1",
+          "name": "1",
+          "short": "1",
+          "period": "1",
+          "starttime": "08:15",
+          "endtime": "09:00"
+        },
+        {
+          "id": "2",
+          "name": "2",
+          "short": "2",
+          "period": "2",
+          "starttime": "09:10",
+          "endtime": "09:55"
+        },
+        {
+          "id": "3",
+          "name": "3",
+          "short": "3",
+          "period": "3",
+          "starttime": "10:05",
+          "endtime": "10:50"
+        },
+        {
+          "id": "4",
+          "name": "4",
+          "short": "4",
+          "period": "4",
+          "starttime": "11:15",
+          "endtime": "12:00"
+        },
+        {
+          "id": "5",
+          "name": "5",
+          "short": "5",
+          "period": "5",
+          "starttime": "12:25",
+          "endtime": "13:10"
+        },
+        {
+          "id": "6",
+          "name": "6",
+          "short": "6",
+          "period": "6",
+          "starttime": "13:35",
+          "endtime": "14:20"
+        },
+        {
+          "id": "7",
+          "name": "7",
+          "short": "7",
+          "period": "7",
+          "starttime": "14:30",
+          "endtime": "15:15"
+        },
+        {
+          "id": "8",
+          "name": "8",
+          "short": "8",
+          "period": "8",
+          "starttime": "15:20",
+          "endtime": "16:05"
+        },
+        {
+          "id": "9",
+          "name": "9",
+          "short": "9",
+          "period": "9",
+          "starttime": "16:10",
+          "endtime": "16:55"
+        },
+        {
+          "id": "10",
+          "name": "10",
+          "short": "10",
+          "period": "10",
+          "starttime": "17:00",
+          "endtime": "17:45"
+        },
+        {
+          "id": "11",
+          "name": "11",
+          "short": "11",
+          "period": "11",
+          "starttime": "17:50",
+          "endtime": "18:35"
+        },
+        {
+          "id": "12",
+          "name": "12",
+          "short": "12",
+          "period": "12",
+          "starttime": "18:40",
+          "endtime": "19:25"
+        },
+        {
+          "id": "13",
+          "name": "13",
+          "short": "13",
+          "period": "13",
+          "starttime": "19:30",
+          "endtime": "20:15"
+        },
+        {
+          "id": "14",
+          "name": "14",
+          "short": "14",
+          "period": "14",
+          "starttime": "20:20",
+          "endtime": "21:05"
+        },
+        {
+          "id": "15",
+          "name": "15",
+          "short": "15",
+          "period": "15",
+          "starttime": "21:10",
+          "endtime": "21:55"
+        }
+      ],
+      "classrooms": [
+        {
+          "id": "*1",
+          "name": "",
+          "short": "K24"
+        },
+        {
+          "id": "*3",
+          "name": "Muusikasaal",
+          "short": "K23"
+        },
+        {
+          "id": "*5",
+          "name": "4.a koduklass",
+          "short": "K13"
+        },
+        {
+          "id": "*6",
+          "name": "3.c koduklass",
+          "short": "K22"
+        },
+        {
+          "id": "*7",
+          "name": "407",
+          "short": "407"
+        },
+        {
+          "id": "*9",
+          "name": "408",
+          "short": "408"
+        },
+        {
+          "id": "*10",
+          "name": "1.a koduklass",
+          "short": "K15"
+        },
+        {
+          "id": "*11",
+          "name": "2.a koduklass",
+          "short": "2.a"
+        },
+        {
+          "id": "*12",
+          "name": "2.b koduklass",
+          "short": "K21"
+        },
+        {
+          "id": "*13",
+          "name": "Arengutuba/Robootika",
+          "short": "K14"
+        },
+        {
+          "id": "*14",
+          "name": "3.a koduklass",
+          "short": "K11"
+        },
+        {
+          "id": "*15",
+          "name": "3.b koduklass",
+          "short": "K20"
+        },
+        {
+          "id": "*16",
+          "name": "307",
+          "short": "307"
+        },
+        {
+          "id": "*17",
+          "name": "23",
+          "short": "23"
+        },
+        {
+          "id": "*18",
+          "name": "Ujula",
+          "short": "Ujula"
+        },
+        {
+          "id": "*19",
+          "name": "207",
+          "short": "207"
+        },
+        {
+          "id": "*20",
+          "name": "27 - Muusika",
+          "short": "27 - Muusika"
+        },
+        {
+          "id": "*21",
+          "name": "Aula",
+          "short": "Aula"
+        },
+        {
+          "id": "*23",
+          "name": "1.b koduklass",
+          "short": "K12"
+        },
+        {
+          "id": "*24",
+          "name": "202",
+          "short": "202"
+        },
+        {
+          "id": "*25",
+          "name": "Informaatika",
+          "short": "105"
+        },
+        {
+          "id": "*26",
+          "name": "4.k koduklass",
+          "short": "K28"
+        },
+        {
+          "id": "*27",
+          "name": "Õpetajate tuba",
+          "short": "K25"
+        },
+        {
+          "id": "*28",
+          "name": "Söökla",
+          "short": "K26"
+        },
+        {
+          "id": "*29",
+          "name": "4.b koduklass",
+          "short": "K10"
+        },
+        {
+          "id": "*30",
+          "name": "110 Käeline tegevus",
+          "short": "110 "
+        },
+        {
+          "id": "*31",
+          "name": "108",
+          "short": "108"
+        },
+        {
+          "id": "*32",
+          "name": "106",
+          "short": "106"
+        },
+        {
+          "id": "*33",
+          "name": "201",
+          "short": "201"
+        },
+        {
+          "id": "*34",
+          "name": "203",
+          "short": "203"
+        },
+        {
+          "id": "*35",
+          "name": "204",
+          "short": "204"
+        },
+        {
+          "id": "*36",
+          "name": "206",
+          "short": "206"
+        },
+        {
+          "id": "*37",
+          "name": "209",
+          "short": "209"
+        },
+        {
+          "id": "*38",
+          "name": "210",
+          "short": "210"
+        },
+        {
+          "id": "*39",
+          "name": "212",
+          "short": "212"
+        },
+        {
+          "id": "*40",
+          "name": "21",
+          "short": "21"
+        },
+        {
+          "id": "*41",
+          "name": "22",
+          "short": "22"
+        },
+        {
+          "id": "*42",
+          "name": "24",
+          "short": "24"
+        },
+        {
+          "id": "*43",
+          "name": "25",
+          "short": "25"
+        },
+        {
+          "id": "*44",
+          "name": "27",
+          "short": "27"
+        },
+        {
+          "id": "*45",
+          "name": "31",
+          "short": "31"
+        },
+        {
+          "id": "*46",
+          "name": "32",
+          "short": "32"
+        },
+        {
+          "id": "*47",
+          "name": "33",
+          "short": "33"
+        },
+        {
+          "id": "*48",
+          "name": "34",
+          "short": "34"
+        },
+        {
+          "id": "*49",
+          "name": "35",
+          "short": "35"
+        },
+        {
+          "id": "*50",
+          "name": "37",
+          "short": "37"
+        },
+        {
+          "id": "*51",
+          "name": "38",
+          "short": "38"
+        },
+        {
+          "id": "*52",
+          "name": "301",
+          "short": "301"
+        },
+        {
+          "id": "*53",
+          "name": "303",
+          "short": "303"
+        },
+        {
+          "id": "*54",
+          "name": "304",
+          "short": "304"
+        },
+        {
+          "id": "*55",
+          "name": "306",
+          "short": "306"
+        },
+        {
+          "id": "*56",
+          "name": "300",
+          "short": "300"
+        },
+        {
+          "id": "*57",
+          "name": "309",
+          "short": "309"
+        },
+        {
+          "id": "*58",
+          "name": "310",
+          "short": "310"
+        },
+        {
+          "id": "*59",
+          "name": "312",
+          "short": "312"
+        },
+        {
+          "id": "*60",
+          "name": "311",
+          "short": "311"
+        },
+        {
+          "id": "*61",
+          "name": "401",
+          "short": "401"
+        },
+        {
+          "id": "*62",
+          "name": "403",
+          "short": "403"
+        },
+        {
+          "id": "*63",
+          "name": "404",
+          "short": "404"
+        },
+        {
+          "id": "*64",
+          "name": "405",
+          "short": "405"
+        },
+        {
+          "id": "*65",
+          "name": "400",
+          "short": "400"
+        },
+        {
+          "id": "*66",
+          "name": "410",
+          "short": "410"
+        },
+        {
+          "id": "*67",
+          "name": "411",
+          "short": "411"
+        },
+        {
+          "id": "*68",
+          "name": "412",
+          "short": "412"
+        },
+        {
+          "id": "*69",
+          "name": "413",
+          "short": "413"
+        },
+        {
+          "id": "*70",
+          "name": "Töökoda",
+          "short": "Töökoda"
+        },
+        {
+          "id": "*71",
+          "name": "Muusika",
+          "short": "Muusika"
+        },
+        {
+          "id": "*72",
+          "name": "302",
+          "short": "302"
+        },
+        {
+          "id": "*73",
+          "name": "28",
+          "short": "28"
+        },
+        {
+          "id": "*74",
+          "name": "20",
+          "short": "20"
+        },
+        {
+          "id": "*75",
+          "name": "26",
+          "short": "26"
+        },
+        {
+          "id": "*76",
+          "name": "402",
+          "short": "402"
+        },
+        {
+          "id": "*77",
+          "name": "Spordisaal",
+          "short": "C1"
+        },
+        {
+          "id": "*78",
+          "name": "Spordihoone",
+          "short": "SHV"
+        },
+        {
+          "id": "*79",
+          "name": "Staadion",
+          "short": "õue"
+        },
+        {
+          "id": "*80",
+          "name": "211",
+          "short": "211"
+        },
+        {
+          "id": "*81",
+          "name": "Moodle",
+          "short": "Moodle"
+        }
+      ],
+      "classes": [
+        {
+          "id": "*20",
+          "name": "1.a",
+          "short": "1.a"
+        },
+        {
+          "id": "*1",
+          "name": "1.b",
+          "short": "1.B"
+        },
+        {
+          "id": "*65",
+          "name": "1.el",
+          "short": "1.el"
+        },
+        {
+          "id": "*21",
+          "name": "2.a",
+          "short": "2.a"
+        },
+        {
+          "id": "*22",
+          "name": "2.b",
+          "short": "2.b"
+        },
+        {
+          "id": "*66",
+          "name": "2.er",
+          "short": "2.er"
+        },
+        {
+          "id": "*23",
+          "name": "3.a",
+          "short": "3.a"
+        },
+        {
+          "id": "*24",
+          "name": "3.b",
+          "short": "3.b"
+        },
+        {
+          "id": "*12",
+          "name": "3.c",
+          "short": "3.c"
+        },
+        {
+          "id": "*64",
+          "name": "3.el",
+          "short": "3.el"
+        },
+        {
+          "id": "*61",
+          "name": "3.er",
+          "short": "3.er"
+        },
+        {
+          "id": "*11",
+          "name": "4.a",
+          "short": "4.a"
+        },
+        {
+          "id": "*25",
+          "name": "4.b",
+          "short": "4.b"
+        },
+        {
+          "id": "*63",
+          "name": "4.el",
+          "short": "4.el"
+        },
+        {
+          "id": "*62",
+          "name": "4.er",
+          "short": "4.er"
+        },
+        {
+          "id": "*26",
+          "name": "4.k",
+          "short": "4.k"
+        },
+        {
+          "id": "*17",
+          "name": "5.a",
+          "short": "5.a"
+        },
+        {
+          "id": "*19",
+          "name": "5.b",
+          "short": "5.b"
+        },
+        {
+          "id": "*27",
+          "name": "5.c",
+          "short": "5.c"
+        },
+        {
+          "id": "*58",
+          "name": "5.er",
+          "short": "5.er"
+        },
+        {
+          "id": "*29",
+          "name": "6.a",
+          "short": "6.a"
+        },
+        {
+          "id": "*30",
+          "name": "6.b",
+          "short": "6.b"
+        },
+        {
+          "id": "*31",
+          "name": "6.c",
+          "short": "6.c"
+        },
+        {
+          "id": "*18",
+          "name": "6.d",
+          "short": "6.d"
+        },
+        {
+          "id": "*67",
+          "name": "6.el",
+          "short": "6.el"
+        },
+        {
+          "id": "*60",
+          "name": "6.ep",
+          "short": "6.ep"
+        },
+        {
+          "id": "*59",
+          "name": "6.er",
+          "short": "6.er"
+        },
+        {
+          "id": "*2",
+          "name": "7.a",
+          "short": "7.a"
+        },
+        {
+          "id": "*33",
+          "name": "7.b",
+          "short": "7.b"
+        },
+        {
+          "id": "*70",
+          "name": "7.er",
+          "short": "7.er"
+        },
+        {
+          "id": "*35",
+          "name": "7.k",
+          "short": "7.k"
+        },
+        {
+          "id": "*5",
+          "name": "8.a",
+          "short": "8.a"
+        },
+        {
+          "id": "*6",
+          "name": "8.b",
+          "short": "8.b"
+        },
+        {
+          "id": "*71",
+          "name": "8.er",
+          "short": "8.er"
+        },
+        {
+          "id": "*36",
+          "name": "8.h",
+          "short": "8.h"
+        },
+        {
+          "id": "*3",
+          "name": "9.a",
+          "short": "9.a"
+        },
+        {
+          "id": "*13",
+          "name": "9.b",
+          "short": "9.b"
+        },
+        {
+          "id": "*14",
+          "name": "9.c",
+          "short": "9.c"
+        },
+        {
+          "id": "*68",
+          "name": "9.er",
+          "short": "9.er"
+        },
+        {
+          "id": "*15",
+          "name": "9.h",
+          "short": "9.h"
+        },
+        {
+          "id": "*43",
+          "name": "9.võ",
+          "short": "9.võ"
+        },
+        {
+          "id": "*10",
+          "name": "10.a",
+          "short": "10.a"
+        },
+        {
+          "id": "*37",
+          "name": "10.b",
+          "short": "10.b"
+        },
+        {
+          "id": "*69",
+          "name": "10.c",
+          "short": "10.c"
+        },
+        {
+          "id": "*45",
+          "name": "10.eõ",
+          "short": "10.eõ"
+        },
+        {
+          "id": "*44",
+          "name": "10.võ",
+          "short": "10.võ"
+        },
+        {
+          "id": "*38",
+          "name": "11.erh",
+          "short": "11.erh"
+        },
+        {
+          "id": "*53",
+          "name": "11.md",
+          "short": "11.md"
+        },
+        {
+          "id": "*52",
+          "name": "11.mõ",
+          "short": "11.mõ"
+        },
+        {
+          "id": "*51",
+          "name": "11.vd",
+          "short": "11.vd"
+        },
+        {
+          "id": "*40",
+          "name": "11.vh",
+          "short": "11.vh"
+        },
+        {
+          "id": "*49",
+          "name": "11.võ1",
+          "short": "11.võ1"
+        },
+        {
+          "id": "*50",
+          "name": "11.võ2",
+          "short": "11.võ2"
+        },
+        {
+          "id": "*16",
+          "name": "11.vr",
+          "short": "11.vr"
+        },
+        {
+          "id": "*41",
+          "name": "11.vü",
+          "short": "11.vü"
+        },
+        {
+          "id": "*9",
+          "name": "12.c",
+          "short": "12.c"
+        },
+        {
+          "id": "*4",
+          "name": "12.d",
+          "short": "12.d"
+        },
+        {
+          "id": "*57",
+          "name": "12.md",
+          "short": "12.md"
+        },
+        {
+          "id": "*56",
+          "name": "12.mõ",
+          "short": "12.mõ"
+        },
+        {
+          "id": "*7",
+          "name": "12.a",
+          "short": "12.a"
+        },
+        {
+          "id": "*55",
+          "name": "12.vd",
+          "short": "12.vd"
+        },
+        {
+          "id": "*54",
+          "name": "12.võ1",
+          "short": "12.võ1"
+        },
+        {
+          "id": "*72",
+          "name": "12võ2",
+          "short": "12võ2"
+        }
+      ],
+      "subjects": [
+        {
+          "id": "*1",
+          "name": "Eesti keel",
+          "short": "Ek"
+        },
+        {
+          "id": "*2",
+          "name": "Matemaatika",
+          "short": "Mat"
+        },
+        {
+          "id": "*3",
+          "name": "Loodusõpetus",
+          "short": "Lõ"
+        },
+        {
+          "id": "*4",
+          "name": "Käeline tegevus",
+          "short": "KTe"
+        },
+        {
+          "id": "*5",
+          "name": "Liikumine",
+          "short": "Li"
+        },
+        {
+          "id": "*6",
+          "name": "Muusika",
+          "short": "Mu"
+        },
+        {
+          "id": "*7",
+          "name": "Robootika",
+          "short": "Ro"
+        },
+        {
+          "id": "*8",
+          "name": "Klassijuhataja tund",
+          "short": "Kj"
+        },
+        {
+          "id": "*10",
+          "name": "Saksa keel",
+          "short": "Sk"
+        },
+        {
+          "id": "*11",
+          "name": "Kunst",
+          "short": "Ku"
+        },
+        {
+          "id": "*12",
+          "name": "Tööõpetus/Tehnoloogia",
+          "short": "Tö"
+        },
+        {
+          "id": "*13",
+          "name": "Inglise keel",
+          "short": "Ik"
+        },
+        {
+          "id": "*14",
+          "name": "Inimeseõpetus",
+          "short": "I"
+        },
+        {
+          "id": "*15",
+          "name": "Käsitöö ja kodundus",
+          "short": "Kjk"
+        },
+        {
+          "id": "*16",
+          "name": "Keemia",
+          "short": "K"
+        },
+        {
+          "id": "*17",
+          "name": "Tantsimine",
+          "short": "Ta"
+        },
+        {
+          "id": "*18",
+          "name": "Vene keel",
+          "short": "Vk"
+        },
+        {
+          "id": "*19",
+          "name": "Draamaõpetus",
+          "short": "Draama"
+        },
+        {
+          "id": "*20",
+          "name": "Eesti kirjandus",
+          "short": "Ekk"
+        },
+        {
+          "id": "*21",
+          "name": "Ettevalmistus eesti keele B2 eksamiks",
+          "short": "evB2"
+        },
+        {
+          "id": "*22",
+          "name": "Praktiline eesti keel",
+          "short": "Prek"
+        },
+        {
+          "id": "*23",
+          "name": "Õigesti kõnelemine",
+          "short": "Õk"
+        },
+        {
+          "id": "*24",
+          "name": "Eesti keel teise keelena",
+          "short": "Ektk"
+        },
+        {
+          "id": "*25",
+          "name": "Kirjandus",
+          "short": "Kirj"
+        },
+        {
+          "id": "*27",
+          "name": "Ujumine",
+          "short": "Uj"
+        },
+        {
+          "id": "*28",
+          "name": "Füüsika",
+          "short": "Fü"
+        },
+        {
+          "id": "*29",
+          "name": "Ajalugu",
+          "short": "Aj"
+        },
+        {
+          "id": "*30",
+          "name": "Informaatika",
+          "short": "IT"
+        },
+        {
+          "id": "*31",
+          "name": "Vene keel ja kultuur",
+          "short": "Vkjk"
+        },
+        {
+          "id": "*33",
+          "name": "Eesti keel (valikaine)",
+          "short": "Ek("
+        },
+        {
+          "id": "*34",
+          "name": "Matemaatika (valikaine)",
+          "short": "M("
+        },
+        {
+          "id": "*35",
+          "name": "Ühiskonnaõpetus",
+          "short": "Üh"
+        },
+        {
+          "id": "*37",
+          "name": "Kirjandus vene keeles",
+          "short": "Kjvk"
+        },
+        {
+          "id": "*38",
+          "name": "Geograafia",
+          "short": "Ge"
+        },
+        {
+          "id": "*39",
+          "name": "Bioloogia",
+          "short": "Bi"
+        },
+        {
+          "id": "*40",
+          "name": "Eesti keel valikaine",
+          "short": "Ek(valik)"
+        },
+        {
+          "id": "*41",
+          "name": "Loovtöö alused",
+          "short": "Loov"
+        },
+        {
+          "id": "*42",
+          "name": "Eripedagoog",
+          "short": "E"
+        },
+        {
+          "id": "*43",
+          "name": "Psühholoog",
+          "short": "Ps"
+        },
+        {
+          "id": "*44",
+          "name": "Logopeed",
+          "short": "Log"
+        },
+        {
+          "id": "*45",
+          "name": "Ukraina keel ja kultuur",
+          "short": "Ukjk"
+        },
+        {
+          "id": "*46",
+          "name": "Majandus- ja ettevõtlusõpe",
+          "short": "Mje"
+        },
+        {
+          "id": "*47",
+          "name": "Lai matemaatika",
+          "short": "Mat(L)"
+        },
+        {
+          "id": "*48",
+          "name": "Kitsas matemaatika",
+          "short": "Mat(K)"
+        },
+        {
+          "id": "*49",
+          "name": "Ennastjuhtiv õppija",
+          "short": "Ejõ"
+        },
+        {
+          "id": "*51",
+          "name": "Harjumaa, mu kodu",
+          "short": "Harj"
+        },
+        {
+          "id": "*53",
+          "name": "Uurimistöö alused",
+          "short": "Ua"
+        },
+        {
+          "id": "*54",
+          "name": "Praktiline inglise keel",
+          "short": "PrI"
+        },
+        {
+          "id": "*55",
+          "name": "Riigikaitse",
+          "short": "Rk"
+        },
+        {
+          "id": "*56",
+          "name": "Developing skills",
+          "short": "Ds"
+        },
+        {
+          "id": "*57",
+          "name": "Psühholoogia",
+          "short": "Psü"
+        },
+        {
+          "id": "*58",
+          "name": "Liikumine välistingimustes",
+          "short": "Lv"
+        },
+        {
+          "id": "*59",
+          "name": "Elementide keemia",
+          "short": "Elem.k"
+        },
+        {
+          "id": "*60",
+          "name": "Inimene ja õigus",
+          "short": "Ijõ"
+        },
+        {
+          "id": "*61",
+          "name": "Enesekaitse",
+          "short": "Enk"
+        },
+        {
+          "id": "*62",
+          "name": "Saksa keel (valikaine)",
+          "short": "Sk(valik)"
+        },
+        {
+          "id": "*63",
+          "name": "Esmaabi (e-õpe)",
+          "short": "EA"
+        },
+        {
+          "id": "*64",
+          "name": "Inglise keel B2",
+          "short": "IkB2"
+        },
+        {
+          "id": "*65",
+          "name": "Matemaatika (kitsas)",
+          "short": "Mat(k)"
+        },
+        {
+          "id": "*66",
+          "name": "Vene keel B1",
+          "short": "Vene(B1)"
+        },
+        {
+          "id": "*67",
+          "name": "Muusika ja kunst",
+          "short": ""
+        },
+        {
+          "id": "*68",
+          "name": "Majandus",
+          "short": ""
+        },
+        {
+          "id": "*69",
+          "name": "Tervislik toitumine",
+          "short": ""
+        },
+        {
+          "id": "*70",
+          "name": "Kõne ja väitlus",
+          "short": ""
+        },
+        {
+          "id": "*71",
+          "name": "Karjääriõpetus",
+          "short": "Karj"
+        },
+        {
+          "id": "*72",
+          "name": "Autojuhtimine",
+          "short": "Auto"
+        },
+        {
+          "id": "*73",
+          "name": "Abipolitseinik",
+          "short": "Abip"
+        },
+        {
+          "id": "*74",
+          "name": "Rahatarkus",
+          "short": "Raha"
+        },
+        {
+          "id": "*75",
+          "name": "Matemaatika riigieksamiks ettevalmistus",
+          "short": ""
+        },
+        {
+          "id": "*76",
+          "name": "Lineaaralgebra",
+          "short": ""
+        },
+        {
+          "id": "*77",
+          "name": "Itaalia keel (valik)",
+          "short": "Itaalia(valik)"
+        },
+        {
+          "id": "*78",
+          "name": "Anatoomia",
+          "short": "An"
+        },
+        {
+          "id": "*79",
+          "name": "Geneetika",
+          "short": "Gen"
+        },
+        {
+          "id": "*80",
+          "name": "Ettevalmistav kursus eesti keele eksamiks (teise keelena)",
+          "short": "Ekeke(valik)"
+        },
+        {
+          "id": "*81",
+          "name": "Ettevalmistav kursus eesti keele eksamiks (emakeelena)",
+          "short": "Ekeke emakeel(valik)"
+        },
+        {
+          "id": "*82",
+          "name": "Ettevalmistus eesti keele riigieksamiks (emakeel)",
+          "short": "Eekr"
+        },
+        {
+          "id": "*83",
+          "name": "Eesti keele õpiabi",
+          "short": "Ekõ"
+        },
+        {
+          "id": "*84",
+          "name": "Liikumine välistingimustes",
+          "short": "Liik. väl."
+        }
+      ],
+      "teachers": [
+        {
+          "id": "*1",
+          "short": "Umbleja"
+        },
+        {
+          "id": "*2",
+          "short": "Mashchenko"
+        },
+        {
+          "id": "*3",
+          "short": "Lampuu"
+        },
+        {
+          "id": "*4",
+          "short": "Kiipus"
+        },
+        {
+          "id": "*5",
+          "short": "Dmitrijeva"
+        },
+        {
+          "id": "*6",
+          "short": "Faizova"
+        },
+        {
+          "id": "*7",
+          "short": "Jeršova"
+        },
+        {
+          "id": "*8",
+          "short": "Niitmäe"
+        },
+        {
+          "id": "*10",
+          "short": "Selivanova"
+        },
+        {
+          "id": "*12",
+          "short": "Pogorelova"
+        },
+        {
+          "id": "*13",
+          "short": "Pruuli"
+        },
+        {
+          "id": "*14",
+          "short": "Korotina"
+        },
+        {
+          "id": "*15",
+          "short": "Komelkova"
+        },
+        {
+          "id": "*16",
+          "short": "Adler"
+        },
+        {
+          "id": "*17",
+          "short": "Ageikina"
+        },
+        {
+          "id": "*18",
+          "short": "Aleksejev"
+        },
+        {
+          "id": "*20",
+          "short": "Andriyanovich"
+        },
+        {
+          "id": "*21",
+          "short": "Antonišina"
+        },
+        {
+          "id": "*23",
+          "short": "Avdejeva"
+        },
+        {
+          "id": "*11",
+          "short": "Amineva"
+        },
+        {
+          "id": "*24",
+          "short": "Baidiuk"
+        },
+        {
+          "id": "*25",
+          "short": "Zaskaleta"
+        },
+        {
+          "id": "*26",
+          "short": "Borissova"
+        },
+        {
+          "id": "*27",
+          "short": "Bramanis"
+        },
+        {
+          "id": "*28",
+          "short": "Demysheva"
+        },
+        {
+          "id": "*29",
+          "short": "Deržavina"
+        },
+        {
+          "id": "*30",
+          "short": "Dolinina"
+        },
+        {
+          "id": "*31",
+          "short": "Döskaya"
+        },
+        {
+          "id": "*32",
+          "short": "Dudakova"
+        },
+        {
+          "id": "*33",
+          "short": "Fokin"
+        },
+        {
+          "id": "*34",
+          "short": "Galkina"
+        },
+        {
+          "id": "*35",
+          "short": "Gordijenko"
+        },
+        {
+          "id": "*36",
+          "short": "Grünbaum"
+        },
+        {
+          "id": "*37",
+          "short": "Hindpere-Raudsik"
+        },
+        {
+          "id": "*38",
+          "short": "Issatšenko"
+        },
+        {
+          "id": "*39",
+          "short": "Ivanova"
+        },
+        {
+          "id": "*40",
+          "short": "Jakobson"
+        },
+        {
+          "id": "*41",
+          "short": "Jakovlev"
+        },
+        {
+          "id": "*43",
+          "short": "Jeršova"
+        },
+        {
+          "id": "*44",
+          "short": "Kamm"
+        },
+        {
+          "id": "*45",
+          "short": "Kerge"
+        },
+        {
+          "id": "*46",
+          "short": "Klaussen"
+        },
+        {
+          "id": "*47",
+          "short": "Kolesnik"
+        },
+        {
+          "id": "*48",
+          "short": "Komaldinov"
+        },
+        {
+          "id": "*49",
+          "short": "Komelkova"
+        },
+        {
+          "id": "*50",
+          "short": "Kormašov"
+        },
+        {
+          "id": "*51",
+          "short": "Kovš"
+        },
+        {
+          "id": "*52",
+          "short": "Kriisa"
+        },
+        {
+          "id": "*53",
+          "short": "Kulakovskaja"
+        },
+        {
+          "id": "*54",
+          "short": "Kurvits"
+        },
+        {
+          "id": "*55",
+          "short": "Lelkova"
+        },
+        {
+          "id": "*57",
+          "short": "Liisma"
+        },
+        {
+          "id": "*58",
+          "short": "Linntam"
+        },
+        {
+          "id": "*59",
+          "short": "Lubnin"
+        },
+        {
+          "id": "*60",
+          "short": "Luiska"
+        },
+        {
+          "id": "*61",
+          "short": "Luur"
+        },
+        {
+          "id": "*63",
+          "short": "Makovei"
+        },
+        {
+          "id": "*64",
+          "short": "Maslov"
+        },
+        {
+          "id": "*65",
+          "short": "Matvejeva"
+        },
+        {
+          "id": "*67",
+          "short": "Mihatšov"
+        },
+        {
+          "id": "*68",
+          "short": "Minajeva"
+        },
+        {
+          "id": "*69",
+          "short": "Naydenova"
+        },
+        {
+          "id": "*70",
+          "short": "Nikiforova"
+        },
+        {
+          "id": "*71",
+          "short": "Oganesjan"
+        },
+        {
+          "id": "*72",
+          "short": "Schor"
+        },
+        {
+          "id": "*74",
+          "short": "Sinimaa"
+        },
+        {
+          "id": "*75",
+          "short": "Skopitš"
+        },
+        {
+          "id": "*76",
+          "short": "Smagin"
+        },
+        {
+          "id": "*77",
+          "short": "Sokolova"
+        },
+        {
+          "id": "*78",
+          "short": "Solovjova"
+        },
+        {
+          "id": "*80",
+          "short": "Suškevitš"
+        },
+        {
+          "id": "*81",
+          "short": "Šeibak"
+        },
+        {
+          "id": "*82",
+          "short": "Talts"
+        },
+        {
+          "id": "*83",
+          "short": "Tera"
+        },
+        {
+          "id": "*84",
+          "short": "Tihhomirov"
+        },
+        {
+          "id": "*85",
+          "short": "Tištšenkov"
+        },
+        {
+          "id": "*87",
+          "short": "Vassiljeva"
+        },
+        {
+          "id": "*88",
+          "short": "Veiner"
+        },
+        {
+          "id": "*89",
+          "short": "Veiser"
+        },
+        {
+          "id": "*90",
+          "short": "Zubovitš"
+        },
+        {
+          "id": "*91",
+          "short": "Alaküla"
+        },
+        {
+          "id": "*92",
+          "short": "Saealle"
+        },
+        {
+          "id": "*93",
+          "short": "Peil"
+        },
+        {
+          "id": "*95",
+          "short": "Jevstafjeva"
+        },
+        {
+          "id": "*96",
+          "short": "Povshenko"
+        },
+        {
+          "id": "*97",
+          "short": "Karu"
+        },
+        {
+          "id": "*98",
+          "short": "Jetskalo"
+        },
+        {
+          "id": "*99",
+          "short": "Valdmets"
+        },
+        {
+          "id": "*100",
+          "short": "Fiter"
+        },
+        {
+          "id": "*101",
+          "short": "Laasma"
+        },
+        {
+          "id": "*102",
+          "short": "Viks"
+        },
+        {
+          "id": "*103",
+          "short": "Autokool1"
+        },
+        {
+          "id": "*104",
+          "short": "Autokool2"
+        },
+        {
+          "id": "*105",
+          "short": "Halling"
+        },
+        {
+          "id": "*106",
+          "short": "UV"
+        }
+      ]
+    }
+  },
+  "items": [
+    {
+      "type": "card",
+      "date": "2026-09-28",
+      "uniperiod": "4",
+      "starttime": "11:15",
+      "endtime": "12:00",
+      "subjectid": "*55",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*61"
+      ],
+      "classroomids": [
+        "*64"
+      ],
+      "studentids": [],
+      "colors": [
+        "#008080"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-09-28",
+      "uniperiod": "5",
+      "starttime": "12:25",
+      "endtime": "13:10",
+      "subjectid": "*6",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*10"
+      ],
+      "classroomids": [
+        "*44"
+      ],
+      "studentids": [],
+      "colors": [
+        "#00FF00"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-09-28",
+      "uniperiod": "6",
+      "starttime": "13:35",
+      "endtime": "14:20",
+      "subjectid": "*39",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*57"
+      ],
+      "classroomids": [
+        "*57"
+      ],
+      "studentids": [],
+      "colors": [
+        "#660066"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-09-28",
+      "uniperiod": "7",
+      "starttime": "14:30",
+      "endtime": "15:15",
+      "subjectid": "*25",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*20"
+      ],
+      "classroomids": [
+        "*49"
+      ],
+      "studentids": [],
+      "colors": [
+        "#66FF66"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-09-28",
+      "uniperiod": "8",
+      "starttime": "15:20",
+      "endtime": "16:05",
+      "subjectid": "*80",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*20"
+      ],
+      "classroomids": [
+        "*49"
+      ],
+      "studentids": [],
+      "colors": [
+        "#66FF66"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-09-28",
+      "uniperiod": "9",
+      "starttime": "16:10",
+      "endtime": "16:55",
+      "subjectid": "*71",
+      "classids": [
+        "*38",
+        "*40",
+        "*16",
+        "*41",
+        "*9",
+        "*4",
+        "*7"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*82"
+      ],
+      "classroomids": [
+        "*45"
+      ],
+      "studentids": [],
+      "colors": [
+        "#33CCFF"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-09-28",
+      "uniperiod": "10",
+      "starttime": "17:00",
+      "endtime": "19:25",
+      "subjectid": "*72",
+      "classids": [
+        "*38",
+        "*40",
+        "*16",
+        "*41"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*103",
+        "*104"
+      ],
+      "classroomids": [],
+      "studentids": [],
+      "colors": [
+        "#CC0000",
+        "#666666"
+      ],
+      "durationperiods": 3
+    },
+    {
+      "type": "card",
+      "date": "2026-09-29",
+      "uniperiod": "1",
+      "starttime": "08:15",
+      "endtime": "09:00",
+      "subjectid": "*53",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*76"
+      ],
+      "classroomids": [
+        "*25"
+      ],
+      "studentids": [],
+      "colors": [
+        "#C0FFFF"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-09-29",
+      "uniperiod": "2",
+      "starttime": "09:10",
+      "endtime": "09:55",
+      "subjectid": "*47",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*58"
+      ],
+      "classroomids": [
+        "*37"
+      ],
+      "studentids": [],
+      "colors": [
+        "#808080"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-09-29",
+      "uniperiod": "3",
+      "starttime": "10:05",
+      "endtime": "10:50",
+      "subjectid": "*54",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*52"
+      ],
+      "classroomids": [
+        "*76"
+      ],
+      "studentids": [],
+      "colors": [
+        "#FF9966"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-09-29",
+      "uniperiod": "4",
+      "starttime": "11:15",
+      "endtime": "12:00",
+      "subjectid": "*47",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*58"
+      ],
+      "classroomids": [
+        "*37"
+      ],
+      "studentids": [],
+      "colors": [
+        "#808080"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-09-29",
+      "uniperiod": "5",
+      "starttime": "12:25",
+      "endtime": "13:10",
+      "subjectid": "*18",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*85"
+      ],
+      "classroomids": [
+        "*36"
+      ],
+      "studentids": [],
+      "colors": [
+        "#339933"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-09-29",
+      "uniperiod": "6",
+      "starttime": "13:35",
+      "endtime": "14:20",
+      "subjectid": "*29",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*72"
+      ],
+      "classroomids": [
+        "*58"
+      ],
+      "studentids": [],
+      "colors": [
+        "#FFFFCC"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-09-29",
+      "uniperiod": "7",
+      "starttime": "14:30",
+      "endtime": "15:15",
+      "subjectid": "*39",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*57"
+      ],
+      "classroomids": [
+        "*57"
+      ],
+      "studentids": [],
+      "colors": [
+        "#660066"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-09-29",
+      "uniperiod": "8",
+      "starttime": "15:20",
+      "endtime": "16:05",
+      "subjectid": "*16",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*82"
+      ],
+      "classroomids": [
+        "*45"
+      ],
+      "studentids": [],
+      "colors": [
+        "#33CCFF"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-09-29",
+      "uniperiod": "9",
+      "starttime": "16:10",
+      "endtime": "16:55",
+      "subjectid": "*29",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*72"
+      ],
+      "classroomids": [
+        "*58"
+      ],
+      "studentids": [],
+      "colors": [
+        "#FFFFCC"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-09-30",
+      "uniperiod": "1",
+      "starttime": "08:15",
+      "endtime": "09:00",
+      "subjectid": "*61",
+      "classids": [
+        "*38",
+        "*40",
+        "*16",
+        "*41"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*41"
+      ],
+      "classroomids": [
+        "*56"
+      ],
+      "studentids": [],
+      "colors": [
+        "#000080"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-09-30",
+      "uniperiod": "2",
+      "starttime": "09:10",
+      "endtime": "09:55",
+      "subjectid": "*38",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*92"
+      ],
+      "classroomids": [
+        "*54"
+      ],
+      "studentids": [],
+      "colors": [
+        "#009933"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-09-30",
+      "uniperiod": "3",
+      "starttime": "10:05",
+      "endtime": "10:50",
+      "subjectid": "*22",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*20"
+      ],
+      "classroomids": [
+        "*49"
+      ],
+      "studentids": [],
+      "colors": [
+        "#66FF66"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-09-30",
+      "uniperiod": "4",
+      "starttime": "11:15",
+      "endtime": "12:00",
+      "subjectid": "*47",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*58"
+      ],
+      "classroomids": [
+        "*37"
+      ],
+      "studentids": [],
+      "colors": [
+        "#808080"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-09-30",
+      "uniperiod": "5",
+      "starttime": "12:25",
+      "endtime": "13:10",
+      "subjectid": "*56",
+      "classids": [
+        "*38",
+        "*40",
+        "*16",
+        "*41"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*88"
+      ],
+      "classroomids": [
+        "*61"
+      ],
+      "studentids": [],
+      "colors": [
+        "#00CC99"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-09-30",
+      "uniperiod": "6",
+      "starttime": "13:35",
+      "endtime": "14:20",
+      "subjectid": "*68",
+      "classids": [
+        "*38",
+        "*40",
+        "*16",
+        "*41"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*60"
+      ],
+      "classroomids": [
+        "*52"
+      ],
+      "studentids": [],
+      "colors": [
+        "#4040FF"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-09-30",
+      "uniperiod": "7",
+      "starttime": "14:30",
+      "endtime": "15:15",
+      "subjectid": "*13",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        "Grupp 1"
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*52"
+      ],
+      "classroomids": [
+        "*59"
+      ],
+      "studentids": [],
+      "colors": [
+        "#FF9966"
+      ],
+      "cellSlices": "10",
+      "cellOrder": 0
+    },
+    {
+      "type": "card",
+      "date": "2026-09-30",
+      "uniperiod": "7",
+      "starttime": "14:30",
+      "endtime": "15:15",
+      "subjectid": "*1",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        "Grupp 2"
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*20"
+      ],
+      "classroomids": [
+        "*49"
+      ],
+      "studentids": [],
+      "colors": [
+        "#66FF66"
+      ],
+      "cellSlices": "01",
+      "cellOrder": 1
+    },
+    {
+      "type": "card",
+      "date": "2026-09-30",
+      "uniperiod": "8",
+      "starttime": "15:20",
+      "endtime": "16:05",
+      "subjectid": "*1",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        "Grupp 1"
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*20"
+      ],
+      "classroomids": [
+        "*49"
+      ],
+      "studentids": [],
+      "colors": [
+        "#66FF66"
+      ],
+      "cellSlices": "10",
+      "cellOrder": 0
+    },
+    {
+      "type": "card",
+      "date": "2026-09-30",
+      "uniperiod": "8",
+      "starttime": "15:20",
+      "endtime": "16:05",
+      "subjectid": "*13",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        "Grupp 2"
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*52"
+      ],
+      "classroomids": [
+        "*76"
+      ],
+      "studentids": [],
+      "colors": [
+        "#FF9966"
+      ],
+      "cellSlices": "01",
+      "cellOrder": 1
+    },
+    {
+      "type": "card",
+      "date": "2026-09-30",
+      "uniperiod": "9",
+      "starttime": "16:10",
+      "endtime": "16:55",
+      "subjectid": "*73",
+      "classids": [
+        "*38",
+        "*40",
+        "*16",
+        "*41"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*41"
+      ],
+      "classroomids": [
+        "*56"
+      ],
+      "studentids": [],
+      "colors": [
+        "#000080"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-10-01",
+      "uniperiod": "3",
+      "starttime": "10:05",
+      "endtime": "10:50",
+      "subjectid": "*38",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*92"
+      ],
+      "classroomids": [
+        "*55"
+      ],
+      "studentids": [],
+      "colors": [
+        "#009933"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-10-01",
+      "uniperiod": "4",
+      "starttime": "11:15",
+      "endtime": "12:00",
+      "subjectid": "*47",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*58"
+      ],
+      "classroomids": [
+        "*37"
+      ],
+      "studentids": [],
+      "colors": [
+        "#808080"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-10-01",
+      "uniperiod": "5",
+      "starttime": "12:25",
+      "endtime": "14:20",
+      "subjectid": "*5",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*38"
+      ],
+      "classroomids": [
+        "*79"
+      ],
+      "studentids": [],
+      "colors": [
+        "#9900FF"
+      ],
+      "durationperiods": 2
+    },
+    {
+      "type": "card",
+      "date": "2026-10-01",
+      "uniperiod": "7",
+      "starttime": "14:30",
+      "endtime": "15:15",
+      "subjectid": "*1",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        "Grupp 1"
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*20"
+      ],
+      "classroomids": [
+        "*49"
+      ],
+      "studentids": [],
+      "colors": [
+        "#66FF66"
+      ],
+      "cellSlices": "10",
+      "cellOrder": 0
+    },
+    {
+      "type": "card",
+      "date": "2026-10-01",
+      "uniperiod": "7",
+      "starttime": "14:30",
+      "endtime": "15:15",
+      "subjectid": "*13",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        "Grupp 2"
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*52"
+      ],
+      "classroomids": [
+        "*76"
+      ],
+      "studentids": [],
+      "colors": [
+        "#FF9966"
+      ],
+      "cellSlices": "01",
+      "cellOrder": 1
+    },
+    {
+      "type": "card",
+      "date": "2026-10-01",
+      "uniperiod": "8",
+      "starttime": "15:20",
+      "endtime": "16:05",
+      "subjectid": "*13",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        "Grupp 1"
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*52"
+      ],
+      "classroomids": [
+        "*76"
+      ],
+      "studentids": [],
+      "colors": [
+        "#FF9966"
+      ],
+      "cellSlices": "10",
+      "cellOrder": 0
+    },
+    {
+      "type": "card",
+      "date": "2026-10-01",
+      "uniperiod": "8",
+      "starttime": "15:20",
+      "endtime": "16:05",
+      "subjectid": "*1",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        "Grupp 2"
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*20"
+      ],
+      "classroomids": [
+        "*49"
+      ],
+      "studentids": [],
+      "colors": [
+        "#66FF66"
+      ],
+      "cellSlices": "01",
+      "cellOrder": 1
+    },
+    {
+      "type": "card",
+      "date": "2026-10-01",
+      "uniperiod": "9",
+      "starttime": "16:10",
+      "endtime": "16:55",
+      "subjectid": "*54",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*52"
+      ],
+      "classroomids": [
+        "*76"
+      ],
+      "studentids": [],
+      "colors": [
+        "#FF9966"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-10-02",
+      "uniperiod": "4",
+      "starttime": "11:15",
+      "endtime": "12:00",
+      "subjectid": "*25",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*20"
+      ],
+      "classroomids": [
+        "*49"
+      ],
+      "studentids": [],
+      "colors": [
+        "#66FF66"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-10-02",
+      "uniperiod": "5",
+      "starttime": "12:25",
+      "endtime": "13:10",
+      "subjectid": "*18",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*85"
+      ],
+      "classroomids": [
+        "*7"
+      ],
+      "studentids": [],
+      "colors": [
+        "#339933"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-10-02",
+      "uniperiod": "6",
+      "starttime": "13:35",
+      "endtime": "14:20",
+      "subjectid": "*74",
+      "classids": [
+        "*38",
+        "*40",
+        "*16",
+        "*41"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*60"
+      ],
+      "classroomids": [
+        "*52"
+      ],
+      "studentids": [],
+      "colors": [
+        "#4040FF"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-10-02",
+      "uniperiod": "7",
+      "starttime": "14:30",
+      "endtime": "15:15",
+      "subjectid": "*39",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*57"
+      ],
+      "classroomids": [
+        "*57"
+      ],
+      "studentids": [],
+      "colors": [
+        "#660066"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-10-02",
+      "uniperiod": "8",
+      "starttime": "15:20",
+      "endtime": "16:05",
+      "subjectid": "*47",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*58"
+      ],
+      "classroomids": [
+        "*37"
+      ],
+      "studentids": [],
+      "colors": [
+        "#808080"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-10-02",
+      "uniperiod": "9",
+      "starttime": "16:10",
+      "endtime": "16:55",
+      "subjectid": "*28",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*21"
+      ],
+      "classroomids": [
+        "*55"
+      ],
+      "studentids": [],
+      "colors": [
+        "#339933"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-10-02",
+      "uniperiod": "10",
+      "starttime": "17:00",
+      "endtime": "18:35",
+      "subjectid": "*63",
+      "classids": [
+        "*38",
+        "*40"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*76"
+      ],
+      "classroomids": [
+        "*81"
+      ],
+      "studentids": [],
+      "colors": [
+        "#C0FFFF"
+      ],
+      "durationperiods": 2
+    },
+    {
+      "type": "card",
+      "date": "2026-10-05",
+      "uniperiod": "4",
+      "starttime": "11:15",
+      "endtime": "12:00",
+      "subjectid": "*55",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*61"
+      ],
+      "classroomids": [
+        "*64"
+      ],
+      "studentids": [],
+      "colors": [
+        "#008080"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-10-05",
+      "uniperiod": "5",
+      "starttime": "12:25",
+      "endtime": "13:10",
+      "subjectid": "*6",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*10"
+      ],
+      "classroomids": [
+        "*44"
+      ],
+      "studentids": [],
+      "colors": [
+        "#00FF00"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-10-05",
+      "uniperiod": "6",
+      "starttime": "13:35",
+      "endtime": "14:20",
+      "subjectid": "*39",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*57"
+      ],
+      "classroomids": [
+        "*57"
+      ],
+      "studentids": [],
+      "colors": [
+        "#660066"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-10-05",
+      "uniperiod": "7",
+      "starttime": "14:30",
+      "endtime": "15:15",
+      "subjectid": "*25",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*20"
+      ],
+      "classroomids": [
+        "*49"
+      ],
+      "studentids": [],
+      "colors": [
+        "#66FF66"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-10-05",
+      "uniperiod": "8",
+      "starttime": "15:20",
+      "endtime": "16:05",
+      "subjectid": "*80",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*20"
+      ],
+      "classroomids": [
+        "*49"
+      ],
+      "studentids": [],
+      "colors": [
+        "#66FF66"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-10-05",
+      "uniperiod": "9",
+      "starttime": "16:10",
+      "endtime": "16:55",
+      "subjectid": "*71",
+      "classids": [
+        "*38",
+        "*40",
+        "*16",
+        "*41",
+        "*9",
+        "*4",
+        "*7"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*82"
+      ],
+      "classroomids": [
+        "*45"
+      ],
+      "studentids": [],
+      "colors": [
+        "#33CCFF"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-10-05",
+      "uniperiod": "10",
+      "starttime": "17:00",
+      "endtime": "19:25",
+      "subjectid": "*72",
+      "classids": [
+        "*38",
+        "*40",
+        "*16",
+        "*41"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*103",
+        "*104"
+      ],
+      "classroomids": [],
+      "studentids": [],
+      "colors": [
+        "#CC0000",
+        "#666666"
+      ],
+      "durationperiods": 3
+    },
+    {
+      "type": "card",
+      "date": "2026-10-06",
+      "uniperiod": "1",
+      "starttime": "08:15",
+      "endtime": "09:00",
+      "subjectid": "*53",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*76"
+      ],
+      "classroomids": [
+        "*25"
+      ],
+      "studentids": [],
+      "colors": [
+        "#C0FFFF"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-10-06",
+      "uniperiod": "2",
+      "starttime": "09:10",
+      "endtime": "09:55",
+      "subjectid": "*47",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*58"
+      ],
+      "classroomids": [
+        "*37"
+      ],
+      "studentids": [],
+      "colors": [
+        "#808080"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-10-06",
+      "uniperiod": "3",
+      "starttime": "10:05",
+      "endtime": "10:50",
+      "subjectid": "*54",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*52"
+      ],
+      "classroomids": [
+        "*76"
+      ],
+      "studentids": [],
+      "colors": [
+        "#FF9966"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-10-06",
+      "uniperiod": "4",
+      "starttime": "11:15",
+      "endtime": "12:00",
+      "subjectid": "*47",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*58"
+      ],
+      "classroomids": [
+        "*37"
+      ],
+      "studentids": [],
+      "colors": [
+        "#808080"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-10-06",
+      "uniperiod": "5",
+      "starttime": "12:25",
+      "endtime": "13:10",
+      "subjectid": "*18",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*85"
+      ],
+      "classroomids": [
+        "*36"
+      ],
+      "studentids": [],
+      "colors": [
+        "#339933"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-10-06",
+      "uniperiod": "6",
+      "starttime": "13:35",
+      "endtime": "14:20",
+      "subjectid": "*29",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*72"
+      ],
+      "classroomids": [
+        "*58"
+      ],
+      "studentids": [],
+      "colors": [
+        "#FFFFCC"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-10-06",
+      "uniperiod": "7",
+      "starttime": "14:30",
+      "endtime": "15:15",
+      "subjectid": "*39",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*57"
+      ],
+      "classroomids": [
+        "*57"
+      ],
+      "studentids": [],
+      "colors": [
+        "#660066"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-10-06",
+      "uniperiod": "8",
+      "starttime": "15:20",
+      "endtime": "16:05",
+      "subjectid": "*16",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*82"
+      ],
+      "classroomids": [
+        "*45"
+      ],
+      "studentids": [],
+      "colors": [
+        "#33CCFF"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-10-06",
+      "uniperiod": "9",
+      "starttime": "16:10",
+      "endtime": "16:55",
+      "subjectid": "*29",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*72"
+      ],
+      "classroomids": [
+        "*58"
+      ],
+      "studentids": [],
+      "colors": [
+        "#FFFFCC"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-10-07",
+      "uniperiod": "1",
+      "starttime": "08:15",
+      "endtime": "09:00",
+      "subjectid": "*61",
+      "classids": [
+        "*38",
+        "*40",
+        "*16",
+        "*41"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*41"
+      ],
+      "classroomids": [
+        "*56"
+      ],
+      "studentids": [],
+      "colors": [
+        "#000080"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-10-07",
+      "uniperiod": "2",
+      "starttime": "09:10",
+      "endtime": "09:55",
+      "subjectid": "*38",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*92"
+      ],
+      "classroomids": [
+        "*54"
+      ],
+      "studentids": [],
+      "colors": [
+        "#009933"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-10-07",
+      "uniperiod": "3",
+      "starttime": "10:05",
+      "endtime": "10:50",
+      "subjectid": "*22",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*20"
+      ],
+      "classroomids": [
+        "*49"
+      ],
+      "studentids": [],
+      "colors": [
+        "#66FF66"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-10-07",
+      "uniperiod": "4",
+      "starttime": "11:15",
+      "endtime": "12:00",
+      "subjectid": "*47",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*58"
+      ],
+      "classroomids": [
+        "*37"
+      ],
+      "studentids": [],
+      "colors": [
+        "#808080"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-10-07",
+      "uniperiod": "5",
+      "starttime": "12:25",
+      "endtime": "13:10",
+      "subjectid": "*56",
+      "classids": [
+        "*38",
+        "*40",
+        "*16",
+        "*41"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*88"
+      ],
+      "classroomids": [
+        "*61"
+      ],
+      "studentids": [],
+      "colors": [
+        "#00CC99"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-10-07",
+      "uniperiod": "6",
+      "starttime": "13:35",
+      "endtime": "14:20",
+      "subjectid": "*68",
+      "classids": [
+        "*38",
+        "*40",
+        "*16",
+        "*41"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*60"
+      ],
+      "classroomids": [
+        "*52"
+      ],
+      "studentids": [],
+      "colors": [
+        "#4040FF"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-10-07",
+      "uniperiod": "7",
+      "starttime": "14:30",
+      "endtime": "15:15",
+      "subjectid": "*13",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        "Grupp 1"
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*52"
+      ],
+      "classroomids": [
+        "*59"
+      ],
+      "studentids": [],
+      "colors": [
+        "#FF9966"
+      ],
+      "cellSlices": "10",
+      "cellOrder": 0
+    },
+    {
+      "type": "card",
+      "date": "2026-10-07",
+      "uniperiod": "7",
+      "starttime": "14:30",
+      "endtime": "15:15",
+      "subjectid": "*1",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        "Grupp 2"
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*20"
+      ],
+      "classroomids": [
+        "*49"
+      ],
+      "studentids": [],
+      "colors": [
+        "#66FF66"
+      ],
+      "cellSlices": "01",
+      "cellOrder": 1
+    },
+    {
+      "type": "card",
+      "date": "2026-10-07",
+      "uniperiod": "8",
+      "starttime": "15:20",
+      "endtime": "16:05",
+      "subjectid": "*1",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        "Grupp 1"
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*20"
+      ],
+      "classroomids": [
+        "*49"
+      ],
+      "studentids": [],
+      "colors": [
+        "#66FF66"
+      ],
+      "cellSlices": "10",
+      "cellOrder": 0
+    },
+    {
+      "type": "card",
+      "date": "2026-10-07",
+      "uniperiod": "8",
+      "starttime": "15:20",
+      "endtime": "16:05",
+      "subjectid": "*13",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        "Grupp 2"
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*52"
+      ],
+      "classroomids": [
+        "*76"
+      ],
+      "studentids": [],
+      "colors": [
+        "#FF9966"
+      ],
+      "cellSlices": "01",
+      "cellOrder": 1
+    },
+    {
+      "type": "card",
+      "date": "2026-10-07",
+      "uniperiod": "9",
+      "starttime": "16:10",
+      "endtime": "16:55",
+      "subjectid": "*73",
+      "classids": [
+        "*38",
+        "*40",
+        "*16",
+        "*41"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*41"
+      ],
+      "classroomids": [
+        "*56"
+      ],
+      "studentids": [],
+      "colors": [
+        "#000080"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-10-08",
+      "uniperiod": "3",
+      "starttime": "10:05",
+      "endtime": "10:50",
+      "subjectid": "*38",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*92"
+      ],
+      "classroomids": [
+        "*55"
+      ],
+      "studentids": [],
+      "colors": [
+        "#009933"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-10-08",
+      "uniperiod": "4",
+      "starttime": "11:15",
+      "endtime": "12:00",
+      "subjectid": "*47",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*58"
+      ],
+      "classroomids": [
+        "*37"
+      ],
+      "studentids": [],
+      "colors": [
+        "#808080"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-10-08",
+      "uniperiod": "5",
+      "starttime": "12:25",
+      "endtime": "14:20",
+      "subjectid": "*5",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*38"
+      ],
+      "classroomids": [
+        "*79"
+      ],
+      "studentids": [],
+      "colors": [
+        "#9900FF"
+      ],
+      "durationperiods": 2
+    },
+    {
+      "type": "card",
+      "date": "2026-10-08",
+      "uniperiod": "7",
+      "starttime": "14:30",
+      "endtime": "15:15",
+      "subjectid": "*1",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        "Grupp 1"
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*20"
+      ],
+      "classroomids": [
+        "*49"
+      ],
+      "studentids": [],
+      "colors": [
+        "#66FF66"
+      ],
+      "cellSlices": "10",
+      "cellOrder": 0
+    },
+    {
+      "type": "card",
+      "date": "2026-10-08",
+      "uniperiod": "7",
+      "starttime": "14:30",
+      "endtime": "15:15",
+      "subjectid": "*13",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        "Grupp 2"
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*52"
+      ],
+      "classroomids": [
+        "*76"
+      ],
+      "studentids": [],
+      "colors": [
+        "#FF9966"
+      ],
+      "cellSlices": "01",
+      "cellOrder": 1
+    },
+    {
+      "type": "card",
+      "date": "2026-10-08",
+      "uniperiod": "8",
+      "starttime": "15:20",
+      "endtime": "16:05",
+      "subjectid": "*13",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        "Grupp 1"
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*52"
+      ],
+      "classroomids": [
+        "*76"
+      ],
+      "studentids": [],
+      "colors": [
+        "#FF9966"
+      ],
+      "cellSlices": "10",
+      "cellOrder": 0
+    },
+    {
+      "type": "card",
+      "date": "2026-10-08",
+      "uniperiod": "8",
+      "starttime": "15:20",
+      "endtime": "16:05",
+      "subjectid": "*1",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        "Grupp 2"
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*20"
+      ],
+      "classroomids": [
+        "*49"
+      ],
+      "studentids": [],
+      "colors": [
+        "#66FF66"
+      ],
+      "cellSlices": "01",
+      "cellOrder": 1
+    },
+    {
+      "type": "card",
+      "date": "2026-10-08",
+      "uniperiod": "9",
+      "starttime": "16:10",
+      "endtime": "16:55",
+      "subjectid": "*54",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*52"
+      ],
+      "classroomids": [
+        "*76"
+      ],
+      "studentids": [],
+      "colors": [
+        "#FF9966"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-10-09",
+      "uniperiod": "4",
+      "starttime": "11:15",
+      "endtime": "12:00",
+      "subjectid": "*25",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*20"
+      ],
+      "classroomids": [
+        "*49"
+      ],
+      "studentids": [],
+      "colors": [
+        "#66FF66"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-10-09",
+      "uniperiod": "5",
+      "starttime": "12:25",
+      "endtime": "13:10",
+      "subjectid": "*18",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*85"
+      ],
+      "classroomids": [
+        "*7"
+      ],
+      "studentids": [],
+      "colors": [
+        "#339933"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-10-09",
+      "uniperiod": "6",
+      "starttime": "13:35",
+      "endtime": "14:20",
+      "subjectid": "*74",
+      "classids": [
+        "*38",
+        "*40",
+        "*16",
+        "*41"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*60"
+      ],
+      "classroomids": [
+        "*52"
+      ],
+      "studentids": [],
+      "colors": [
+        "#4040FF"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-10-09",
+      "uniperiod": "7",
+      "starttime": "14:30",
+      "endtime": "15:15",
+      "subjectid": "*39",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*57"
+      ],
+      "classroomids": [
+        "*57"
+      ],
+      "studentids": [],
+      "colors": [
+        "#660066"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-10-09",
+      "uniperiod": "8",
+      "starttime": "15:20",
+      "endtime": "16:05",
+      "subjectid": "*47",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*58"
+      ],
+      "classroomids": [
+        "*37"
+      ],
+      "studentids": [],
+      "colors": [
+        "#808080"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-10-09",
+      "uniperiod": "9",
+      "starttime": "16:10",
+      "endtime": "16:55",
+      "subjectid": "*28",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*21"
+      ],
+      "classroomids": [
+        "*55"
+      ],
+      "studentids": [],
+      "colors": [
+        "#339933"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-10-09",
+      "uniperiod": "10",
+      "starttime": "17:00",
+      "endtime": "18:35",
+      "subjectid": "*63",
+      "classids": [
+        "*38",
+        "*40"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*76"
+      ],
+      "classroomids": [
+        "*81"
+      ],
+      "studentids": [],
+      "colors": [
+        "#C0FFFF"
+      ],
+      "durationperiods": 2
+    },
+    {
+      "type": "card",
+      "date": "2026-10-12",
+      "uniperiod": "4",
+      "starttime": "11:15",
+      "endtime": "12:00",
+      "subjectid": "*55",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*61"
+      ],
+      "classroomids": [
+        "*64"
+      ],
+      "studentids": [],
+      "colors": [
+        "#008080"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-10-12",
+      "uniperiod": "5",
+      "starttime": "12:25",
+      "endtime": "13:10",
+      "subjectid": "*6",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*10"
+      ],
+      "classroomids": [
+        "*44"
+      ],
+      "studentids": [],
+      "colors": [
+        "#00FF00"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-10-12",
+      "uniperiod": "6",
+      "starttime": "13:35",
+      "endtime": "14:20",
+      "subjectid": "*39",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*57"
+      ],
+      "classroomids": [
+        "*57"
+      ],
+      "studentids": [],
+      "colors": [
+        "#660066"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-10-12",
+      "uniperiod": "7",
+      "starttime": "14:30",
+      "endtime": "15:15",
+      "subjectid": "*25",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*20"
+      ],
+      "classroomids": [
+        "*49"
+      ],
+      "studentids": [],
+      "colors": [
+        "#66FF66"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-10-12",
+      "uniperiod": "8",
+      "starttime": "15:20",
+      "endtime": "16:05",
+      "subjectid": "*80",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*20"
+      ],
+      "classroomids": [
+        "*49"
+      ],
+      "studentids": [],
+      "colors": [
+        "#66FF66"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-10-12",
+      "uniperiod": "9",
+      "starttime": "16:10",
+      "endtime": "16:55",
+      "subjectid": "*71",
+      "classids": [
+        "*38",
+        "*40",
+        "*16",
+        "*41",
+        "*9",
+        "*4",
+        "*7"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*82"
+      ],
+      "classroomids": [
+        "*45"
+      ],
+      "studentids": [],
+      "colors": [
+        "#33CCFF"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-10-12",
+      "uniperiod": "10",
+      "starttime": "17:00",
+      "endtime": "19:25",
+      "subjectid": "*72",
+      "classids": [
+        "*38",
+        "*40",
+        "*16",
+        "*41"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*103",
+        "*104"
+      ],
+      "classroomids": [],
+      "studentids": [],
+      "colors": [
+        "#CC0000",
+        "#666666"
+      ],
+      "durationperiods": 3
+    },
+    {
+      "type": "card",
+      "date": "2026-10-13",
+      "uniperiod": "1",
+      "starttime": "08:15",
+      "endtime": "09:00",
+      "subjectid": "*53",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*76"
+      ],
+      "classroomids": [
+        "*25"
+      ],
+      "studentids": [],
+      "colors": [
+        "#C0FFFF"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-10-13",
+      "uniperiod": "2",
+      "starttime": "09:10",
+      "endtime": "09:55",
+      "subjectid": "*47",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*58"
+      ],
+      "classroomids": [
+        "*37"
+      ],
+      "studentids": [],
+      "colors": [
+        "#808080"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-10-13",
+      "uniperiod": "3",
+      "starttime": "10:05",
+      "endtime": "10:50",
+      "subjectid": "*54",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*52"
+      ],
+      "classroomids": [
+        "*76"
+      ],
+      "studentids": [],
+      "colors": [
+        "#FF9966"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-10-13",
+      "uniperiod": "4",
+      "starttime": "11:15",
+      "endtime": "12:00",
+      "subjectid": "*47",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*58"
+      ],
+      "classroomids": [
+        "*37"
+      ],
+      "studentids": [],
+      "colors": [
+        "#808080"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-10-13",
+      "uniperiod": "5",
+      "starttime": "12:25",
+      "endtime": "13:10",
+      "subjectid": "*18",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*85"
+      ],
+      "classroomids": [
+        "*36"
+      ],
+      "studentids": [],
+      "colors": [
+        "#339933"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-10-13",
+      "uniperiod": "6",
+      "starttime": "13:35",
+      "endtime": "14:20",
+      "subjectid": "*29",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*72"
+      ],
+      "classroomids": [
+        "*58"
+      ],
+      "studentids": [],
+      "colors": [
+        "#FFFFCC"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-10-13",
+      "uniperiod": "7",
+      "starttime": "14:30",
+      "endtime": "15:15",
+      "subjectid": "*39",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*57"
+      ],
+      "classroomids": [
+        "*57"
+      ],
+      "studentids": [],
+      "colors": [
+        "#660066"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-10-13",
+      "uniperiod": "8",
+      "starttime": "15:20",
+      "endtime": "16:05",
+      "subjectid": "*16",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*82"
+      ],
+      "classroomids": [
+        "*45"
+      ],
+      "studentids": [],
+      "colors": [
+        "#33CCFF"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-10-13",
+      "uniperiod": "9",
+      "starttime": "16:10",
+      "endtime": "16:55",
+      "subjectid": "*29",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*72"
+      ],
+      "classroomids": [
+        "*58"
+      ],
+      "studentids": [],
+      "colors": [
+        "#FFFFCC"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-10-14",
+      "uniperiod": "1",
+      "starttime": "08:15",
+      "endtime": "09:00",
+      "subjectid": "*61",
+      "classids": [
+        "*38",
+        "*40",
+        "*16",
+        "*41"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*41"
+      ],
+      "classroomids": [
+        "*56"
+      ],
+      "studentids": [],
+      "colors": [
+        "#000080"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-10-14",
+      "uniperiod": "2",
+      "starttime": "09:10",
+      "endtime": "09:55",
+      "subjectid": "*38",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*92"
+      ],
+      "classroomids": [
+        "*54"
+      ],
+      "studentids": [],
+      "colors": [
+        "#009933"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-10-14",
+      "uniperiod": "3",
+      "starttime": "10:05",
+      "endtime": "10:50",
+      "subjectid": "*22",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*20"
+      ],
+      "classroomids": [
+        "*49"
+      ],
+      "studentids": [],
+      "colors": [
+        "#66FF66"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-10-14",
+      "uniperiod": "4",
+      "starttime": "11:15",
+      "endtime": "12:00",
+      "subjectid": "*47",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*58"
+      ],
+      "classroomids": [
+        "*37"
+      ],
+      "studentids": [],
+      "colors": [
+        "#808080"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-10-14",
+      "uniperiod": "5",
+      "starttime": "12:25",
+      "endtime": "13:10",
+      "subjectid": "*56",
+      "classids": [
+        "*38",
+        "*40",
+        "*16",
+        "*41"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*88"
+      ],
+      "classroomids": [
+        "*61"
+      ],
+      "studentids": [],
+      "colors": [
+        "#00CC99"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-10-14",
+      "uniperiod": "6",
+      "starttime": "13:35",
+      "endtime": "14:20",
+      "subjectid": "*68",
+      "classids": [
+        "*38",
+        "*40",
+        "*16",
+        "*41"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*60"
+      ],
+      "classroomids": [
+        "*52"
+      ],
+      "studentids": [],
+      "colors": [
+        "#4040FF"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-10-14",
+      "uniperiod": "7",
+      "starttime": "14:30",
+      "endtime": "15:15",
+      "subjectid": "*13",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        "Grupp 1"
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*52"
+      ],
+      "classroomids": [
+        "*59"
+      ],
+      "studentids": [],
+      "colors": [
+        "#FF9966"
+      ],
+      "cellSlices": "10",
+      "cellOrder": 0
+    },
+    {
+      "type": "card",
+      "date": "2026-10-14",
+      "uniperiod": "7",
+      "starttime": "14:30",
+      "endtime": "15:15",
+      "subjectid": "*1",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        "Grupp 2"
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*20"
+      ],
+      "classroomids": [
+        "*49"
+      ],
+      "studentids": [],
+      "colors": [
+        "#66FF66"
+      ],
+      "cellSlices": "01",
+      "cellOrder": 1
+    },
+    {
+      "type": "card",
+      "date": "2026-10-14",
+      "uniperiod": "8",
+      "starttime": "15:20",
+      "endtime": "16:05",
+      "subjectid": "*1",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        "Grupp 1"
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*20"
+      ],
+      "classroomids": [
+        "*49"
+      ],
+      "studentids": [],
+      "colors": [
+        "#66FF66"
+      ],
+      "cellSlices": "10",
+      "cellOrder": 0
+    },
+    {
+      "type": "card",
+      "date": "2026-10-14",
+      "uniperiod": "8",
+      "starttime": "15:20",
+      "endtime": "16:05",
+      "subjectid": "*13",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        "Grupp 2"
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*52"
+      ],
+      "classroomids": [
+        "*76"
+      ],
+      "studentids": [],
+      "colors": [
+        "#FF9966"
+      ],
+      "cellSlices": "01",
+      "cellOrder": 1
+    },
+    {
+      "type": "card",
+      "date": "2026-10-14",
+      "uniperiod": "9",
+      "starttime": "16:10",
+      "endtime": "16:55",
+      "subjectid": "*73",
+      "classids": [
+        "*38",
+        "*40",
+        "*16",
+        "*41"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*41"
+      ],
+      "classroomids": [
+        "*56"
+      ],
+      "studentids": [],
+      "colors": [
+        "#000080"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-10-15",
+      "uniperiod": "3",
+      "starttime": "10:05",
+      "endtime": "10:50",
+      "subjectid": "*38",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*92"
+      ],
+      "classroomids": [
+        "*55"
+      ],
+      "studentids": [],
+      "colors": [
+        "#009933"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-10-15",
+      "uniperiod": "4",
+      "starttime": "11:15",
+      "endtime": "12:00",
+      "subjectid": "*47",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*58"
+      ],
+      "classroomids": [
+        "*37"
+      ],
+      "studentids": [],
+      "colors": [
+        "#808080"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-10-15",
+      "uniperiod": "5",
+      "starttime": "12:25",
+      "endtime": "14:20",
+      "subjectid": "*5",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*38"
+      ],
+      "classroomids": [
+        "*79"
+      ],
+      "studentids": [],
+      "colors": [
+        "#9900FF"
+      ],
+      "durationperiods": 2
+    },
+    {
+      "type": "card",
+      "date": "2026-10-15",
+      "uniperiod": "7",
+      "starttime": "14:30",
+      "endtime": "15:15",
+      "subjectid": "*1",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        "Grupp 1"
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*20"
+      ],
+      "classroomids": [
+        "*49"
+      ],
+      "studentids": [],
+      "colors": [
+        "#66FF66"
+      ],
+      "cellSlices": "10",
+      "cellOrder": 0
+    },
+    {
+      "type": "card",
+      "date": "2026-10-15",
+      "uniperiod": "7",
+      "starttime": "14:30",
+      "endtime": "15:15",
+      "subjectid": "*13",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        "Grupp 2"
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*52"
+      ],
+      "classroomids": [
+        "*76"
+      ],
+      "studentids": [],
+      "colors": [
+        "#FF9966"
+      ],
+      "cellSlices": "01",
+      "cellOrder": 1
+    },
+    {
+      "type": "card",
+      "date": "2026-10-15",
+      "uniperiod": "8",
+      "starttime": "15:20",
+      "endtime": "16:05",
+      "subjectid": "*13",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        "Grupp 1"
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*52"
+      ],
+      "classroomids": [
+        "*76"
+      ],
+      "studentids": [],
+      "colors": [
+        "#FF9966"
+      ],
+      "cellSlices": "10",
+      "cellOrder": 0
+    },
+    {
+      "type": "card",
+      "date": "2026-10-15",
+      "uniperiod": "8",
+      "starttime": "15:20",
+      "endtime": "16:05",
+      "subjectid": "*1",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        "Grupp 2"
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*20"
+      ],
+      "classroomids": [
+        "*49"
+      ],
+      "studentids": [],
+      "colors": [
+        "#66FF66"
+      ],
+      "cellSlices": "01",
+      "cellOrder": 1
+    },
+    {
+      "type": "card",
+      "date": "2026-10-15",
+      "uniperiod": "9",
+      "starttime": "16:10",
+      "endtime": "16:55",
+      "subjectid": "*54",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*52"
+      ],
+      "classroomids": [
+        "*76"
+      ],
+      "studentids": [],
+      "colors": [
+        "#FF9966"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-10-16",
+      "uniperiod": "4",
+      "starttime": "11:15",
+      "endtime": "12:00",
+      "subjectid": "*25",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*20"
+      ],
+      "classroomids": [
+        "*49"
+      ],
+      "studentids": [],
+      "colors": [
+        "#66FF66"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-10-16",
+      "uniperiod": "5",
+      "starttime": "12:25",
+      "endtime": "13:10",
+      "subjectid": "*18",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*85"
+      ],
+      "classroomids": [
+        "*7"
+      ],
+      "studentids": [],
+      "colors": [
+        "#339933"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-10-16",
+      "uniperiod": "6",
+      "starttime": "13:35",
+      "endtime": "14:20",
+      "subjectid": "*74",
+      "classids": [
+        "*38",
+        "*40",
+        "*16",
+        "*41"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*60"
+      ],
+      "classroomids": [
+        "*52"
+      ],
+      "studentids": [],
+      "colors": [
+        "#4040FF"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-10-16",
+      "uniperiod": "7",
+      "starttime": "14:30",
+      "endtime": "15:15",
+      "subjectid": "*39",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*57"
+      ],
+      "classroomids": [
+        "*57"
+      ],
+      "studentids": [],
+      "colors": [
+        "#660066"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-10-16",
+      "uniperiod": "8",
+      "starttime": "15:20",
+      "endtime": "16:05",
+      "subjectid": "*47",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*58"
+      ],
+      "classroomids": [
+        "*37"
+      ],
+      "studentids": [],
+      "colors": [
+        "#808080"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-10-16",
+      "uniperiod": "9",
+      "starttime": "16:10",
+      "endtime": "16:55",
+      "subjectid": "*28",
+      "classids": [
+        "*38"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*21"
+      ],
+      "classroomids": [
+        "*55"
+      ],
+      "studentids": [],
+      "colors": [
+        "#339933"
+      ]
+    },
+    {
+      "type": "card",
+      "date": "2026-10-16",
+      "uniperiod": "10",
+      "starttime": "17:00",
+      "endtime": "18:35",
+      "subjectid": "*63",
+      "classids": [
+        "*38",
+        "*40"
+      ],
+      "groupnames": [
+        ""
+      ],
+      "igroupid": "",
+      "teacherids": [
+        "*76"
+      ],
+      "classroomids": [
+        "*81"
+      ],
+      "studentids": [],
+      "colors": [
+        "#C0FFFF"
+      ],
+      "durationperiods": 2
+    }
+  ],
+  "substitutions": {
+    "2026-09-28": "<div class=\"_RSS481\"><style type=\"text/css\">._RSS481 .signature {font-Size:20px;float:right;border-Bottom:1px dashed #c0c0c0;width:100px;margin-Right:4px;margin-Left:10px}\n._RSS481 .row {display:flex;flex-Direction:row;align-Items:baseline;font-Size:12px;margin-Bottom:1px}\n._RSS481 .period {font-Size:16px;text-Align:center;flex-Grow:0;margin-Right:10px}\n._RSS481 .period>span {white-Space:pre;display:inline-block;min-Width:30px}\n._RSS481 .info {flex:1}\n._RSS481 .section {margin-Bottom:15px;border:1px solid #c0c0c0;border-Radius:6px;padding:4px}\n._RSS481 .header {font-Size:20px;margin-Bottom:5px;font-Weight:bold;border:2px solid #c0c0c0;border-Radius:6px;padding:4px;display:inline-block}\n._RSS481 .rows {padding-Left:5px}\n._RSS481 .rows .signature {font-Size:inherit}</style><div data-date=\"2026-09-28\"><div style=\"height:15px;flex:none\"></div><div class=\"section print-nobreak\"><div class=\"rows\"><div class=\"row nosubst\"><div class=\"period\"><span class=\"print-font-resizable\"></span></div><div class=\"info\"><span class=\"print-font-resizable\">Sellel päeval pole tühistatud tunde või asendusi.</span></div></div></div></div></div></div>",
+    "2026-09-29": "<div class=\"_RSS491\"><style type=\"text/css\">._RSS491 .signature {font-Size:20px;float:right;border-Bottom:1px dashed #c0c0c0;width:100px;margin-Right:4px;margin-Left:10px}\n._RSS491 .row {display:flex;flex-Direction:row;align-Items:baseline;font-Size:12px;margin-Bottom:1px}\n._RSS491 .period {font-Size:16px;text-Align:center;flex-Grow:0;margin-Right:10px}\n._RSS491 .period>span {white-Space:pre;display:inline-block;min-Width:30px}\n._RSS491 .info {flex:1}\n._RSS491 .section {margin-Bottom:15px;border:1px solid #c0c0c0;border-Radius:6px;padding:4px}\n._RSS491 .header {font-Size:20px;margin-Bottom:5px;font-Weight:bold;border:2px solid #c0c0c0;border-Radius:6px;padding:4px;display:inline-block}\n._RSS491 .rows {padding-Left:5px}\n._RSS491 .rows .signature {font-Size:inherit}</style><div data-date=\"2026-09-29\"><div style=\"height:15px;flex:none\"></div><div class=\"section print-nobreak\"><div class=\"rows\"><div class=\"row nosubst\"><div class=\"period\"><span class=\"print-font-resizable\"></span></div><div class=\"info\"><span class=\"print-font-resizable\">Sellel päeval pole tühistatud tunde või asendusi.</span></div></div></div></div></div></div>",
+    "2026-09-30": "<div class=\"_RSS489\"><style type=\"text/css\">._RSS489 .signature {font-Size:20px;float:right;border-Bottom:1px dashed #c0c0c0;width:100px;margin-Right:4px;margin-Left:10px}\n._RSS489 .row {display:flex;flex-Direction:row;align-Items:baseline;font-Size:12px;margin-Bottom:1px}\n._RSS489 .period {font-Size:16px;text-Align:center;flex-Grow:0;margin-Right:10px}\n._RSS489 .period>span {white-Space:pre;display:inline-block;min-Width:30px}\n._RSS489 .info {flex:1}\n._RSS489 .section {margin-Bottom:15px;border:1px solid #c0c0c0;border-Radius:6px;padding:4px}\n._RSS489 .header {font-Size:20px;margin-Bottom:5px;font-Weight:bold;border:2px solid #c0c0c0;border-Radius:6px;padding:4px;display:inline-block}\n._RSS489 .rows {padding-Left:5px}\n._RSS489 .rows .signature {font-Size:inherit}</style><div data-date=\"2026-09-30\"><div style=\"height:15px;flex:none\"></div><div class=\"section print-nobreak\"><div class=\"rows\"><div class=\"row nosubst\"><div class=\"period\"><span class=\"print-font-resizable\"></span></div><div class=\"info\"><span class=\"print-font-resizable\">Sellel päeval pole tühistatud tunde või asendusi.</span></div></div></div></div></div></div>",
+    "2026-10-01": "<div class=\"_RSS483\"><style type=\"text/css\">._RSS483 .signature {font-Size:20px;float:right;border-Bottom:1px dashed #c0c0c0;width:100px;margin-Right:4px;margin-Left:10px}\n._RSS483 .row {display:flex;flex-Direction:row;align-Items:baseline;font-Size:12px;margin-Bottom:1px}\n._RSS483 .period {font-Size:16px;text-Align:center;flex-Grow:0;margin-Right:10px}\n._RSS483 .period>span {white-Space:pre;display:inline-block;min-Width:30px}\n._RSS483 .info {flex:1}\n._RSS483 .section {margin-Bottom:15px;border:1px solid #c0c0c0;border-Radius:6px;padding:4px}\n._RSS483 .header {font-Size:20px;margin-Bottom:5px;font-Weight:bold;border:2px solid #c0c0c0;border-Radius:6px;padding:4px;display:inline-block}\n._RSS483 .rows {padding-Left:5px}\n._RSS483 .rows .signature {font-Size:inherit}</style><div data-date=\"2026-10-01\"><div style=\"height:15px;flex:none\"></div><div class=\"section print-nobreak\"><div class=\"rows\"><div class=\"row nosubst\"><div class=\"period\"><span class=\"print-font-resizable\"></span></div><div class=\"info\"><span class=\"print-font-resizable\">Sellel päeval pole tühistatud tunde või asendusi.</span></div></div></div></div></div></div>",
+    "2026-10-02": "<div class=\"_RSS487\"><style type=\"text/css\">._RSS487 .signature {font-Size:20px;float:right;border-Bottom:1px dashed #c0c0c0;width:100px;margin-Right:4px;margin-Left:10px}\n._RSS487 .row {display:flex;flex-Direction:row;align-Items:baseline;font-Size:12px;margin-Bottom:1px}\n._RSS487 .period {font-Size:16px;text-Align:center;flex-Grow:0;margin-Right:10px}\n._RSS487 .period>span {white-Space:pre;display:inline-block;min-Width:30px}\n._RSS487 .info {flex:1}\n._RSS487 .section {margin-Bottom:15px;border:1px solid #c0c0c0;border-Radius:6px;padding:4px}\n._RSS487 .header {font-Size:20px;margin-Bottom:5px;font-Weight:bold;border:2px solid #c0c0c0;border-Radius:6px;padding:4px;display:inline-block}\n._RSS487 .rows {padding-Left:5px}\n._RSS487 .rows .signature {font-Size:inherit}</style><div data-date=\"2026-10-02\"><div style=\"height:15px;flex:none\"></div><div class=\"section print-nobreak\"><div class=\"rows\"><div class=\"row nosubst\"><div class=\"period\"><span class=\"print-font-resizable\"></span></div><div class=\"info\"><span class=\"print-font-resizable\">Sellel päeval pole tühistatud tunde või asendusi.</span></div></div></div></div></div></div>",
+    "2026-10-05": "<div class=\"_RSS486\"><style type=\"text/css\">._RSS486 .signature {font-Size:20px;float:right;border-Bottom:1px dashed #c0c0c0;width:100px;margin-Right:4px;margin-Left:10px}\n._RSS486 .row {display:flex;flex-Direction:row;align-Items:baseline;font-Size:12px;margin-Bottom:1px}\n._RSS486 .period {font-Size:16px;text-Align:center;flex-Grow:0;margin-Right:10px}\n._RSS486 .period>span {white-Space:pre;display:inline-block;min-Width:30px}\n._RSS486 .info {flex:1}\n._RSS486 .section {margin-Bottom:15px;border:1px solid #c0c0c0;border-Radius:6px;padding:4px}\n._RSS486 .header {font-Size:20px;margin-Bottom:5px;font-Weight:bold;border:2px solid #c0c0c0;border-Radius:6px;padding:4px;display:inline-block}\n._RSS486 .rows {padding-Left:5px}\n._RSS486 .rows .signature {font-Size:inherit}</style><div data-date=\"2026-10-05\"><div style=\"height:15px;flex:none\"></div><div class=\"section print-nobreak\"><div class=\"rows\"><div class=\"row nosubst\"><div class=\"period\"><span class=\"print-font-resizable\"></span></div><div class=\"info\"><span class=\"print-font-resizable\">Sellel päeval pole tühistatud tunde või asendusi.</span></div></div></div></div></div></div>",
+    "2026-10-06": "<div class=\"_RSS492\"><style type=\"text/css\">._RSS492 .signature {font-Size:20px;float:right;border-Bottom:1px dashed #c0c0c0;width:100px;margin-Right:4px;margin-Left:10px}\n._RSS492 .row {display:flex;flex-Direction:row;align-Items:baseline;font-Size:12px;margin-Bottom:1px}\n._RSS492 .period {font-Size:16px;text-Align:center;flex-Grow:0;margin-Right:10px}\n._RSS492 .period>span {white-Space:pre;display:inline-block;min-Width:30px}\n._RSS492 .info {flex:1}\n._RSS492 .section {margin-Bottom:15px;border:1px solid #c0c0c0;border-Radius:6px;padding:4px}\n._RSS492 .header {font-Size:20px;margin-Bottom:5px;font-Weight:bold;border:2px solid #c0c0c0;border-Radius:6px;padding:4px;display:inline-block}\n._RSS492 .rows {padding-Left:5px}\n._RSS492 .rows .signature {font-Size:inherit}</style><div data-date=\"2026-10-06\"><div style=\"height:15px;flex:none\"></div><div class=\"section print-nobreak\"><div class=\"rows\"><div class=\"row nosubst\"><div class=\"period\"><span class=\"print-font-resizable\"></span></div><div class=\"info\"><span class=\"print-font-resizable\">Sellel päeval pole tühistatud tunde või asendusi.</span></div></div></div></div></div></div>",
+    "2026-10-07": "<div class=\"_RSS482\"><style type=\"text/css\">._RSS482 .signature {font-Size:20px;float:right;border-Bottom:1px dashed #c0c0c0;width:100px;margin-Right:4px;margin-Left:10px}\n._RSS482 .row {display:flex;flex-Direction:row;align-Items:baseline;font-Size:12px;margin-Bottom:1px}\n._RSS482 .period {font-Size:16px;text-Align:center;flex-Grow:0;margin-Right:10px}\n._RSS482 .period>span {white-Space:pre;display:inline-block;min-Width:30px}\n._RSS482 .info {flex:1}\n._RSS482 .section {margin-Bottom:15px;border:1px solid #c0c0c0;border-Radius:6px;padding:4px}\n._RSS482 .header {font-Size:20px;margin-Bottom:5px;font-Weight:bold;border:2px solid #c0c0c0;border-Radius:6px;padding:4px;display:inline-block}\n._RSS482 .rows {padding-Left:5px}\n._RSS482 .rows .signature {font-Size:inherit}</style><div data-date=\"2026-10-07\"><div style=\"height:15px;flex:none\"></div><div class=\"section print-nobreak\"><div class=\"rows\"><div class=\"row nosubst\"><div class=\"period\"><span class=\"print-font-resizable\"></span></div><div class=\"info\"><span class=\"print-font-resizable\">Sellel päeval pole tühistatud tunde või asendusi.</span></div></div></div></div></div></div>",
+    "2026-10-08": "<div class=\"_RSS490\"><style type=\"text/css\">._RSS490 .signature {font-Size:20px;float:right;border-Bottom:1px dashed #c0c0c0;width:100px;margin-Right:4px;margin-Left:10px}\n._RSS490 .row {display:flex;flex-Direction:row;align-Items:baseline;font-Size:12px;margin-Bottom:1px}\n._RSS490 .period {font-Size:16px;text-Align:center;flex-Grow:0;margin-Right:10px}\n._RSS490 .period>span {white-Space:pre;display:inline-block;min-Width:30px}\n._RSS490 .info {flex:1}\n._RSS490 .section {margin-Bottom:15px;border:1px solid #c0c0c0;border-Radius:6px;padding:4px}\n._RSS490 .header {font-Size:20px;margin-Bottom:5px;font-Weight:bold;border:2px solid #c0c0c0;border-Radius:6px;padding:4px;display:inline-block}\n._RSS490 .rows {padding-Left:5px}\n._RSS490 .rows .signature {font-Size:inherit}</style><div data-date=\"2026-10-08\"><div style=\"height:15px;flex:none\"></div><div class=\"section print-nobreak\"><div class=\"rows\"><div class=\"row nosubst\"><div class=\"period\"><span class=\"print-font-resizable\"></span></div><div class=\"info\"><span class=\"print-font-resizable\">Sellel päeval pole tühistatud tunde või asendusi.</span></div></div></div></div></div></div>",
+    "2026-10-09": "<div class=\"_RSS484\"><style type=\"text/css\">._RSS484 .signature {font-Size:20px;float:right;border-Bottom:1px dashed #c0c0c0;width:100px;margin-Right:4px;margin-Left:10px}\n._RSS484 .row {display:flex;flex-Direction:row;align-Items:baseline;font-Size:12px;margin-Bottom:1px}\n._RSS484 .period {font-Size:16px;text-Align:center;flex-Grow:0;margin-Right:10px}\n._RSS484 .period>span {white-Space:pre;display:inline-block;min-Width:30px}\n._RSS484 .info {flex:1}\n._RSS484 .section {margin-Bottom:15px;border:1px solid #c0c0c0;border-Radius:6px;padding:4px}\n._RSS484 .header {font-Size:20px;margin-Bottom:5px;font-Weight:bold;border:2px solid #c0c0c0;border-Radius:6px;padding:4px;display:inline-block}\n._RSS484 .rows {padding-Left:5px}\n._RSS484 .rows .signature {font-Size:inherit}</style><div data-date=\"2026-10-09\"><div style=\"height:15px;flex:none\"></div><div class=\"section print-nobreak\"><div class=\"rows\"><div class=\"row nosubst\"><div class=\"period\"><span class=\"print-font-resizable\"></span></div><div class=\"info\"><span class=\"print-font-resizable\">Sellel päeval pole tühistatud tunde või asendusi.</span></div></div></div></div></div></div>",
+    "2026-10-12": "<div class=\"_RSS494\"><style type=\"text/css\">._RSS494 .signature {font-Size:20px;float:right;border-Bottom:1px dashed #c0c0c0;width:100px;margin-Right:4px;margin-Left:10px}\n._RSS494 .row {display:flex;flex-Direction:row;align-Items:baseline;font-Size:12px;margin-Bottom:1px}\n._RSS494 .period {font-Size:16px;text-Align:center;flex-Grow:0;margin-Right:10px}\n._RSS494 .period>span {white-Space:pre;display:inline-block;min-Width:30px}\n._RSS494 .info {flex:1}\n._RSS494 .section {margin-Bottom:15px;border:1px solid #c0c0c0;border-Radius:6px;padding:4px}\n._RSS494 .header {font-Size:20px;margin-Bottom:5px;font-Weight:bold;border:2px solid #c0c0c0;border-Radius:6px;padding:4px;display:inline-block}\n._RSS494 .rows {padding-Left:5px}\n._RSS494 .rows .signature {font-Size:inherit}</style><div data-date=\"2026-10-12\"><div style=\"height:15px;flex:none\"></div><div class=\"section print-nobreak\"><div class=\"rows\"><div class=\"row nosubst\"><div class=\"period\"><span class=\"print-font-resizable\"></span></div><div class=\"info\"><span class=\"print-font-resizable\">Sellel päeval pole tühistatud tunde või asendusi.</span></div></div></div></div></div></div>",
+    "2026-10-13": "<div class=\"_RSS493\"><style type=\"text/css\">._RSS493 .signature {font-Size:20px;float:right;border-Bottom:1px dashed #c0c0c0;width:100px;margin-Right:4px;margin-Left:10px}\n._RSS493 .row {display:flex;flex-Direction:row;align-Items:baseline;font-Size:12px;margin-Bottom:1px}\n._RSS493 .period {font-Size:16px;text-Align:center;flex-Grow:0;margin-Right:10px}\n._RSS493 .period>span {white-Space:pre;display:inline-block;min-Width:30px}\n._RSS493 .info {flex:1}\n._RSS493 .section {margin-Bottom:15px;border:1px solid #c0c0c0;border-Radius:6px;padding:4px}\n._RSS493 .header {font-Size:20px;margin-Bottom:5px;font-Weight:bold;border:2px solid #c0c0c0;border-Radius:6px;padding:4px;display:inline-block}\n._RSS493 .rows {padding-Left:5px}\n._RSS493 .rows .signature {font-Size:inherit}</style><div data-date=\"2026-10-13\"><div style=\"height:15px;flex:none\"></div><div class=\"section print-nobreak\"><div class=\"rows\"><div class=\"row nosubst\"><div class=\"period\"><span class=\"print-font-resizable\"></span></div><div class=\"info\"><span class=\"print-font-resizable\">Sellel päeval pole tühistatud tunde või asendusi.</span></div></div></div></div></div></div>",
+    "2026-10-14": "<div class=\"_RSS488\"><style type=\"text/css\">._RSS488 .signature {font-Size:20px;float:right;border-Bottom:1px dashed #c0c0c0;width:100px;margin-Right:4px;margin-Left:10px}\n._RSS488 .row {display:flex;flex-Direction:row;align-Items:baseline;font-Size:12px;margin-Bottom:1px}\n._RSS488 .period {font-Size:16px;text-Align:center;flex-Grow:0;margin-Right:10px}\n._RSS488 .period>span {white-Space:pre;display:inline-block;min-Width:30px}\n._RSS488 .info {flex:1}\n._RSS488 .section {margin-Bottom:15px;border:1px solid #c0c0c0;border-Radius:6px;padding:4px}\n._RSS488 .header {font-Size:20px;margin-Bottom:5px;font-Weight:bold;border:2px solid #c0c0c0;border-Radius:6px;padding:4px;display:inline-block}\n._RSS488 .rows {padding-Left:5px}\n._RSS488 .rows .signature {font-Size:inherit}</style><div data-date=\"2026-10-14\"><div style=\"height:15px;flex:none\"></div><div class=\"section print-nobreak\"><div class=\"rows\"><div class=\"row nosubst\"><div class=\"period\"><span class=\"print-font-resizable\"></span></div><div class=\"info\"><span class=\"print-font-resizable\">Sellel päeval pole tühistatud tunde või asendusi.</span></div></div></div></div></div></div>",
+    "2026-10-15": "<div class=\"_RSS485\"><style type=\"text/css\">._RSS485 .signature {font-Size:20px;float:right;border-Bottom:1px dashed #c0c0c0;width:100px;margin-Right:4px;margin-Left:10px}\n._RSS485 .row {display:flex;flex-Direction:row;align-Items:baseline;font-Size:12px;margin-Bottom:1px}\n._RSS485 .period {font-Size:16px;text-Align:center;flex-Grow:0;margin-Right:10px}\n._RSS485 .period>span {white-Space:pre;display:inline-block;min-Width:30px}\n._RSS485 .info {flex:1}\n._RSS485 .section {margin-Bottom:15px;border:1px solid #c0c0c0;border-Radius:6px;padding:4px}\n._RSS485 .header {font-Size:20px;margin-Bottom:5px;font-Weight:bold;border:2px solid #c0c0c0;border-Radius:6px;padding:4px;display:inline-block}\n._RSS485 .rows {padding-Left:5px}\n._RSS485 .rows .signature {font-Size:inherit}</style><div data-date=\"2026-10-15\"><div style=\"height:15px;flex:none\"></div><div class=\"section print-nobreak\"><div class=\"rows\"><div class=\"row nosubst\"><div class=\"period\"><span class=\"print-font-resizable\"></span></div><div class=\"info\"><span class=\"print-font-resizable\">Sellel päeval pole tühistatud tunde või asendusi.</span></div></div></div></div></div></div>",
+    "2026-10-16": "<div class=\"_RSS495\"><style type=\"text/css\">._RSS495 .signature {font-Size:20px;float:right;border-Bottom:1px dashed #c0c0c0;width:100px;margin-Right:4px;margin-Left:10px}\n._RSS495 .row {display:flex;flex-Direction:row;align-Items:baseline;font-Size:12px;margin-Bottom:1px}\n._RSS495 .period {font-Size:16px;text-Align:center;flex-Grow:0;margin-Right:10px}\n._RSS495 .period>span {white-Space:pre;display:inline-block;min-Width:30px}\n._RSS495 .info {flex:1}\n._RSS495 .section {margin-Bottom:15px;border:1px solid #c0c0c0;border-Radius:6px;padding:4px}\n._RSS495 .header {font-Size:20px;margin-Bottom:5px;font-Weight:bold;border:2px solid #c0c0c0;border-Radius:6px;padding:4px;display:inline-block}\n._RSS495 .rows {padding-Left:5px}\n._RSS495 .rows .signature {font-Size:inherit}</style><div data-date=\"2026-10-16\"><div style=\"height:15px;flex:none\"></div><div class=\"section print-nobreak\"><div class=\"rows\"><div class=\"row nosubst\"><div class=\"period\"><span class=\"print-font-resizable\"></span></div><div class=\"info\"><span class=\"print-font-resizable\">Sellel päeval pole tühistatud tunde või asendusi.</span></div></div></div></div></div></div>"
+  }
+}
