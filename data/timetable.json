@@ -1,7 +1,7 @@
 {
   "class": "11.erh",
   "source": "https://mgm.edupage.org/timetable/",
-  "fetchedAt": "2026-10-02T07:10:06+03:00",
+  "fetchedAt": "2026-10-02T12:10:06+03:00",
   "from": "2026-09-28",
   "to": "2026-10-18",
   "periods": [
@@ -903,7 +903,7 @@
       "subject": "Vene keel",
       "subjectKey": "vene keel",
       "teacher": "Tištšenkov",
-      "room": "312",
+      "room": "304",
       "group": null,
       "changed": false,
       "note": null
@@ -1043,7 +1043,7 @@
       "subject": "Abipolitseinik",
       "subjectKey": "abipolitseinik",
       "teacher": "Jakovlev",
-      "room": null,
+      "room": "309",
       "group": null,
       "changed": false,
       "note": null
@@ -1547,7 +1547,7 @@
       "subject": "Vene keel",
       "subjectKey": "vene keel",
       "teacher": "Tištšenkov",
-      "room": "312",
+      "room": "304",
       "group": null,
       "changed": false,
       "note": null
@@ -1687,7 +1687,7 @@
       "subject": "Abipolitseinik",
       "subjectKey": "abipolitseinik",
       "teacher": "Jakovlev",
-      "room": null,
+      "room": "309",
       "group": null,
       "changed": false,
       "note": null
