@@ -1,7 +1,7 @@
 {
   "class": "11.erh",
   "source": "https://mgm.edupage.org/timetable/",
-  "fetchedAt": "2026-10-03T12:10:01+03:00",
+  "fetchedAt": "2026-10-03T19:10:04+03:00",
   "from": "2026-09-28",
   "to": "2026-10-18",
   "periods": [
@@ -524,11 +524,11 @@
       "end": "13:10",
       "subject": "Liikumine",
       "subjectKey": "liikumine",
-      "teacher": "Issatšenko",
+      "teacher": null,
       "room": "õue",
       "group": null,
-      "changed": false,
-      "note": null
+      "changed": true,
+      "note": "Liikumine - (Issatšenko Anton)"
     },
     {
       "date": "2026-10-01",
@@ -538,11 +538,11 @@
       "end": "14:20",
       "subject": "Liikumine",
       "subjectKey": "liikumine",
-      "teacher": "Issatšenko",
+      "teacher": null,
       "room": "õue",
       "group": null,
-      "changed": false,
-      "note": null
+      "changed": true,
+      "note": "Liikumine - (Issatšenko Anton)"
     },
     {
       "date": "2026-10-01",
