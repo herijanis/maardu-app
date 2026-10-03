@@ -1,7 +1,7 @@
 {
   "class": "11.erh",
   "source": "https://mgm.edupage.org/timetable/",
-  "fetchedAt": "2026-10-03T07:10:06+03:00",
+  "fetchedAt": "2026-10-03T12:10:01+03:00",
   "from": "2026-09-28",
   "to": "2026-10-18",
   "periods": [
@@ -762,11 +762,11 @@
       "end": "13:10",
       "subject": "Muusika",
       "subjectKey": "muusika",
-      "teacher": "Selivanova",
+      "teacher": "Vassiljeva",
       "room": "27",
       "group": null,
-      "changed": false,
-      "note": null
+      "changed": true,
+      "note": "Muusika - Asendused: (Selivanova Darja) ➔ Vassiljeva Nadežda"
     },
     {
       "date": "2026-10-05",
