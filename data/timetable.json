@@ -1,7 +1,7 @@
 {
   "class": "11.erh",
   "source": "https://mgm.edupage.org/timetable/",
-  "fetchedAt": "2026-10-11T07:10:06+03:00",
+  "fetchedAt": "2026-10-11T12:10:09+03:00",
   "from": "2026-10-05",
   "to": "2026-10-25",
   "periods": [
@@ -692,11 +692,11 @@
       "end": "14:20",
       "subject": "Bioloogia",
       "subjectKey": "bioloogia",
-      "teacher": "Liisma",
+      "teacher": "Minajeva",
       "room": "309",
       "group": null,
-      "changed": false,
-      "note": null
+      "changed": true,
+      "note": "Bioloogia - Asendused: (Liisma Rasmus) ➔ Minajeva Nadežda"
     },
     {
       "date": "2026-10-12",
