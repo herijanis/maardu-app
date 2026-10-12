@@ -1,7 +1,7 @@
 {
   "class": "11.erh",
   "source": "https://mgm.edupage.org/timetable/",
-  "fetchedAt": "2026-10-12T12:10:07+03:00",
+  "fetchedAt": "2026-10-12T19:10:17+03:00",
   "from": "2026-10-12",
   "to": "2026-11-01",
   "periods": [
@@ -160,11 +160,11 @@
       "end": "16:05",
       "subject": "Keemia",
       "subjectKey": "keemia",
-      "teacher": "Talts",
+      "teacher": null,
       "room": "31",
       "group": null,
-      "changed": false,
-      "note": null
+      "changed": true,
+      "note": "Keemia - (Talts Polina Angelika)"
     },
     {
       "date": "2026-10-12",
