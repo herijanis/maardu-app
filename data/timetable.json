@@ -1,7 +1,7 @@
 {
   "class": "11.erh",
   "source": "https://mgm.edupage.org/timetable/",
-  "fetchedAt": "2026-10-13T07:10:00+03:00",
+  "fetchedAt": "2026-10-13T12:10:10+03:00",
   "from": "2026-10-12",
   "to": "2026-11-01",
   "periods": [
@@ -261,8 +261,8 @@
       "teacher": "Tištšenkov",
       "room": "304",
       "group": null,
-      "changed": false,
-      "note": null
+      "changed": true,
+      "note": "Vene keel - Tištšenkov Aleksandr, Tühistatud"
     },
     {
       "date": "2026-10-13",
@@ -303,8 +303,8 @@
       "teacher": "Talts",
       "room": "31",
       "group": null,
-      "changed": false,
-      "note": null
+      "changed": true,
+      "note": "Karjääriõpetus - Talts Polina Angelika, Tühistatud"
     },
     {
       "date": "2026-10-14",
