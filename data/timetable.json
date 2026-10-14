@@ -1,7 +1,7 @@
 {
   "class": "11.erh",
   "source": "https://mgm.edupage.org/timetable/",
-  "fetchedAt": "2026-10-14T12:10:09+03:00",
+  "fetchedAt": "2026-10-14T19:10:06+03:00",
   "from": "2026-10-12",
   "to": "2026-11-01",
   "periods": [
@@ -552,11 +552,11 @@
       "end": "16:05",
       "subject": "Eesti keel",
       "subjectKey": "eesti keel",
-      "teacher": "Andriyanovich",
+      "teacher": "Zubovitš",
       "room": "35",
       "group": "Grupp 1",
-      "changed": false,
-      "note": null
+      "changed": true,
+      "note": "Grupp 1: Eesti keel - Asendused: (Andriyanovich Daria) ➔ Zubovitš Maksim"
     },
     {
       "date": "2026-10-15",
@@ -569,8 +569,8 @@
       "teacher": "Kriisa",
       "room": "402",
       "group": "Grupp 2",
-      "changed": false,
-      "note": null
+      "changed": true,
+      "note": "Grupp 1: Eesti keel - Asendused: (Andriyanovich Daria) ➔ Zubovitš Maksim"
     },
     {
       "date": "2026-10-15",
@@ -583,8 +583,8 @@
       "teacher": "Kriisa",
       "room": "402",
       "group": "Grupp 1",
-      "changed": false,
-      "note": null
+      "changed": true,
+      "note": "Grupp 2: Eesti keel - Asendused: (Andriyanovich Daria) ➔ Zubovitš Maksim"
     },
     {
       "date": "2026-10-15",
@@ -594,11 +594,11 @@
       "end": "16:55",
       "subject": "Eesti keel",
       "subjectKey": "eesti keel",
-      "teacher": "Andriyanovich",
+      "teacher": "Zubovitš",
       "room": "35",
       "group": "Grupp 2",
-      "changed": false,
-      "note": null
+      "changed": true,
+      "note": "Grupp 2: Eesti keel - Asendused: (Andriyanovich Daria) ➔ Zubovitš Maksim"
     },
     {
       "date": "2026-10-16",
