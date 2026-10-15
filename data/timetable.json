@@ -1,7 +1,7 @@
 {
   "class": "11.erh",
   "source": "https://mgm.edupage.org/timetable/",
-  "fetchedAt": "2026-10-15T12:10:14+03:00",
+  "fetchedAt": "2026-10-15T19:10:07+03:00",
   "from": "2026-10-12",
   "to": "2026-11-01",
   "periods": [
@@ -622,11 +622,11 @@
       "end": "10:50",
       "subject": "Vene keel",
       "subjectKey": "vene keel",
-      "teacher": "Tištšenkov",
+      "teacher": "Vassiljeva",
       "room": "407",
       "group": null,
-      "changed": false,
-      "note": null
+      "changed": true,
+      "note": "Vene keel - Asendused: (Tištšenkov Aleksandr) ➔ Vassiljeva Nadežda"
     },
     {
       "date": "2026-10-16",
