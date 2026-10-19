@@ -1,7 +1,7 @@
 {
   "class": "11.erh",
   "source": "https://mgm.edupage.org/timetable/",
-  "fetchedAt": "2026-10-19T12:10:05+03:00",
+  "fetchedAt": "2026-10-19T17:47:25+03:00",
   "from": "2026-10-19",
   "to": "2026-11-08",
   "periods": [
@@ -258,11 +258,11 @@
       "end": "12:00",
       "subject": "Vene keel",
       "subjectKey": "vene keel",
-      "teacher": null,
+      "teacher": "Tištšenkov",
       "room": "304",
       "group": null,
-      "changed": true,
-      "note": "Vene keel - (Tištšenkov Aleksandr)"
+      "changed": false,
+      "note": null
     },
     {
       "date": "2026-10-20",
