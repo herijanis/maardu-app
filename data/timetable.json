@@ -1,7 +1,7 @@
 {
   "class": "11.erh",
   "source": "https://mgm.edupage.org/timetable/",
-  "fetchedAt": "2026-10-21T12:10:06+03:00",
+  "fetchedAt": "2026-10-21T19:10:06+03:00",
   "from": "2026-10-19",
   "to": "2026-11-08",
   "periods": [
@@ -538,11 +538,11 @@
       "end": "15:15",
       "subject": "Füüsika",
       "subjectKey": "fuusika",
-      "teacher": "Antonišina",
+      "teacher": "Luur",
       "room": "306",
       "group": null,
-      "changed": false,
-      "note": null
+      "changed": true,
+      "note": "Füüsika - Asendused: (Antonišina Jana) ➔ Luur Kaupo"
     },
     {
       "date": "2026-10-22",
@@ -552,11 +552,11 @@
       "end": "16:05",
       "subject": "Eesti keel",
       "subjectKey": "eesti keel",
-      "teacher": "Andriyanovich",
+      "teacher": "Peil",
       "room": "35",
       "group": "Grupp 1",
-      "changed": false,
-      "note": null
+      "changed": true,
+      "note": "Grupp 1: Eesti keel - Asendused: (Andriyanovich Daria) ➔ Peil Piret"
     },
     {
       "date": "2026-10-22",
@@ -569,8 +569,8 @@
       "teacher": "Kriisa",
       "room": "402",
       "group": "Grupp 2",
-      "changed": false,
-      "note": null
+      "changed": true,
+      "note": "Grupp 1: Eesti keel - Asendused: (Andriyanovich Daria) ➔ Peil Piret"
     },
     {
       "date": "2026-10-22",
@@ -583,8 +583,8 @@
       "teacher": "Kriisa",
       "room": "402",
       "group": "Grupp 1",
-      "changed": false,
-      "note": null
+      "changed": true,
+      "note": "Grupp 2: Eesti keel - Andriyanovich Daria, Tühistatud"
     },
     {
       "date": "2026-10-22",
@@ -597,8 +597,8 @@
       "teacher": "Andriyanovich",
       "room": "35",
       "group": "Grupp 2",
-      "changed": false,
-      "note": null
+      "changed": true,
+      "note": "Grupp 2: Eesti keel - Andriyanovich Daria, Tühistatud"
     },
     {
       "date": "2026-10-23",
