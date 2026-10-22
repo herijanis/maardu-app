@@ -1,7 +1,7 @@
 {
   "class": "11.erh",
   "source": "https://mgm.edupage.org/timetable/",
-  "fetchedAt": "2026-10-21T19:10:06+03:00",
+  "fetchedAt": "2026-10-22T07:10:06+03:00",
   "from": "2026-10-19",
   "to": "2026-11-08",
   "periods": [
@@ -468,11 +468,11 @@
       "end": "09:55",
       "subject": "Praktiline inglise keel",
       "subjectKey": "praktiline inglise keel",
-      "teacher": "Kriisa",
+      "teacher": "Klaussen",
       "room": "402",
       "group": null,
-      "changed": false,
-      "note": null
+      "changed": true,
+      "note": "Praktiline inglise keel - Asendused: (Kriisa Tiiu) ➔ Klaussen Merilyn"
     },
     {
       "date": "2026-10-22",
@@ -556,7 +556,7 @@
       "room": "35",
       "group": "Grupp 1",
       "changed": true,
-      "note": "Grupp 1: Eesti keel - Asendused: (Andriyanovich Daria) ➔ Peil Piret"
+      "note": "Grupp 1: Eesti keel - Asendused: (Andriyanovich Daria) ➔ Peil Piret; Grupp 2: Inglise keel - Asendused: (Kriisa Tiiu) ➔ Naydenova Anastasia"
     },
     {
       "date": "2026-10-22",
@@ -566,11 +566,11 @@
       "end": "16:05",
       "subject": "Inglise keel",
       "subjectKey": "inglise keel",
-      "teacher": "Kriisa",
+      "teacher": "Naydenova",
       "room": "402",
       "group": "Grupp 2",
       "changed": true,
-      "note": "Grupp 1: Eesti keel - Asendused: (Andriyanovich Daria) ➔ Peil Piret"
+      "note": "Grupp 1: Eesti keel - Asendused: (Andriyanovich Daria) ➔ Peil Piret; Grupp 2: Inglise keel - Asendused: (Kriisa Tiiu) ➔ Naydenova Anastasia"
     },
     {
       "date": "2026-10-22",
@@ -584,7 +584,7 @@
       "room": "402",
       "group": "Grupp 1",
       "changed": true,
-      "note": "Grupp 2: Eesti keel - Andriyanovich Daria, Tühistatud"
+      "note": "Grupp 1: Inglise keel - Kriisa Tiiu, Tühistatud; Grupp 2: Eesti keel - Andriyanovich Daria, Tühistatud"
     },
     {
       "date": "2026-10-22",
@@ -598,7 +598,7 @@
       "room": "35",
       "group": "Grupp 2",
       "changed": true,
-      "note": "Grupp 2: Eesti keel - Andriyanovich Daria, Tühistatud"
+      "note": "Grupp 1: Inglise keel - Kriisa Tiiu, Tühistatud; Grupp 2: Eesti keel - Andriyanovich Daria, Tühistatud"
     },
     {
       "date": "2026-10-23",
