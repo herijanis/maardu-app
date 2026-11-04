@@ -1,7 +1,7 @@
 {
   "class": "11.erh",
   "source": "https://mgm.edupage.org/timetable/",
-  "fetchedAt": "2026-11-04T12:10:05+02:00",
+  "fetchedAt": "2026-11-04T19:10:05+02:00",
   "from": "2026-11-02",
   "to": "2026-11-22",
   "periods": [
@@ -597,8 +597,8 @@
       "teacher": "Saar",
       "room": null,
       "group": null,
-      "changed": false,
-      "note": null
+      "changed": true,
+      "note": "Itaalia keel (valik) - Saar Ille, Tühistatud"
     },
     {
       "date": "2026-11-05",
@@ -611,8 +611,8 @@
       "teacher": "Saar",
       "room": null,
       "group": null,
-      "changed": false,
-      "note": null
+      "changed": true,
+      "note": "Itaalia keel (valik) - Saar Ille, Tühistatud"
     },
     {
       "date": "2026-11-05",
