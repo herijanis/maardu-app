@@ -1,7 +1,7 @@
 {
   "class": "11.erh",
   "source": "https://mgm.edupage.org/timetable/",
-  "fetchedAt": "2026-11-06T17:15:50+02:00",
+  "fetchedAt": "2026-11-08T19:31:54+02:00",
   "from": "2026-11-02",
   "to": "2026-11-22",
   "periods": [
@@ -818,11 +818,11 @@
       "end": "12:00",
       "subject": "Kirjandus",
       "subjectKey": "kirjandus",
-      "teacher": "Andriyanovich",
+      "teacher": null,
       "room": "35",
       "group": null,
-      "changed": false,
-      "note": null
+      "changed": true,
+      "note": "Kirjandus - Asendused: (Andriyanovich Daria) ➔ Palgi Karmela"
     },
     {
       "date": "2026-11-09",
@@ -877,8 +877,8 @@
       "teacher": "Talts",
       "room": "31",
       "group": null,
-      "changed": false,
-      "note": null
+      "changed": true,
+      "note": "Keemia - Talts Polina Angelika, Tühistatud"
     },
     {
       "date": "2026-11-09",
