@@ -1,7 +1,7 @@
 {
   "class": "11.erh",
   "source": "https://mgm.edupage.org/timetable/",
-  "fetchedAt": "2026-11-10T12:10:06+02:00",
+  "fetchedAt": "2026-11-10T19:10:01+02:00",
   "from": "2026-11-09",
   "to": "2026-11-29",
   "periods": [
@@ -426,11 +426,11 @@
       "end": "16:05",
       "subject": "Inglise keel",
       "subjectKey": "inglise keel",
-      "teacher": "Andriyanovich",
+      "teacher": "Faizova",
       "room": "402",
       "group": "Grupp 1",
       "changed": true,
-      "note": "Grupp 1: Inglise keel - Asendused: (Kriisa Tiiu) ➔ Andriyanovich Daria"
+      "note": "Grupp 1: Inglise keel - Asendused: (Kriisa Tiiu) ➔ Faizova Roksana"
     },
     {
       "date": "2026-11-11",
@@ -444,7 +444,7 @@
       "room": "35",
       "group": "Grupp 2",
       "changed": true,
-      "note": "Grupp 1: Inglise keel - Asendused: (Kriisa Tiiu) ➔ Andriyanovich Daria"
+      "note": "Grupp 1: Inglise keel - Asendused: (Kriisa Tiiu) ➔ Faizova Roksana"
     },
     {
       "date": "2026-11-11",
@@ -454,11 +454,11 @@
       "end": "16:55",
       "subject": "Inglise keel",
       "subjectKey": "inglise keel",
-      "teacher": "Andriyanovich",
+      "teacher": "Faizova",
       "room": "402",
       "group": "Grupp 1",
       "changed": true,
-      "note": "Grupp 1: Inglise keel - Asendused: (Kriisa Tiiu) ➔ Andriyanovich Daria"
+      "note": "Grupp 1: Inglise keel - Asendused: (Kriisa Tiiu) ➔ Faizova Roksana"
     },
     {
       "date": "2026-11-11",
@@ -472,7 +472,7 @@
       "room": "35",
       "group": "Grupp 2",
       "changed": true,
-      "note": "Grupp 1: Inglise keel - Asendused: (Kriisa Tiiu) ➔ Andriyanovich Daria"
+      "note": "Grupp 1: Inglise keel - Asendused: (Kriisa Tiiu) ➔ Faizova Roksana"
     },
     {
       "date": "2026-11-11",
