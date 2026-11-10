@@ -1,7 +1,7 @@
 {
   "class": "11.erh",
   "source": "https://mgm.edupage.org/timetable/",
-  "fetchedAt": "2026-11-10T07:09:01+02:00",
+  "fetchedAt": "2026-11-10T12:10:06+02:00",
   "from": "2026-11-09",
   "to": "2026-11-29",
   "periods": [
@@ -370,11 +370,11 @@
       "end": "12:00",
       "subject": "Praktiline inglise keel",
       "subjectKey": "praktiline inglise keel",
-      "teacher": "Kriisa",
+      "teacher": "Dolinina",
       "room": "402",
       "group": null,
-      "changed": false,
-      "note": null
+      "changed": true,
+      "note": "Praktiline inglise keel - Asendused: (Kriisa Tiiu) ➔ Dolinina Anna"
     },
     {
       "date": "2026-11-11",
@@ -426,11 +426,11 @@
       "end": "16:05",
       "subject": "Inglise keel",
       "subjectKey": "inglise keel",
-      "teacher": "Kriisa",
+      "teacher": "Andriyanovich",
       "room": "402",
       "group": "Grupp 1",
-      "changed": false,
-      "note": null
+      "changed": true,
+      "note": "Grupp 1: Inglise keel - Asendused: (Kriisa Tiiu) ➔ Andriyanovich Daria"
     },
     {
       "date": "2026-11-11",
@@ -443,8 +443,8 @@
       "teacher": "Andriyanovich",
       "room": "35",
       "group": "Grupp 2",
-      "changed": false,
-      "note": null
+      "changed": true,
+      "note": "Grupp 1: Inglise keel - Asendused: (Kriisa Tiiu) ➔ Andriyanovich Daria"
     },
     {
       "date": "2026-11-11",
@@ -454,11 +454,11 @@
       "end": "16:55",
       "subject": "Inglise keel",
       "subjectKey": "inglise keel",
-      "teacher": "Kriisa",
+      "teacher": "Andriyanovich",
       "room": "402",
       "group": "Grupp 1",
-      "changed": false,
-      "note": null
+      "changed": true,
+      "note": "Grupp 1: Inglise keel - Asendused: (Kriisa Tiiu) ➔ Andriyanovich Daria"
     },
     {
       "date": "2026-11-11",
@@ -471,8 +471,8 @@
       "teacher": "Andriyanovich",
       "room": "35",
       "group": "Grupp 2",
-      "changed": false,
-      "note": null
+      "changed": true,
+      "note": "Grupp 1: Inglise keel - Asendused: (Kriisa Tiiu) ➔ Andriyanovich Daria"
     },
     {
       "date": "2026-11-11",
@@ -499,8 +499,8 @@
       "teacher": "Andriyanovich",
       "room": "35",
       "group": "Grupp 1",
-      "changed": false,
-      "note": null
+      "changed": true,
+      "note": "Grupp 2: Inglise keel - (Kriisa Tiiu)"
     },
     {
       "date": "2026-11-12",
@@ -510,11 +510,11 @@
       "end": "09:00",
       "subject": "Inglise keel",
       "subjectKey": "inglise keel",
-      "teacher": "Kriisa",
+      "teacher": null,
       "room": "402",
       "group": "Grupp 2",
-      "changed": false,
-      "note": null
+      "changed": true,
+      "note": "Grupp 2: Inglise keel - (Kriisa Tiiu)"
     },
     {
       "date": "2026-11-12",
@@ -524,11 +524,11 @@
       "end": "09:55",
       "subject": "Praktiline inglise keel",
       "subjectKey": "praktiline inglise keel",
-      "teacher": "Kriisa",
+      "teacher": null,
       "room": "402",
       "group": null,
-      "changed": false,
-      "note": null
+      "changed": true,
+      "note": "Praktiline inglise keel - (Kriisa Tiiu)"
     },
     {
       "date": "2026-11-12",
@@ -625,8 +625,8 @@
       "teacher": "Kriisa",
       "room": "402",
       "group": "Grupp 2",
-      "changed": false,
-      "note": null
+      "changed": true,
+      "note": "Grupp 2: Inglise keel - Kriisa Tiiu, Tühistatud"
     },
     {
       "date": "2026-11-13",
@@ -664,11 +664,11 @@
       "end": "12:00",
       "subject": "Vene keel",
       "subjectKey": "vene keel",
-      "teacher": "Tištšenkov",
+      "teacher": null,
       "room": "407",
       "group": null,
-      "changed": false,
-      "note": null
+      "changed": true,
+      "note": "Vene keel - (Tištšenkov Aleksandr)"
     },
     {
       "date": "2026-11-13",
@@ -678,11 +678,11 @@
       "end": "13:10",
       "subject": "Vene keel",
       "subjectKey": "vene keel",
-      "teacher": "Tištšenkov",
+      "teacher": null,
       "room": "407",
       "group": null,
-      "changed": false,
-      "note": null
+      "changed": true,
+      "note": "Vene keel - (Tištšenkov Aleksandr)"
     },
     {
       "date": "2026-11-13",
@@ -874,11 +874,11 @@
       "end": "16:05",
       "subject": "Keemia",
       "subjectKey": "keemia",
-      "teacher": "Talts",
+      "teacher": null,
       "room": "31",
       "group": null,
-      "changed": false,
-      "note": null
+      "changed": true,
+      "note": "Keemia - (Talts Polina Angelika)"
     },
     {
       "date": "2026-11-16",
@@ -1000,11 +1000,11 @@
       "end": "17:40",
       "subject": "Karjääriõpetus",
       "subjectKey": "karjaariopetus",
-      "teacher": "Talts",
+      "teacher": null,
       "room": "31",
       "group": null,
-      "changed": false,
-      "note": null
+      "changed": true,
+      "note": "Karjääriõpetus - (Talts Polina Angelika)"
     },
     {
       "date": "2026-11-18",
@@ -1704,7 +1704,7 @@
       "room": "300",
       "group": null,
       "changed": true,
-      "note": "Enesekaitse - (Jakovlev Sergei); Abipolitseinik - Jakovlev Sergei, Tühistatud"
+      "note": "Abipolitseinik - Jakovlev Sergei, Tühistatud"
     },
     {
       "date": "2026-11-25",
@@ -1787,8 +1787,8 @@
       "teacher": "Andriyanovich",
       "room": "35",
       "group": null,
-      "changed": true,
-      "note": "Abipolitseinik - (Jakovlev Sergei)"
+      "changed": false,
+      "note": null
     },
     {
       "date": "2026-11-25",
