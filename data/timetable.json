@@ -1,7 +1,7 @@
 {
   "class": "11.erh",
   "source": "https://mgm.edupage.org/timetable/",
-  "fetchedAt": "2026-11-11T07:10:04+02:00",
+  "fetchedAt": "2026-11-11T12:10:05+02:00",
   "from": "2026-11-09",
   "to": "2026-11-29",
   "periods": [
@@ -454,11 +454,11 @@
       "end": "16:55",
       "subject": "Inglise keel",
       "subjectKey": "inglise keel",
-      "teacher": "Faizova",
+      "teacher": null,
       "room": "402",
       "group": "Grupp 1",
       "changed": true,
-      "note": "Grupp 1: Inglise keel - Asendused: (Kriisa Tiiu) ➔ Faizova Roksana"
+      "note": "Grupp 1: Inglise keel - Asendused: (Kriisa Tiiu) ➔ iseseisev töö"
     },
     {
       "date": "2026-11-11",
@@ -472,7 +472,7 @@
       "room": "35",
       "group": "Grupp 2",
       "changed": true,
-      "note": "Grupp 1: Inglise keel - Asendused: (Kriisa Tiiu) ➔ Faizova Roksana"
+      "note": "Grupp 1: Inglise keel - Asendused: (Kriisa Tiiu) ➔ iseseisev töö"
     },
     {
       "date": "2026-11-11",
