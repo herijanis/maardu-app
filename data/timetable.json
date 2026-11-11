@@ -1,7 +1,7 @@
 {
   "class": "11.erh",
   "source": "https://mgm.edupage.org/timetable/",
-  "fetchedAt": "2026-11-11T12:10:05+02:00",
+  "fetchedAt": "2026-11-11T19:10:06+02:00",
   "from": "2026-11-09",
   "to": "2026-11-29",
   "periods": [
@@ -500,7 +500,7 @@
       "room": "35",
       "group": "Grupp 1",
       "changed": true,
-      "note": "Grupp 2: Inglise keel - (Kriisa Tiiu)"
+      "note": "Grupp 2: Inglise keel - Kriisa Tiiu, Tühistatud"
     },
     {
       "date": "2026-11-12",
@@ -510,11 +510,11 @@
       "end": "09:00",
       "subject": "Inglise keel",
       "subjectKey": "inglise keel",
-      "teacher": null,
+      "teacher": "Kriisa",
       "room": "402",
       "group": "Grupp 2",
       "changed": true,
-      "note": "Grupp 2: Inglise keel - (Kriisa Tiiu)"
+      "note": "Grupp 2: Inglise keel - Kriisa Tiiu, Tühistatud"
     },
     {
       "date": "2026-11-12",
@@ -528,7 +528,7 @@
       "room": "402",
       "group": null,
       "changed": true,
-      "note": "Praktiline inglise keel - (Kriisa Tiiu)"
+      "note": "Praktiline inglise keel - Asendused: (Kriisa Tiiu) ➔ iseseisev töö"
     },
     {
       "date": "2026-11-12",
