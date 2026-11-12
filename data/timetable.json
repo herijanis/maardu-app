@@ -1,7 +1,7 @@
 {
   "class": "11.erh",
   "source": "https://mgm.edupage.org/timetable/",
-  "fetchedAt": "2026-11-12T12:10:01+02:00",
+  "fetchedAt": "2026-11-12T19:10:01+02:00",
   "from": "2026-11-09",
   "to": "2026-11-29",
   "periods": [
@@ -664,11 +664,11 @@
       "end": "12:00",
       "subject": "Vene keel",
       "subjectKey": "vene keel",
-      "teacher": null,
+      "teacher": "Dolinina",
       "room": "407",
       "group": null,
       "changed": true,
-      "note": "Vene keel - (Tištšenkov Aleksandr)"
+      "note": "Vene keel - Asendused: (Tištšenkov Aleksandr) ➔ Dolinina Anna"
     },
     {
       "date": "2026-11-13",
@@ -678,11 +678,11 @@
       "end": "13:10",
       "subject": "Vene keel",
       "subjectKey": "vene keel",
-      "teacher": null,
+      "teacher": "Dolinina",
       "room": "407",
       "group": null,
       "changed": true,
-      "note": "Vene keel - (Tištšenkov Aleksandr)"
+      "note": "Vene keel - Asendused: (Tištšenkov Aleksandr) ➔ Dolinina Anna"
     },
     {
       "date": "2026-11-13",
