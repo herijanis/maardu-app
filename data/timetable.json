@@ -1,7 +1,7 @@
 {
   "class": "11.erh",
   "source": "https://mgm.edupage.org/timetable/",
-  "fetchedAt": "2026-11-15T07:10:03+02:00",
+  "fetchedAt": "2026-11-15T12:10:01+02:00",
   "from": "2026-11-09",
   "to": "2026-11-29",
   "periods": [
@@ -874,11 +874,11 @@
       "end": "16:05",
       "subject": "Keemia",
       "subjectKey": "keemia",
-      "teacher": null,
+      "teacher": "Linntam",
       "room": "31",
       "group": null,
       "changed": true,
-      "note": "Keemia - (Talts Polina Angelika)"
+      "note": "Keemia - Asendused: (Talts Polina Angelika) ➔ Linntam Alo"
     },
     {
       "date": "2026-11-16",
