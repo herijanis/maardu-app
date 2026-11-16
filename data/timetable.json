@@ -1,7 +1,7 @@
 {
   "class": "11.erh",
   "source": "https://mgm.edupage.org/timetable/",
-  "fetchedAt": "2026-11-16T07:10:04+02:00",
+  "fetchedAt": "2026-11-16T12:10:03+02:00",
   "from": "2026-11-16",
   "to": "2026-12-06",
   "periods": [
@@ -318,7 +318,7 @@
       "room": "31",
       "group": null,
       "changed": true,
-      "note": "Karjääriõpetus - (Talts Polina Angelika)"
+      "note": "Karjääriõpetus - Asendused: (Talts Polina Angelika) ➔ iseseisev töö"
     },
     {
       "date": "2026-11-18",
