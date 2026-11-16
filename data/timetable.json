@@ -1,7 +1,7 @@
 {
   "class": "11.erh",
   "source": "https://mgm.edupage.org/timetable/",
-  "fetchedAt": "2026-11-16T14:54:29+02:00",
+  "fetchedAt": "2026-11-16T19:10:05+02:00",
   "from": "2026-11-16",
   "to": "2026-12-06",
   "periods": [
@@ -258,11 +258,11 @@
       "end": "12:00",
       "subject": "Itaalia keel (valik)",
       "subjectKey": "itaalia keel",
-      "teacher": "Saar",
+      "teacher": null,
       "room": "204",
       "group": null,
-      "changed": false,
-      "note": null
+      "changed": true,
+      "note": "Itaalia keel (valik) - Asendused: (Saar Ille) ➔ iseseisev töö"
     },
     {
       "date": "2026-11-17",
