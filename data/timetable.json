@@ -1,7 +1,7 @@
 {
   "class": "11.erh",
   "source": "https://mgm.edupage.org/timetable/",
-  "fetchedAt": "2026-11-19T07:10:05+02:00",
+  "fetchedAt": "2026-11-19T12:10:04+02:00",
   "from": "2026-11-16",
   "to": "2026-12-06",
   "periods": [
@@ -692,11 +692,11 @@
       "end": "14:20",
       "subject": "Muusika",
       "subjectKey": "muusika",
-      "teacher": "Selivanova",
+      "teacher": "Vassiljeva",
       "room": "27",
       "group": null,
-      "changed": false,
-      "note": null
+      "changed": true,
+      "note": "Muusika - Asendused: (Selivanova Darja) ➔ Vassiljeva Nadežda"
     },
     {
       "date": "2026-11-20",
@@ -706,11 +706,11 @@
       "end": "15:15",
       "subject": "Ettevalmistav kursus eesti keele eksamiks (teise keelena)",
       "subjectKey": "ettevalmistav kursus eesti keele eksamiks",
-      "teacher": "Andriyanovich",
+      "teacher": "Peil",
       "room": "35",
       "group": null,
-      "changed": false,
-      "note": null
+      "changed": true,
+      "note": "Ettevalmistav kursus eesti keele eksamiks (teise keelena) - Asendused: (Andriyanovich Daria) ➔ Peil Piret"
     },
     {
       "date": "2026-11-20",
@@ -720,11 +720,11 @@
       "end": "16:05",
       "subject": "Praktiline eesti keel",
       "subjectKey": "praktiline eesti keel",
-      "teacher": "Andriyanovich",
+      "teacher": "Peil",
       "room": "35",
       "group": null,
-      "changed": false,
-      "note": null
+      "changed": true,
+      "note": "Praktiline eesti keel - Asendused: (Andriyanovich Daria) ➔ Peil Piret"
     },
     {
       "date": "2026-11-20",
