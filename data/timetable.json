@@ -1,7 +1,7 @@
 {
   "class": "11.erh",
   "source": "https://mgm.edupage.org/timetable/",
-  "fetchedAt": "2026-11-19T19:10:06+02:00",
+  "fetchedAt": "2026-11-20T07:10:04+02:00",
   "from": "2026-11-16",
   "to": "2026-12-06",
   "periods": [
@@ -720,11 +720,11 @@
       "end": "16:05",
       "subject": "Praktiline eesti keel",
       "subjectKey": "praktiline eesti keel",
-      "teacher": "Peil",
+      "teacher": "Oganesjan",
       "room": "35",
       "group": null,
       "changed": true,
-      "note": "Praktiline eesti keel - Asendused: (Andriyanovich Daria) ➔ Peil Piret"
+      "note": "Praktiline eesti keel - Asendused: (Andriyanovich Daria) ➔ Oganesjan Edgar"
     },
     {
       "date": "2026-11-20",
