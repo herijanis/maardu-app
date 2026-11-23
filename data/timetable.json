@@ -1,7 +1,7 @@
 {
   "class": "11.erh",
   "source": "https://mgm.edupage.org/timetable/",
-  "fetchedAt": "2026-11-23T12:40:13+02:00",
+  "fetchedAt": "2026-11-23T19:10:05+02:00",
   "from": "2026-11-23",
   "to": "2026-12-13",
   "periods": [
@@ -286,11 +286,11 @@
       "end": "14:20",
       "subject": "Bioloogia",
       "subjectKey": "bioloogia",
-      "teacher": null,
+      "teacher": "Tihhomirov",
       "room": "309",
       "group": null,
       "changed": true,
-      "note": "Bioloogia - (Liisma Rasmus)"
+      "note": "Bioloogia - Asendused: (Liisma Rasmus) ➔ Tihhomirov Deniss"
     },
     {
       "date": "2026-11-24",
