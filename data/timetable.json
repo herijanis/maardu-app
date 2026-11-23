@@ -1,7 +1,7 @@
 {
   "class": "11.erh",
   "source": "https://mgm.edupage.org/timetable/",
-  "fetchedAt": "2026-11-23T07:10:03+02:00",
+  "fetchedAt": "2026-11-23T12:10:04+02:00",
   "from": "2026-11-23",
   "to": "2026-12-13",
   "periods": [
@@ -286,11 +286,11 @@
       "end": "14:20",
       "subject": "Bioloogia",
       "subjectKey": "bioloogia",
-      "teacher": "Liisma",
+      "teacher": null,
       "room": "309",
       "group": null,
-      "changed": false,
-      "note": null
+      "changed": true,
+      "note": "Bioloogia - (Liisma Rasmus)"
     },
     {
       "date": "2026-11-24",
