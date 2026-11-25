@@ -1,7 +1,7 @@
 {
   "class": "11.erh",
   "source": "https://mgm.edupage.org/timetable/",
-  "fetchedAt": "2026-11-24T19:40:16+02:00",
+  "fetchedAt": "2026-11-25T07:10:05+02:00",
   "from": "2026-11-23",
   "to": "2026-12-13",
   "periods": [
@@ -399,10 +399,10 @@
       "subject": "Bioloogia",
       "subjectKey": "bioloogia",
       "teacher": "Luur",
-      "room": "309",
+      "room": "405",
       "group": null,
       "changed": true,
-      "note": "Bioloogia - Asendused: (Liisma Rasmus) ➔ Luur Kaupo"
+      "note": "Bioloogia - Asendused: (Liisma Rasmus) ➔ Luur Kaupo, Vaheta ruumi: (309) ➔ 405"
     },
     {
       "date": "2026-11-25",
